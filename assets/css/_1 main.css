@@ -1,0 +1,268 @@
+/* =========================================================
+   main.css – styl bazowy publikacji cyfrowej (skrypt)
+   ========================================================= */
+
+/* --- Reset / baza --- */
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  background: #ffffff;
+  color: #111;
+}
+
+/* Ułatwia przewijanie do nagłówków przy stałym headerze */
+:target { scroll-margin-top: 90px; }
+
+/* --- Kontener --- */
+.container {
+  width: min(980px, 92vw);
+  margin: 0 auto;
+}
+
+/* --- Linki --- */
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+/* --- Header / Footer --- */
+.site-header {
+  border-bottom: 1px solid #e6e6e6;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header .container {
+  padding: 16px 0;
+}
+
+.site-header h1 {
+  font-size: 18px;
+  margin: 0 0 6px 0;
+  font-weight: 650;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: #444;
+}
+.breadcrumb a {
+  color: #444;
+  text-decoration: none;
+}
+.breadcrumb a:hover { text-decoration: underline; }
+
+.site-footer {
+  border-top: 1px solid #e6e6e6;
+  margin-top: 48px;
+  padding: 20px 0;
+  background: #fff;
+  color: #444;
+  font-size: 14px;
+}
+
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.site-footer button {
+  border: 1px solid #d0d0d0;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.site-footer button:hover { border-color: #999; }
+
+/* --- Układ rozdziału --- */
+.chapter {
+  padding: 28px 0 8px 0;
+}
+
+.chapter > h1 {
+  font-size: 30px;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+  font-weight: 750;
+}
+
+.chapter-intro {
+  margin: 0 0 22px 0;
+  font-size: 17px;
+  color: #222;
+}
+
+/* --- Nagłówki sekcji --- */
+h2 {
+  margin: 34px 0 10px 0;
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 750;
+}
+
+h3 {
+  margin: 22px 0 8px 0;
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+p { margin: 0 0 12px 0; }
+
+/* --- Spis treści rozdziału --- */
+.chapter-toc {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin: 18px 0 26px 0;
+  background: #fafafa;
+}
+
+.chapter-toc h2 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.chapter-toc ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.chapter-toc li {
+  margin: 6px 0;
+}
+
+.chapter-toc a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+.chapter-toc a:hover {
+  border-bottom-color: rgba(0,0,0,0.85);
+}
+
+/* --- Sekcje / akapity --- */
+section {
+  padding: 0;
+}
+
+/* Delikatne wyróżnienie sekcji przy nawigacji kotwicą */
+section:target {
+  outline: 2px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-left: -12px;
+  margin-right: -12px;
+  background: #fcfcfc;
+}
+
+/* --- Ryciny --- */
+
+.figure {
+  display: block;
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 420px;      /* kontrola szerokości całego bloku 720 */
+}
+
+.figure img {
+  max-width: 40%;
+  width: 80px;          /* docelowy rozmiar ilustracji 480 */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.figure figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #555;
+}
+
+
+/* --- Listy (jeśli pojawią się w treści) --- */
+ul, ol {
+  margin: 8px 0 14px 0;
+  padding-left: 22px;
+}
+
+li { margin: 6px 0; }
+
+/* --- Cytaty / ramki informacyjne (opcjonalne klasy) --- */
+.note {
+  border-left: 4px solid #e6e6e6;
+  padding: 10px 12px;
+  margin: 14px 0;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.callout {
+  border: 1px solid #e6e6e6;
+  padding: 12px 14px;
+  margin: 14px 0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* --- Tabele (jeśli będą) --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0 22px 0;
+  font-size: 15px;
+}
+
+th, td {
+  border: 1px solid #e6e6e6;
+  padding: 10px 10px;
+  vertical-align: top;
+}
+
+th {
+  background: #fafafa;
+  font-weight: 700;
+}
+
+/* --- Kod (jeśli będzie) --- */
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.95em;
+}
+
+pre {
+  border: 1px solid #e6e6e6;
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 12px 14px;
+  overflow: auto;
+}
+
+/* --- Responsywność --- */
+@media (max-width: 720px) {
+  .site-footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .chapter > h1 { font-size: 26px; }
+  h2 { font-size: 20px; }
+}
+
+/* --- Preferencje dostępności --- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

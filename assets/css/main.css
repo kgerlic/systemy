@@ -1,0 +1,517 @@
+/* =========================================================
+   main.css — e-skrypt (mobile-first) + light/dark theme
+   Domyślnie: jasny motyw
+   Dark mode: html[data-theme="dark"] { ... }
+   ========================================================= */
+
+/* ========== Theme tokens (default: light) ========== */
+:root{
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --surface2: #f1f3f8;
+
+  --text: #121318;
+  --muted: rgba(18,19,24,.72);
+  --muted2: rgba(18,19,24,.56);
+
+  --border: rgba(18,19,24,.14);
+  --shadow: 0 10px 24px rgba(18,19,24,.10);
+
+  --radius: 16px;
+  --radius2: 22px;
+
+  --max: 1100px;
+  --pad: 16px;
+
+  --tap: 48px; /* minimalny rozmiar celu dotykowego */
+
+  --link: #1a4fff;
+
+  /* Ilustracje (na białym tle) jako karta */
+  --figure-bg: #ffffff;
+  --figure-border: rgba(18,19,24,.12);
+}
+
+/* optional: dark theme */
+html[data-theme="dark"]{
+  --bg: #0b0c10;
+  --surface: rgba(255,255,255,.06);
+  --surface2: rgba(255,255,255,.08);
+
+  --text: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.70);
+  --muted2: rgba(255,255,255,.55);
+
+  --border: rgba(255,255,255,.14);
+  --shadow: 0 10px 26px rgba(0,0,0,.35);
+
+  --link: #9bb3ff;
+
+  /* Ilustracje nadal na białym tle (czytelność line-art) */
+  --figure-bg: #ffffff;
+  --figure-border: rgba(255,255,255,.18);
+}
+
+/* ========== Base / reset ========== */
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.35;
+}
+
+img{ max-width: 100%; height: auto; }
+
+a{
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover{ text-decoration: underline; }
+
+a:focus-visible, button:focus-visible, input:focus-visible{
+  outline: 2px solid rgba(26,79,255,.35);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+/* Screen reader only */
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+
+/* Container */
+.container{
+  width: min(var(--max), 100% - 2*var(--pad));
+  margin: 0 auto;
+}
+
+/* ========== Header ========== */
+.app-header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand{
+  display: flex;
+  gap: 12px;
+  padding: 18px 0 10px;
+  align-items: flex-start;
+}
+
+.brand-mark{
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.title{
+  margin: 0;
+  font-size: 1.12rem;
+  letter-spacing: .2px;
+  color: var(--text);
+}
+
+.subtitle{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.meta{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 6px 0 10px;
+}
+
+.chip{
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .82rem;
+  box-shadow: 0 4px 14px rgba(18,19,24,.06);
+}
+
+.chip-link{
+  color: var(--muted);
+  text-decoration: none;
+}
+.chip-link:hover{
+  background: var(--surface2);
+  text-decoration: none;
+}
+
+.chip-button{
+  cursor: pointer;
+}
+.chip-button:hover{
+  background: var(--surface2);
+}
+
+/* ========== Search ========== */
+.search{
+  display: flex;
+  gap: 10px;
+  padding: 10px 0 16px;
+  align-items: center;
+}
+
+.search-input{
+  flex: 1;
+  height: var(--tap);
+  border-radius: 14px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1rem;
+  box-shadow: 0 4px 14px rgba(18,19,24,.06);
+}
+
+.search-input::placeholder{
+  color: color-mix(in srgb, var(--muted2) 80%, transparent);
+}
+
+.btn{
+  height: var(--tap);
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(18,19,24,.06);
+}
+
+.btn:hover{ background: var(--surface2); }
+
+.btn-ghost{
+  background: transparent;
+  box-shadow: none;
+}
+
+/* ========== Sections ========== */
+.section{
+  padding: 18px 0;
+}
+
+.section-title{
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  letter-spacing: .2px;
+  color: var(--text);
+}
+
+.section-head{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.hint{
+  color: var(--muted2);
+  font-size: .9rem;
+}
+
+/* ========== Cards / quick actions ========== */
+.quick-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  color: var(--text);
+}
+
+.card-action{
+  min-height: 76px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.card-action:hover{
+  background: var(--surface2);
+  text-decoration: none;
+}
+
+.card-title{
+  font-weight: 650;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.card-note{
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+/* ========== Chapter tiles ========== */
+.tile-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.tile{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  min-height: 118px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.tile:hover{
+  background: var(--surface2);
+  text-decoration: none;
+}
+
+.tile-kicker{
+  color: var(--muted2);
+  font-size: .82rem;
+  margin-bottom: 6px;
+}
+
+.tile-title{
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.tile-desc{
+  color: var(--muted);
+  font-size: .95rem;
+  margin-bottom: 10px;
+}
+
+.tile-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag{
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
+  background: color-mix(in srgb, var(--surface2) 70%, transparent);
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+/* ========== List ========== */
+.list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: var(--tap);
+  padding: 14px;
+  border-radius: var(--radius2);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--text);
+}
+
+.list-item:hover{
+  background: var(--surface2);
+  text-decoration: none;
+}
+
+.list-title{
+  font-weight: 650;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.list-desc{
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.list-meta{
+  color: var(--muted2);
+  font-size: 1.25rem;
+}
+
+/* ========== Empty state ========== */
+.empty{
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px dashed color-mix(in srgb, var(--border) 90%, transparent);
+  border-radius: var(--radius2);
+  background: color-mix(in srgb, var(--surface2) 55%, transparent);
+}
+
+.empty-title{
+  margin: 0 0 6px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.empty-desc{
+  margin: 0;
+  color: var(--muted);
+}
+
+/* ========== Illustrations (figure card) ========== */
+/* Używaj: <figure class="ill"><img ...><figcaption>...</figcaption></figure> */
+figure.ill{
+  margin: 14px 0;
+  padding: 12px;
+  background: var(--figure-bg);
+  border: 1px solid var(--figure-border);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow);
+}
+
+figure.ill img{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+figure.ill figcaption{
+  margin-top: 10px;
+  color: rgba(18,19,24,.76); /* podpis na białej karcie */
+  font-size: .92rem;
+}
+
+/* W dark podpis też na białej karcie — czytelny */
+html[data-theme="dark"] figure.ill figcaption{
+  color: rgba(18,19,24,.78);
+}
+
+/* ========== Footer ========== */
+.app-footer{
+  border-top: 1px solid var(--border);
+  padding: 18px 0 28px;
+  margin-top: 14px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+}
+
+.footer-grid{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-title{
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.footer-note{
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.footer-links{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-links a{
+  color: var(--muted);
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--border) 90%, transparent);
+  background: color-mix(in srgb, var(--surface2) 55%, transparent);
+  text-decoration: none;
+}
+
+.footer-links a:hover{
+  background: color-mix(in srgb, var(--surface2) 85%, transparent);
+  text-decoration: none;
+}
+
+/* ========== Responsive ========== */
+@media (min-width: 540px){
+  .quick-grid{ grid-template-columns: 1fr 1fr; }
+  .tile-grid{ grid-template-columns: 1fr 1fr; }
+
+  .footer-grid{
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 920px){
+  .title{ font-size: 1.35rem; }
+  .subtitle{ font-size: 1rem; }
+
+  .quick-grid{ grid-template-columns: repeat(3, 1fr); }
+  .tile-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ========== Print: intentionally not designed for printing ========== */
+@media print{
+  body{ background:#fff; color:#000; }
+  header, main, footer{ display:none !important; }
+  body::before{
+    content: "To jest publikacja cyfrowa przeznaczona do korzystania online (wersja mobilna).";
+    display:block;
+    padding: 24px;
+    font: 14pt/1.4 serif;
+  }
+}

@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Wstęp do systemów konstrukcyjnych — e-skrypt</title>
+  <meta name="description" content="E-skrypt mobilny dla studentów architektury: rozdziały, indeks pojęć i szybki dostęp do zagadnień konstrukcyjnych." />
+
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body>
+
+<header class="app-header">
+  <div class="container">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">Σ</div>
+      <div class="brand-text">
+        <h1 class="title">Wstęp do systemów konstrukcyjnych</h1>
+        <p class="subtitle">E-skrypt mobilny dla studentów architektury</p>
+      </div>
+    </div>
+
+    <div class="meta">
+      <span class="chip">Wersja: online</span>
+      <a class="chip chip-link" href="pages/spis-tresci.html">Spis treści</a>
+      <a class="chip chip-link" href="pages/indeks.html">Indeks pojęć</a>
+      <button id="themeToggle" class="chip chip-button" type="button" aria-label="Zmień motyw">Motyw: jasny</button>
+    </div>
+
+    <div class="search" role="search">
+      <input id="q" class="search-input" type="search" placeholder="Szukaj pojęcia lub tematu (np. kratownica, ruszt, stężenie)…" aria-label="Szukaj" />
+      <button class="btn" type="button" onclick="fakeSearch()">Szukaj</button>
+      <button class="btn btn-ghost" type="button" onclick="clearSearch()">Wyczyść</button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="section">
+    <h2 class="section-title">Szybki dostęp</h2>
+
+    <div class="quick-grid">
+      <a class="card card-action" href="pages/jak-korzystac.html">
+        <div class="card-title">Jak korzystać z e-skryptu</div>
+        <div class="card-note">Układ stron, nawigacja, motyw, skróty.</div>
+      </a>
+
+      <a class="card card-action" href="pages/indeks.html">
+        <div class="card-title">Indeks pojęć</div>
+        <div class="card-note">Hasła i odnośniki do rozdziałów.</div>
+      </a>
+
+      <a class="card card-action" href="pages/bibliografia.html">
+        <div class="card-title">Bibliografia</div>
+        <div class="card-note">Źródła i literatura uzupełniająca.</div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">Rozdziały</h2>
+      <div class="hint">Strony zoptymalizowane pod telefony</div>
+    </div>
+
+    <div class="tile-grid" id="chaptersGrid">
+
+      <!-- 1 -->
+      <a class="tile" href="chapters/01/index.html">
+        <div>
+          <div class="tile-kicker">Rozdział 1</div>
+          <div class="tile-title">Wprowadzenie i podstawowe pojęcia</div>
+          <div class="tile-desc">Schemat statyczny, elementy nośne, droga sił, podstawy czytania konstrukcji.</div>
+        </div>
+        <div class="tile-tags">
+          <span class="tag">pojęcia</span>
+          <span class="tag">schematy</span>
+        </div>
+      </a>
+
+      <!-- 2 -->
+      <a class="tile" href="chapters/02/index.html">
+        <div>
+          <div class="tile-kicker">Rozdział 2</div>
+          <div class="tile-title">Ustroje belkowe</div>
+          <div class="tile-desc">Belki, podciągi, wsporniki, układy belek i konsekwencje statyczne.</div>
+        </div>
+        <div class="tile-tags">
+          <span class="tag">zginanie</span>
+          <span class="tag">ugięcia</span>
+        </div>
+      </a>
+
+      <!-- 3 -->
+      <a class="tile" href="chapters/03/index.html">
+        <div>
+          <div class="tile-kicker">Rozdział 3</div>
+          <div class="tile-title">Ustroje płytowe</div>
+          <div class="tile-desc">Płyty jednokierunkowe i dwukierunkowe, żebra, ruszty, płyty użebrowane.</div>
+        </div>
+        <div class="tile-tags">
+          <span class="tag">płyty</span>
+          <span class="tag">ruszty</span>
+        </div>
+      </a>
+
+      <!-- 4 -->
+      <a class="tile" href="chapters/04/index.html">
+        <div>
+          <div class="tile-kicker">Rozdział 4</div>
+          <div class="tile-title">Ramy i układy szkieletowe</div>
+          <div class="tile-desc">Ramy płaskie i przestrzenne, usztywnienia, układy ramowo-trzonowe.</div>
+        </div>
+        <div class="tile-tags">
+          <span class="tag">ramy</span>
+          <span class="tag">usztywnienia</span>
+        </div>
+      </a>
+
+      <!-- 5 -->
+      <a class="tile" href="chapters/05/index.html">
+        <div>
+          <div class="tile-kicker">Rozdział 5</div>
+          <div class="tile-title">Łuki i ustroje krzywoliniowe</div>
+          <div class="tile-desc">Praca osiowa w łukach, rozpor, stateczność, formy krzywoliniowe.</div>
+        </div>
+        <div class="tile-tags">
+          <span class="tag">łuki</span>
+          <span class="tag">rozpor</span>
+        </div>
+      </a>
+
+      <!-- 6 (DODANY + UJEDNOLICONA NAZWA) -->
+      <a class="tile" href="chapters/06/index.html">
+        <div>
+          <div class="tile-kicker">Rozdział 6</div>
+          <div class="tile-title">Ustroje prętowe o pracy osiowej</div>
+          <div class="tile-desc">Kratownice płaskie i przestrzenne, ruszty z kratownic, więźby dachowe jako przypadek graniczny.</div>
+        </div>
+        <div class="tile-tags">
+          <span class="tag">kratownice</span>
+          <span class="tag">triangulacja</span>
+        </div>
+      </a>
+
+      <!-- 7 -->
+      <a class="tile" href="chapters/07/index.html">
+        <div>
+          <div class="tile-kicker">Rozdział 7</div>
+          <div class="tile-title">Ustroje powłokowe</div>
+          <div class="tile-desc">Powłoki cienkościenne, praca membranowa, kolebki i kopuły.</div>
+        </div>
+        <div class="tile-tags">
+          <span class="tag">powłoki</span>
+          <span class="tag">membrany</span>
+        </div>
+      </a>
+
+      <!-- 8 -->
+      <a class="tile" href="chapters/08/index.html">
+        <div>
+          <div class="tile-kicker">Rozdział 8</div>
+          <div class="tile-title">Układy przestrzenne i przekrycia dużych rozpiętości</div>
+          <div class="tile-desc">Przekrycia halowe, układy siatkowe, systemy o wyraźnej pracy przestrzennej.</div>
+        </div>
+        <div class="tile-tags">
+          <span class="tag">hale</span>
+          <span class="tag">przestrzenne</span>
+        </div>
+      </a>
+
+      <!-- 9 -->
+      <a class="tile" href="chapters/09/index.html">
+        <div>
+          <div class="tile-kicker">Rozdział 9</div>
+          <div class="tile-title">Materiały i technologie konstrukcyjne</div>
+          <div class="tile-desc">Stal, żelbet, drewno, systemy hybrydowe, podstawy doboru technologii.</div>
+        </div>
+        <div class="tile-tags">
+          <span class="tag">materiały</span>
+          <span class="tag">technologie</span>
+        </div>
+      </a>
+
+      <!-- 10 -->
+      <a class="tile" href="chapters/10/index.html">
+        <div>
+          <div class="tile-kicker">Rozdział 10</div>
+          <div class="tile-title">Podsumowanie i narzędzia porównawcze</div>
+          <div class="tile-desc">Zestawienia, porównania, pytania kontrolne, mapy pojęć.</div>
+        </div>
+        <div class="tile-tags">
+          <span class="tag">porównania</span>
+          <span class="tag">powtórka</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Uwaga organizacyjna</h2>
+    <div class="empty">
+      <p class="empty-title">Publikacja cyfrowa</p>
+      <p class="empty-desc">
+        E-skrypt jest zaprojektowany do korzystania online (telefon/tablet/PC). Zawartość jest dzielona na krótsze strony
+        dla wygodnego czytania i szybkiego powrotu do zagadnień.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="app-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-title">Wstęp do systemów konstrukcyjnych — e-skrypt</div>
+      <div class="footer-note">Wersja HTML, układ mobilny.</div>
+    </div>
+    <div class="footer-links">
+      <a href="pages/jak-korzystac.html">Jak korzystać</a>
+      <a href="pages/bibliografia.html">Bibliografia</a>
+      <a href="pages/o-projekcie.html">O projekcie</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Motyw: light/dark
+  (function () {
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+
+    function setTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (btn) btn.textContent = theme === 'dark' ? 'Motyw: ciemny' : 'Motyw: jasny';
+    }
+
+    const saved = localStorage.getItem('theme');
+    setTheme(saved === 'dark' ? 'dark' : 'light');
+
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') || 'light';
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+  })();
+
+  // Minimalna "wyszukiwarka" placeholder (docelowo: indeks pojęć + JS)
+  function fakeSearch() {
+    const q = (document.getElementById('q').value || '').trim();
+    if (!q) return;
+    // Najprościej: przenieś do indeksu z parametrem (jeśli dodasz obsługę)
+    window.location.href = 'pages/indeks.html?q=' + encodeURIComponent(q);
+  }
+
+  function clearSearch() {
+    document.getElementById('q').value = '';
+    document.getElementById('q').focus();
+  }
+</script>
+
+</body>
+</html>

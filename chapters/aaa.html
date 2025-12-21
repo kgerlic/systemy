@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rozdział 6 — Ustroje prętowe o pracy osiowej</title>
+  <meta name="description" content="E-skrypt: Ustroje prętowe o pracy osiowej — kratownice płaskie, ruszty z kratownic, kratownice przestrzenne, więźby dachowe." />
+
+  <!-- Wspólne style serwisu (layout, nagłówek, motyw) -->
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <!-- Style typograficzne i komponenty rozdziału -->
+  <link rel="stylesheet" href="../assets/css/chapter.css" />
+</head>
+
+<body>
+  <!-- Opcjonalnie: możesz zachować wspólny header z index.html lub dać lżejszy nagłówek rozdziału -->
+  <header class="app-header">
+    <div class="container">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">Σ</div>
+        <div class="brand-text">
+          <h1 class="title">Wstęp do systemów konstrukcyjnych</h1>
+          <p class="subtitle">E-skrypt mobilny</p>
+        </div>
+      </div>
+
+      <div class="meta">
+        <a class="chip chip-link" href="../index.html">Strona główna</a>
+        <a class="chip chip-link" href="../pages/indeks.html">Indeks</a>
+        <button id="themeToggle" class="chip chip-button" type="button" aria-label="Zmień motyw">
+          Motyw: jasny
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="chapter">
+    <!-- Pasek nawigacyjny rozdziału -->
+    <div class="chapter-top">
+      <nav class="breadcrumb" aria-label="Okruszki">
+        <a href="../index.html">Start</a>
+        <span class="sep">/</span>
+        <a href="../pages/spis-tresci.html">Spis treści</a>
+        <span class="sep">/</span>
+        <span aria-current="page">Rozdział 6</span>
+      </nav>
+
+      <div class="chapter-actions">
+        <a class="pill" href="../chapters/05-kratownice.html">← Poprzedni</a>
+        <a class="pill" href="../chapters/07-plyty-powloki.html">Następny →</a>
+      </div>
+    </div>
+
+    <!-- Tytuł rozdziału -->
+    <header>
+      <h1>USTROJE PRĘTOWE O PRACY OSIOWEJ</h1>
+      <p class="lead">
+        Rozdział przedstawia zasady pracy osiowej w ustrojach prętowych oraz omawia kratownice płaskie,
+        ruszty z kratownic, kratownice przestrzenne i wybrane typy więźb dachowych.
+      </p>
+    </header>
+
+    <!-- Mini spis treści rozdziału (opcjonalnie) -->
+    <nav class="toc" aria-label="Spis treści rozdziału">
+      <div class="toc-title">W tym rozdziale</div>
+      <ul>
+        <li><a href="#s-61"><small>6.1.</small> Warunki pracy</a></li>
+        <li><a href="#s-62"><small>6.2.</small> Kratownice płaskie</a>
+          <ul>
+            <li><a href="#s-621"><small>6.2.1.</small> Układ statyczny i przebieg sił osiowych</a></li>
+            <li><a href="#s-622"><small>6.2.2.</small> Cechy konstrukcyjne i użytkowe</a></li>
+            <li><a href="#s-623"><small>6.2.3.</small> Podział ze względu na geometrię</a></li>
+            <li><a href="#s-624"><small>6.2.4.</small> Typowe schematy kratownic</a></li>
+            <li><a href="#s-625"><small>6.2.5.</small> Zagadnienia stateczności i skali zastosowań</a></li>
+            <li><a href="#s-626"><small>6.2.6.</small> Przykłady materiałowe i rozwiązania szczególne</a></li>
+          </ul>
+        </li>
+        <li><a href="#s-63"><small>6.3.</small> Ruszty z kratownic</a></li>
+        <li><a href="#s-64"><small>6.4.</small> Kratownice przestrzenne</a></li>
+        <li><a href="#s-65"><small>6.5.</small> Więźby dachowe</a></li>
+        <li><a href="#s-66"><small>6.6.</small> Podsumowanie rozdziału</a></li>
+        <li><a href="#tab-6x"><small>Tabela 6.x.</small> Porównanie ustrojów</a></li>
+        <li><a href="#q"><small>Pytania</small> do rozdziału</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===================== 6.1 ===================== -->
+    <section id="s-61">
+      <h2><span class="section-no">6.1.</span> WARUNKI PRACY</h2>
+
+      <p>
+        Praca osiowa prętów, polegająca na przenoszeniu sił ściskających i rozciągających, stanowi jeden z najbardziej
+        efektywnych mechanizmów nośnych w konstrukcjach budowlanych. Równomierny rozkład naprężeń w przekroju
+        umożliwia racjonalne wykorzystanie materiału, ogranicza znaczenie zginania oraz pozwala na uzyskanie dużej
+        nośności przy niewielkim ciężarze własnym konstrukcji.
+      </p>
+
+      <p>
+        Do ustrojów, w których dominuje praca osiowa, należą kratownice. Przenoszenie sił odbywa się w nich zgodnie
+        z zasadą równowagi węzłów, zgodnie z którą wszystkie siły działające w danym węźle muszą pozostawać w stanie
+        równowagi. Konsekwencją spełnienia tego warunku jest osiowy charakter pracy prętów kratownicy.
+      </p>
+
+      <div class="callout def">
+        <div class="callout-title">Wymóg modelu osiowego (idealizacja)</div>
+        <p>
+          Aby w analizie statycznej można było przyjąć wyłącznie siły osiowe w prętach, obciążenia i reakcje podpór
+          powinny być przyłożone w węzłach, a połączenia węzłowe traktowane jako przegubowe (bez przenoszenia momentów).
+        </p>
+      </div>
+
+      <figure class="ill">
+        <img src="../assets/img/ryc-142.png" alt="Wewnętrzne siły osiowe — schemat" />
+        <figcaption><span class="fig-ref">Ryc. 142.</span> Wewnętrzne siły osiowe.</figcaption>
+      </figure>
+
+      <p>
+        Podstawą geometryczną ustrojów prętowych o pracy osiowej jest triangulacja, rozumiana jako układ prętów
+        geometrycznie niezmienny, który nie może ulec odkształceniom kinematycznym bez zmiany długości elementów.
+      </p>
+
+      <div class="callout note">
+        <div class="callout-title">Uwaga praktyczna</div>
+        <p>
+          Praca osiowa jest wrażliwa na mimośrody obciążeń, odchyłki wykonawcze oraz rzeczywistą sztywność połączeń.
+          W prętach ściskanych krytyczne znaczenie ma stateczność (wyboczenie).
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== 6.2 ===================== -->
+    <section id="s-62">
+      <h2><span class="section-no">6.2.</span> KRATOWNICE PŁASKIE <span class="term">(FLAT TRUSSES)</span></h2>
+
+      <section id="s-621">
+        <h3><span class="section-no">6.2.1.</span> Układ statyczny i przebieg sił osiowych</h3>
+        <p>
+          Kratownicą nazywa się sztywny ustrój prętowy złożony z prostych prętów połączonych w węzłach, w którym –
+          przy obciążeniach przyłożonych w węzłach – występują wyłącznie siły osiowe: rozciąganie i ściskanie.
+        </p>
+        <p>
+          Pręty kratownicy tworzą zamknięte układy o polach trójkątnych, co zapewnia geometryczną niezmienność konstrukcji.
+        </p>
+      </section>
+
+      <section id="s-622">
+        <h3><span class="section-no">6.2.2.</span> Cechy konstrukcyjne i użytkowe</h3>
+        <p>
+          Kratownice płaskie są konstrukcjami ażurowymi, lekkimi wizualnie i przepuszczającymi światło.
+          Puste pola pomiędzy prętami ułatwiają prowadzenie instalacji i mogą zmniejszać obciążenia od wiatru.
+        </p>
+      </section>
+
+      <section id="s-623">
+        <h3><span class="section-no">6.2.3.</span> Podział ze względu na geometrię</h3>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-143.png" alt="Kratownice trójkątne — schematy" />
+          <figcaption><span class="fig-ref">Ryc. 143.</span> Kratownice trójkątne (triangle shape trusses).</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-144.png" alt="Kratownice prostokątne — schematy" />
+          <figcaption><span class="fig-ref">Ryc. 144.</span> Kratownice prostokątne (flat trusses).</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-145.png" alt="Kratownice łukowe — schematy" />
+          <figcaption><span class="fig-ref">Ryc. 145.</span> Kratownice łukowe (arch trusses).</figcaption>
+        </figure>
+      </section>
+
+      <section id="s-624">
+        <h3><span class="section-no">6.2.4.</span> Typowe schematy kratownic</h3>
+        <ul>
+          <li>belkowe,</li>
+          <li>dachowe,</li>
+          <li>ramowe kratownicowe.</li>
+        </ul>
+
+        <p>
+          Układy prętów wewnętrznych (skratowanie) często przyjmują formy N, K lub X. Na tej podstawie wyróżnia się m.in.
+          kratownice typu Pratta, Howe’a czy Warrena.
+        </p>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-146.png" alt="Skratowanie typu Pratt — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 146.</span> Skratowanie typu Pratt.</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-147.png" alt="Skratowanie typu Howe — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 147.</span> Skratowanie typu Howe.</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-148.png" alt="Kratownica typu Warren — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 148.</span> Kratownica typu Warren.</figcaption>
+        </figure>
+      </section>
+
+      <section id="s-625">
+        <h3><span class="section-no">6.2.5.</span> Zagadnienia stateczności i skali zastosowań</h3>
+        <p>
+          Ponieważ wszystkie pręty kratownicy płaskiej leżą w jednej płaszczyźnie, konieczne jest stosowanie stężeń
+          zapewniających stateczność przestrzenną i zapobiegających skręcaniu ustroju.
+        </p>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-149.png" alt="Kratownice wspornikowe — schematy" />
+          <figcaption><span class="fig-ref">Ryc. 149.</span> Kratownice wspornikowe (cantilever trusses).</figcaption>
+        </figure>
+      </section>
+
+      <section id="s-626">
+        <h3><span class="section-no">6.2.6.</span> Przykłady materiałowe i rozwiązania szczególne</h3>
+
+        <div class="callout def">
+          <div class="callout-title">Kratownica stalowa (steel truss)</div>
+          <p>
+            Wykonywana z prętów gorąco walcowanych o przekrojach zamkniętych (rury) lub otwartych (kątowniki, teowniki).
+            Połączenia: spawanie lub skręcanie; historycznie także nitowanie.
+          </p>
+        </div>
+
+        <div class="spec">
+          <h4>Wymiary orientacyjne</h4>
+          <ul class="spec-list">
+            <li>rozpiętość kratownic dachowych: 8–20 m,</li>
+            <li>wysokość kratownic trójkątnych: 1/5–1/10 rozpiętości,</li>
+            <li>wysokość kratownic prostokątnych: 1/10–1/18 rozpiętości,</li>
+            <li>rozstaw wiązarów dachowych: 3–6 m.</li>
+          </ul>
+        </div>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-150.png" alt="Węzeł kratownicy stalowej — przykład" />
+          <figcaption><span class="fig-ref">Ryc. 150.</span> Węzeł kratownicy stalowej.</figcaption>
+        </figure>
+
+        <div class="callout def">
+          <div class="callout-title">Kratownica drewniana (timber truss)</div>
+          <p>
+            Najczęściej prefabrykowane wiązary dachowe z desek łączonych stalowymi płytkami kolczastymi.
+            Ze względu na niewielkie przekroje zwykle wymagają zabezpieczenia przeciwpożarowego.
+          </p>
+        </div>
+
+        <div class="spec">
+          <h4>Wymiary orientacyjne</h4>
+          <ul class="spec-list">
+            <li>rozpiętość: do 14 m,</li>
+            <li>wysokość kratownicy: 1/4–1/6 rozpiętości,</li>
+            <li>rozstaw kratownic dachowych: 0,6–1,2 m (typowo ok. 0,8–1,0 m).</li>
+          </ul>
+        </div>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-151.png" alt="Węzeł kratownicy drewnianej — przykład" />
+          <figcaption><span class="fig-ref">Ryc. 151.</span> Węzeł kratownicy drewnianej.</figcaption>
+        </figure>
+
+        <div class="callout def">
+          <div class="callout-title">Legar kratownicowy (open-web floor truss)</div>
+          <p>
+            Drewniane pasy górny i dolny połączone stalowym skratowaniem. Zastosowanie: stropy i dachy w budynkach
+            szkieletowych; ułatwione prowadzenie instalacji.
+          </p>
+        </div>
+
+        <div class="spec">
+          <h4>Wymiary orientacyjne</h4>
+          <ul class="spec-list">
+            <li>rozpiętość: do 10 m,</li>
+            <li>wysokość: ok. 1/15 rozpiętości,</li>
+            <li>rozstaw legarów stropowych: 0,4–0,6 m.</li>
+          </ul>
+        </div>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-152.png" alt="Legary stropowe kratownicowe — przykład" />
+          <figcaption><span class="fig-ref">Ryc. 152.</span> Legary stropowe kratownicowe.</figcaption>
+        </figure>
+
+        <div class="callout note">
+          <div class="callout-title">Orientacyjne relacje przekrojów prętów</div>
+          <p>
+            Pasy (zwłaszcza górny w ściskaniu) mają zwykle większe przekroje niż pręty skratowania.
+            Relacje mają charakter porównawczy i nie zastępują projektu.
+          </p>
+        </div>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-153.png" alt="Ramy kratownicowe — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 153.</span> Ramy kratownicowe.</figcaption>
+        </figure>
+      </section>
+    </section>
+
+    <!-- ===================== 6.3 ===================== -->
+    <section id="s-63">
+      <h2><span class="section-no">6.3.</span> RUSZTY Z KRATOWNIC <span class="term">(TRUSSED GRIDS)</span></h2>
+
+      <p>
+        Ruszt z kratownic płaskich jest układem konstrukcyjnym złożonym z wielu równoległych lub krzyżujących się
+        kratownic płaskich, współpracujących przestrzennie za pomocą poprzecznic i stężeń.
+      </p>
+
+      <figure class="ill">
+        <img src="../assets/img/ryc-154.png" alt="Ruszt z kratownic — schemat" />
+        <figcaption><span class="fig-ref">Ryc. 154.</span> Ruszt z kratownic.</figcaption>
+      </figure>
+
+      <div class="callout note">
+        <div class="callout-title">Cechy charakterystyczne</div>
+        <ul class="spec-list">
+          <li>element podstawowy: kratownica płaska,</li>
+          <li>mechanizm nośny: dominacja sił osiowych w prętach,</li>
+          <li>zakres pracy przestrzennej: ograniczony względem kratownic przestrzennych.</li>
+        </ul>
+      </div>
+
+      <figure class="ill">
+        <img src="../assets/img/ryc-155.png" alt="Promienisty układ kratownic — schemat" />
+        <figcaption><span class="fig-ref">Ryc. 155.</span> Promienisty układ kratownic.</figcaption>
+      </figure>
+
+      <figure class="ill">
+        <img src="../assets/img/ryc-156.png" alt="Kolebkowy ruszt z kratownic — schemat" />
+        <figcaption><span class="fig-ref">Ryc. 156.</span> Kolebkowy ruszt z kratownic.</figcaption>
+      </figure>
+
+      <figure class="ill">
+        <img src="../assets/img/ryc-157.png" alt="Ruszt wspornikowy z kratownic — schemat" />
+        <figcaption><span class="fig-ref">Ryc. 157.</span> Ruszt wspornikowy z kratownic.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ===================== 6.4 ===================== -->
+    <section id="s-64">
+      <h2><span class="section-no">6.4.</span> KRATOWNICE PRZESTRZENNE <span class="term">(SPATIAL TRUSSES)</span></h2>
+
+      <section id="s-641">
+        <h3><span class="section-no">6.4.1.</span> Charakter pracy i zakres pojęcia</h3>
+        <p>
+          Kratownicami przestrzennymi nazywa się ustroje prętowe, w których pręty nie leżą w jednej płaszczyźnie ani na
+          jednej powierzchni. Mechanizm nośny pozostaje osiowy, ale siły rozkładają się w trzech kierunkach.
+        </p>
+      </section>
+
+      <section id="s-642">
+        <h3><span class="section-no">6.4.2.</span> Podział ze względu na układ geometryczny</h3>
+        <p>
+          Geometria kratownicy przestrzennej decyduje o jej sztywności, sposobie przenoszenia obciążeń oraz możliwościach
+          kształtowania formy architektonicznej.
+        </p>
+      </section>
+
+      <section id="s-643">
+        <h3><span class="section-no">6.4.3.</span> Układy liniowe i powierzchniowe</h3>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-158.png" alt="Belki kratownicowe trójkątne — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 158.</span> Belki kratownicowe trójkątne.</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-159.png" alt="Belki kratownicowe kwadratowe — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 159.</span> Belki kratownicowe kwadratowe.</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-160.png" alt="Ramy kratownicowe przestrzenne — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 160.</span> Ramy kratownicowe przestrzenne.</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-161.png" alt="Łuki kratownicowe trójprzegubowe — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 161.</span> Łuki kratownicowe trójprzegubowe.</figcaption>
+        </figure>
+      </section>
+
+      <section id="s-644">
+        <h3><span class="section-no">6.4.4.</span> Podparcie i skala rozwiązań</h3>
+
+        <div class="spec">
+          <h4>Orientacyjne wymiary</h4>
+          <ul class="spec-list">
+            <li>kratownice drewniane: 15–60 m,</li>
+            <li>kratownice stalowe: 25–100 m (do 120 m),</li>
+            <li>wysokość konstrukcyjna: płaskie 1/15–1/30; jednokrzywiznowe 1/20–1/40; dwukrzywiznowe 1/30–1/60,</li>
+            <li>rozstaw węzłów: 1,5–3,0 m (do 4,0 m w dużych przekryciach).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="s-645">
+        <h3><span class="section-no">6.4.5.</span> Kratownice przestrzenne powierzchniowe</h3>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-162.png" alt="Płaska kratownica przestrzenna typu rusztowego — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 162.</span> Płaska kratownica przestrzenna typu rusztowego.</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-163.png" alt="Kratownica przestrzenna kolebkowa — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 163.</span> Kratownica przestrzenna kolebkowa.</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-164.png" alt="Kratownica przestrzenna nieregularna — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 164.</span> Kratownica przestrzenna nieregularna.</figcaption>
+        </figure>
+      </section>
+
+      <section id="s-646">
+        <h3><span class="section-no">6.4.6.</span> Podsumowanie</h3>
+        <p>
+          Kratownice przestrzenne stanowią ustroje prętowe o dominującej pracy osiowej, w których przestrzenne
+          rozmieszczenie elementów prowadzi do zwiększenia sztywności i efektywności konstrukcyjnej.
+        </p>
+      </section>
+    </section>
+
+    <!-- ===================== 6.5 ===================== -->
+    <section id="s-65">
+      <h2><span class="section-no">6.5.</span> WIĘŹBY DACHOWE <span class="term">(ROOF TRUSSES)</span></h2>
+
+      <p>
+        Więźby dachowe omówiono jako konstrukcje graniczne, w których zasady pracy kratownicowej ulegają częściowemu
+        zaburzeniu. W praktyce część elementów (np. krokwie) pracuje na zginanie, a połączenia nie są idealnie osiowe.
+      </p>
+
+      <figure class="ill">
+        <img src="../assets/img/ryc-165.png" alt="Schemat pracy wiązara dachowego — schemat" />
+        <figcaption><span class="fig-ref">Ryc. 165.</span> Schemat pracy wiązara dachowego.</figcaption>
+      </figure>
+
+      <section id="s-652">
+        <h3><span class="section-no">6.5.2.</span> Typy więźb według schematu statycznego</h3>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-166.png" alt="Więźba krokwiowa — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 166.</span> Więźba krokwiowa (simple rafter roof).</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-167.png" alt="Więźba jętkowa — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 167.</span> Więźba jętkowa (collar beam roof).</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-168.png" alt="Więźba płatwiowo-kleszczowa — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 168.</span> Więźba płatwiowo-kleszczowa (purlin roof).</figcaption>
+        </figure>
+
+        <figure class="ill">
+          <img src="../assets/img/ryc-169.png" alt="Więźba wieszarowa — schemat" />
+          <figcaption><span class="fig-ref">Ryc. 169.</span> Więźba wieszarowa (suspension truss roof).</figcaption>
+        </figure>
+      </section>
+    </section>
+
+    <!-- ===================== 6.6 ===================== -->
+    <section id="s-66">
+      <h2><span class="section-no">6.6.</span> PODSUMOWANIE ROZDZIAŁU</h2>
+      <p>
+        Ustroje prętowe o pracy osiowej stanowią fundamentalną grupę systemów konstrukcyjnych, w których nośność
+        oparta jest na współdziałaniu prętów rozciąganych i ściskanych, przy możliwie ograniczonym udziale zginania.
+      </p>
+      <p>
+        W rozdziale przedstawiono ewolucję ustrojów prętowych — od kratownic płaskich, poprzez ruszty z kratownic,
+        aż do kratownic przestrzennych — ukazując wzrost złożoności geometrycznej i zakres współpracy przestrzennej.
+      </p>
+    </section>
+
+    <!-- ===================== Tabela 6.x ===================== -->
+    <section id="tab-6x">
+      <h2><span class="section-no">Tabela 6.x.</span> Porównanie ustrojów prętowych</h2>
+
+      <div class="table-wrap">
+        <div class="table-scroll" role="region" aria-label="Tabela porównawcza — przewijana poziomo">
+          <table class="table">
+            <caption>Porównanie ustrojów prętowych ze względu na charakter pracy i organizację geometryczną</caption>
+            <thead>
+              <tr>
+                <th>Cecha / Ustrój</th>
+                <th>Kratownica płaska</th>
+                <th>Ruszt z kratownic płaskich</th>
+                <th>Kratownica przestrzenna</th>
+                <th>Więźba dachowa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Podstawowy wymiar pracy</strong></td>
+                <td>1D (płaszczyzna)</td>
+                <td>2D / 2,5D</td>
+                <td>3D</td>
+                <td>2D (powtarzalne ustroje płaskie)</td>
+              </tr>
+              <tr>
+                <td><strong>Charakter pracy prętów</strong></td>
+                <td>Dominująca praca osiowa</td>
+                <td>Osiowa w kratownicach składowych</td>
+                <td>Osiowa przestrzenna</td>
+                <td>Praca mieszana (osiowa + zginanie)</td>
+              </tr>
+              <tr>
+                <td><strong>Organizacja geometryczna</strong></td>
+                <td>Układ płaski, triangulowany</td>
+                <td>Zespół kratownic powiązanych poprzecznie</td>
+                <td>Przestrzenna sieć prętów</td>
+                <td>Powtarzalne wiązary płaskie</td>
+              </tr>
+              <tr>
+                <td><strong>Stateczność geometryczna</strong></td>
+                <td>Zapewniona w płaszczyźnie</td>
+                <td>Częściowa współpraca przestrzenna</td>
+                <td>Wysoka, geometrycznie niezmienna</td>
+                <td>Zależna od detali i usztywnień</td>
+              </tr>
+              <tr>
+                <td><strong>Typowe zastosowania</strong></td>
+                <td>Dachy, mosty, wiązary</td>
+                <td>Hale, przekrycia dużych pól</td>
+                <td>Hale, stadiony, obiekty publiczne</td>
+                <td>Budownictwo mieszkaniowe</td>
+              </tr>
+              <tr>
+                <td><strong>Relacja do pracy osiowej</strong></td>
+                <td>Model idealny</td>
+                <td>Zbliżona do osiowej</td>
+                <td>Najpełniejsza realizacja</td>
+                <td>Ograniczona, nieidealna</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-note">
+          Zestawienie ma charakter porównawczy i informacyjny; nie zastępuje analizy statycznej ani projektowej.
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Pytania ===================== -->
+    <section id="q" class="questions">
+      <h3>Pytania do rozdziału</h3>
+      <ol>
+        <li>Wyjaśnij, na czym polega praca osiowa pręta i dlaczego jest uznawana za najbardziej efektywny mechanizm nośny.</li>
+        <li>Jakie warunki geometryczne i konstrukcyjne muszą być spełnione, aby w ustroju prętowym dominowała praca osiowa?</li>
+        <li>Dlaczego triangulacja jest podstawowym warunkiem geometrycznej niezmienności kratownic?</li>
+        <li>Wyjaśnij, dlaczego mimośrody obciążeń i sztywność węzłów prowadzą do pojawienia się zginania w prętach.</li>
+        <li>Zdefiniuj kratownicę płaską i wskaż założenia idealizacji statycznej stosowane w jej analizie.</li>
+        <li>Dlaczego kratownice płaskie wymagają stężeń zapewniających stateczność przestrzenną?</li>
+        <li>Porównaj kratownicę belkową i łukową pod względem rozkładu sił osiowych i efektywności materiałowej.</li>
+        <li>Wyjaśnij różnice pomiędzy skratowaniem typu Pratt, Howe i Warren.</li>
+        <li>Dlaczego pręty pasa górnego kratownicy mają zazwyczaj większe przekroje niż pręty skratowania?</li>
+        <li>W jakich sytuacjach kratownica płaska staje się nieefektywna z punktu widzenia wysokości konstrukcyjnej?</li>
+        <li>Wyjaśnij, czym jest ruszt z kratownic i dlaczego stanowi ustrój pośredni między kratownicą płaską a przestrzenną.</li>
+        <li>Jak wpływa wprowadzenie podpór wewnętrznych na pracę i efektywność rusztu z kratownic?</li>
+        <li>Zdefiniuj kratownicę przestrzenną i wskaż jej podstawowe cechy odróżniające ją od kratownicy płaskiej.</li>
+        <li>Dlaczego przestrzenne rozmieszczenie prętów prowadzi do zwiększenia sztywności konstrukcji?</li>
+        <li>Wyjaśnij znaczenie czworościanu jako podstawowej bryły geometrycznej kratownic przestrzennych.</li>
+        <li>Porównaj układy tetraedryczne i typu octet truss pod względem regularności i efektywności konstrukcyjnej.</li>
+        <li>Wyjaśnij różnicę między kratownicą przestrzenną liniową a powierzchniową.</li>
+        <li>Co oznacza określenie „płaska kratownica przestrzenna jako układ typu 2,5D”?</li>
+        <li>Dlaczego więźba dachowa nie jest ustrojem o czysto osiowej pracy prętów?</li>
+        <li>W jakich warunkach prefabrykowane wiązary kratownicowe z drewna można uznać za powrót do idei pracy osiowej?</li>
+      </ol>
+    </section>
+
+    <!-- Powrót na górę -->
+    <p style="margin-top: 24px;">
+      <a class="pill" href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">↑ Do góry</a>
+    </p>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-title">E-skrypt</div>
+        <div class="footer-note">Wersja mobilna — rozdziały publikowane jako strony HTML.</div>
+      </div>
+      <div class="footer-links">
+        <a href="../pages/jak-korzystac.html">Jak korzystać</a>
+        <a href="../pages/bibliografia.html">Bibliografia</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Theme toggle (light/dark) -->
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+
+      function setTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        if (btn) btn.textContent = theme === 'dark' ? 'Motyw: ciemny' : 'Motyw: jasny';
+      }
+
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || saved === 'light') setTheme(saved);
+      else setTheme('light');
+
+      if (btn) {
+        btn.addEventListener('click', function () {
+          const current = root.getAttribute('data-theme') || 'light';
+          setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
