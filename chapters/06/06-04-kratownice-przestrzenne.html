@@ -1,1 +1,350 @@
-aa
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>6.4 Kratownice przestrzenne – Ustroje prętowe o pracy osiowej</title>
+  <meta name="description"
+        content="6.4 Kratownice przestrzenne: charakter pracy i zakres pojęcia, podział geometryczny, układy liniowe i powierzchniowe, podparcie i skala rozwiązań, orientacyjne wymiary, odmiany płaskie i krzywoliniowe, podsumowanie." />
+
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="stylesheet" href="../../assets/css/chapter.css" />
+</head>
+
+<body>
+
+<header class="app-header">
+  <div class="container">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">Σ</div>
+      <div class="brand-text">
+        <h1 class="title">Wstęp do systemów konstrukcyjnych</h1>
+        <p class="subtitle">E-skrypt – rozdział 6</p>
+      </div>
+    </div>
+
+    <div class="meta">
+      <a class="chip chip-link" href="../../index.html">Strona główna</a>
+      <a class="chip chip-link" href="index.html">Rozdział 6</a>
+      <button id="themeToggle" class="chip chip-button" type="button">
+        Motyw: jasny
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="chapter">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Okruszki">
+    <a href="../../index.html">Start</a>
+    <span class="sep">/</span>
+    <a href="../index.html">Rozdziały</a>
+    <span class="sep">/</span>
+    <a href="index.html">6</a>
+    <span class="sep">/</span>
+    <span aria-current="page">6.4</span>
+  </nav>
+
+  <header>
+    <h1><span class="section-no">6.4.</span> KRATOWNICE PRZESTRZENNE <span class="term">(SPATIAL TRUSSES)</span></h1>
+    <p class="lead">
+      Kratownice przestrzenne są ustrojami prętowymi, w których elementy nie leżą w jednej płaszczyźnie.
+      Przestrzenne rozmieszczenie prętów zwiększa sztywność i odporność na obciążenia niesymetryczne,
+      przy zachowaniu dominującej pracy osiowej (rozciąganie i ściskanie).
+    </p>
+  </header>
+
+  <!-- Mini-spis (ułatwia na telefonie) -->
+  <nav class="toc" aria-label="Spis treści punktu 6.4">
+    <div class="toc-title">W tym punkcie</div>
+    <ul>
+      <li><a href="#s-641"><small>6.4.1.</small> Charakter pracy i zakres pojęcia</a></li>
+      <li><a href="#s-642"><small>6.4.2.</small> Podział ze względu na układ geometryczny</a></li>
+      <li><a href="#s-643"><small>6.4.3.</small> Układy liniowe i powierzchniowe</a></li>
+      <li><a href="#s-644"><small>6.4.4.</small> Podparcie i skala rozwiązań</a></li>
+      <li><a href="#s-645"><small>6.4.5.</small> Kratownice przestrzenne powierzchniowe</a></li>
+      <li><a href="#s-646"><small>6.4.6.</small> Podsumowanie</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== 6.4.1 ===================== -->
+  <section id="s-641">
+    <h2><span class="section-no">6.4.1.</span> Charakter pracy i zakres pojęcia</h2>
+
+    <p>
+      Kratownicami przestrzennymi nazywa się ustroje prętowe, w których pręty nie leżą w jednej płaszczyźnie
+      ani na jednej powierzchni. Dzięki przestrzennemu rozmieszczeniu elementów konstrukcje te wykazują
+      zwiększoną sztywność oraz większą odporność na obciążenia działające w różnych kierunkach,
+      w tym na obciążenia przypadkowe i niesymetryczne.
+    </p>
+
+    <p>
+      Podstawowym mechanizmem nośnym kratownic przestrzennych pozostaje praca osiowa prętów – ściskanie i rozciąganie –
+      jednak siły te rozkładają się w trzech kierunkach przestrzennych, co prowadzi do bardziej równomiernego obciążenia
+      elementów i redukcji smukłości prętów ściskanych.
+    </p>
+
+    <div class="callout def">
+      <div class="callout-title">Dlaczego „przestrzenne” = „sztywniejsze”</div>
+      <p>
+        W porównaniu z ustrojem płaskim, przestrzenne rozmieszczenie prętów umożliwia zamknięcie obiegu sił w bryłach
+        (np. czworościanach), co ogranicza wrażliwość konstrukcji na skręcanie oraz poprawia pracę przy obciążeniach
+        niesymetrycznych.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== 6.4.2 ===================== -->
+  <section id="s-642">
+    <h2><span class="section-no">6.4.2.</span> Podział ze względu na układ geometryczny</h2>
+
+    <p>
+      Geometria kratownicy przestrzennej decyduje o jej sztywności, sposobie przenoszenia obciążeń oraz możliwościach
+      kształtowania formy architektonicznej. W odróżnieniu od kratownic płaskich, w których pręty leżą w jednej płaszczyźnie,
+      kratownice przestrzenne zbudowane są z elementów rozmieszczonych w trzech wymiarach.
+    </p>
+
+    <p>
+      Podstawą geometryczną kratownic przestrzennych są proste bryły złożone z elementów trójkątnych, które zapewniają
+      geometryczną niezmienność układu. Trójkąt jako figura sztywna powoduje, że zmiana kształtu konstrukcji wymaga
+      zmiany długości prętów, a nie jedynie ich obrotu w węzłach. Z tego względu większość kratownic przestrzennych opiera się
+      na regularnych, powtarzalnych układach prętów, w których dominującym mechanizmem nośnym pozostaje praca osiowa.
+    </p>
+
+    <div class="callout note">
+      <div class="callout-title">Regularne vs nieregularne</div>
+      <ul class="spec-list">
+        <li><strong>Układy regularne</strong> sprzyjają prefabrykacji, upraszczają węzły i obniżają koszty.</li>
+        <li><strong>Układy nieregularne</strong> zwiększają swobodę formalną, ale wymagają większej liczby typów elementów i kontroli wykonawczej.</li>
+      </ul>
+    </div>
+
+    <p>
+      Geometria kratownicy wpływa również na wysokość konstrukcyjną, rozstaw węzłów oraz sposób podparcia.
+      Zwiększanie rozpiętości konstrukcji wymaga zazwyczaj wzrostu jej wysokości lub zastosowania podpór rozproszonych,
+      umożliwiających korzystniejszy rozkład sił i ograniczenie koncentracji obciążeń. Rozstaw węzłów i moduł konstrukcyjny
+      kształtują nie tylko pracę statyczną, lecz także rytm przestrzeni i czytelność struktury nośnej.
+    </p>
+
+    <p>
+      Z punktu widzenia projektowania geometria kratownicy przestrzennej nie jest jedynie kwestią formy,
+      lecz podstawowym narzędziem kształtowania pracy konstrukcji. Świadomy dobór układu geometrycznego pozwala uzyskać
+      kompromis pomiędzy efektywnością materiałową, możliwościami prefabrykacji, kosztami realizacji oraz zamierzonym wyrazem
+      architektonicznym obiektu.
+    </p>
+  </section>
+
+  <!-- ===================== 6.4.3 ===================== -->
+  <section id="s-643">
+    <h2><span class="section-no">6.4.3.</span> Układy liniowe i powierzchniowe</h2>
+
+    <p>
+      Poniższy podział odnosi się do sposobu pracy i kształtowania ustroju, a nie do jego geometrii elementarnej,
+      dlatego stanowi kryterium niezależne od klasyfikacji przedstawionej powyżej.
+      Ze względu na sposób kształtowania i przebieg osi prętów kratownice przestrzenne można podzielić
+      na układy liniowe i powierzchniowe.
+    </p>
+
+    <h3>Układy liniowe</h3>
+    <p>Do tej grupy należą:</p>
+    <ul>
+      <li>belki kratownicowe przestrzenne,</li>
+      <li>słupy kratownicowe,</li>
+      <li>ramy kratownicowe,</li>
+      <li>łuki kratownicowe.</li>
+    </ul>
+
+    <p>Układy liniowe mają najczęściej przekroje: trójkątne, kwadratowe lub okrągłe.</p>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-04-01.png"
+           alt="Belki kratownicowe przestrzenne o przekroju trójkątnym — schemat" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 158.</span> Belki kratownicowe trójkątne.</figcaption>
+    </figure>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-04-02.png"
+           alt="Belki kratownicowe przestrzenne o przekroju kwadratowym — schemat" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 159.</span> Belki kratownicowe kwadratowe.</figcaption>
+    </figure>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-04-03.png"
+           alt="Ramy kratownicowe przestrzenne — schemat" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 160.</span> Ramy kratownicowe przestrzenne.</figcaption>
+    </figure>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-04-04.png"
+           alt="Łuki kratownicowe trójprzegubowe — schemat" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 161.</span> Łuki kratownicowe trójprzegubowe.</figcaption>
+    </figure>
+
+    <h3>Układy powierzchniowe</h3>
+    <p>Do układów powierzchniowych zalicza się:</p>
+    <ul>
+      <li>płaskie kratownice przestrzenne,</li>
+      <li>kratownice przestrzenne krzywoliniowe:
+        <ul>
+          <li>jednokrzywiznowe (kolebkowe),</li>
+          <li>dwukrzywiznowe (kopułowe, siodłowe),</li>
+          <li>swobodne, o podziale nieregularnym.</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===================== 6.4.4 ===================== -->
+  <section id="s-644">
+    <h2><span class="section-no">6.4.4.</span> Podparcie i skala rozwiązań</h2>
+
+    <p>
+      Projektowanie kratownic przestrzennych często wiąże się z dążeniem do uzyskania dużych rozpiętości
+      lub znacznych nadwieszeń elementów konstrukcji. Należy jednak uwzględnić, że zwiększanie rozpiętości
+      prowadzi do wzrostu wymagań dotyczących podpór, co nie zawsze jest akceptowalne konstrukcyjnie i architektonicznie.
+    </p>
+
+    <p>
+      Ze względu na smukłość prętów szczególnie korzystne jest stosowanie podpór rozproszonych,
+      np. w formie podpór drzewiastych, w których kilka lub kilkanaście węzłów kratownicy opiera się na jednej podporze głównej.
+      Ogranicza to koncentrację sił i poprawia współpracę konstrukcji z podporami.
+    </p>
+
+    <div class="spec">
+      <h4>Orientacyjne wymiary</h4>
+      <ul class="spec-list">
+        <li>kratownice drewniane: 15–60 m,</li>
+        <li>kratownice stalowe: 25–100 m (do 120 m),</li>
+        <li>wysokość konstrukcyjna:
+          <ul>
+            <li>płaskie: 1/15–1/30 rozpiętości,</li>
+            <li>jednokrzywiznowe: 1/20–1/40 rozpiętości,</li>
+            <li>dwukrzywiznowe: 1/30–1/60 rozpiętości,</li>
+          </ul>
+        </li>
+        <li>rozstaw węzłów: 1,5–3,0 m (do 4,0 m w dużych przekryciach).</li>
+      </ul>
+      <p class="small-muted">
+        Zestawienie ma charakter orientacyjny i informacyjny; nie zastępuje analizy statycznej ani projektowej.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== 6.4.5 ===================== -->
+  <section id="s-645">
+    <h2><span class="section-no">6.4.5.</span> Kratownice przestrzenne powierzchniowe</h2>
+
+    <p>
+      Wśród kratownic przestrzennych powierzchniowych podstawową i najczęściej stosowaną odmianą jest układ płaski.
+      Odmiany krzywoliniowe powstają poprzez geometryczne przekształcenie tego schematu, przy zachowaniu zasad pracy osiowej prętów
+      oraz przestrzennej współpracy elementów konstrukcji. Zmiana geometrii nie prowadzi zatem do zmiany mechanizmu nośnego,
+      lecz wpływa na sposób rozkładu sił i sztywność układu.
+    </p>
+
+    <p>
+      Płaska kratownica przestrzenna jest dwukierunkowym układem prętów tworzącym siatkową konstrukcję nośną, opartą na powtarzalnym
+      module geometrycznym o układzie trójkątnym, czworokątnym lub mieszanym. Konstrukcja składa się zazwyczaj z dwóch równoległych warstw
+      – górnej i dolnej – połączonych systemem słupków i krzyżulców, co prowadzi do powstania przestrzennej struktury o znacznej sztywności.
+    </p>
+
+    <div class="callout note">
+      <div class="callout-title">Charakterystyka pracy (skrót)</div>
+      <ul class="spec-list">
+        <li>zachowanie analogiczne do płyty dwukierunkowo zginanej, przy dominacji osiowej pracy prętów,</li>
+        <li>stabilizacja geometryczna przez system krzyżulców i powiązań przestrzennych,</li>
+        <li>możliwość podparcia punktowego lub liniowego, zlokalizowanego w węzłach,</li>
+        <li>kinematyczna niezmienność przy regularnej siatce trójkątnej,</li>
+        <li>niewielka masa własna przy dużej sztywności całego ustroju,</li>
+        <li>lokalne koncentracje sił (zwłaszcza przy podporach) mogą wymagać wzmocnień,</li>
+        <li>krawędzie brzegowe, jeżeli nie są podparte, wymagają wzmocnienia.</li>
+      </ul>
+    </div>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-04-05.png"
+           alt="Płaska kratownica przestrzenna typu rusztowego — schemat" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 162.</span> Płaska kratownica przestrzenna typu rusztowego.</figcaption>
+    </figure>
+
+    <div class="callout warn">
+      <div class="callout-title">Uwaga terminologiczna</div>
+      <p>
+        W praktyce wykonawczej układ ten bywa potocznie określany jako „materac kratowy”.
+        Określenie to nie występuje w literaturze fachowej i nie powinno być stosowane w publikacjach naukowych.
+      </p>
+    </div>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-04-06.png"
+           alt="Kratownica przestrzenna kolebkowa — schemat" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 163.</span> Kratownica przestrzenna kolebkowa.</figcaption>
+    </figure>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-04-07.png"
+           alt="Kratownica przestrzenna o podziale nieregularnym — schemat" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 164.</span> Kratownica przestrzenna nieregularna.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ===================== 6.4.6 ===================== -->
+  <section id="s-646">
+    <h2><span class="section-no">6.4.6.</span> Podsumowanie</h2>
+
+    <p>
+      Kratownice przestrzenne stanowią ustroje prętowe o dominującej pracy osiowej, w których przestrzenne rozmieszczenie elementów
+      prowadzi do znacznego zwiększenia sztywności i efektywności konstrukcyjnej. Dzięki współpracy prętów w trzech kierunkach
+      umożliwiają one realizację dużych rozpiętości przy stosunkowo niewielkiej masie własnej oraz dobrej odporności na obciążenia
+      niesymetryczne.
+    </p>
+
+    <p>
+      Z tego względu znajdują szerokie zastosowanie w przekryciach halowych, obiektach użyteczności publicznej oraz konstrukcjach
+      o wyraźnej ekspresji architektonicznej.
+    </p>
+  </section>
+
+  <!-- Nawigacja -->
+  <div class="chapter-actions" style="margin-top: 28px;">
+    <a class="pill" href="06-03-ruszty-z-kratownic.html">← 6.3 Ruszty z kratownic</a>
+    <a class="pill" href="06-05-wiezby-dachowe.html">6.5 Więźby dachowe →</a>
+  </div>
+
+</main>
+
+<footer class="app-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-title">Rozdział 6 · 6.4 Kratownice przestrzenne</div>
+      <div class="footer-note">E-skrypt · wersja mobilna · HTML</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+
+    function setTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (btn) btn.textContent = theme === 'dark' ? 'Motyw: ciemny' : 'Motyw: jasny';
+    }
+
+    const saved = localStorage.getItem('theme');
+    setTheme(saved === 'dark' ? 'dark' : 'light');
+
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

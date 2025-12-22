@@ -1,1 +1,310 @@
-dd
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>6.5 Więźby dachowe – Ustroje prętowe o pracy osiowej</title>
+  <meta name="description"
+        content="6.5 Więźby dachowe: konstrukcje o pracy mieszanej, schematy statyczne więźb, zakres stosowania, prefabrykowane wiązary kratownicowe jako przypadek graniczny pracy osiowej." />
+
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="stylesheet" href="../../assets/css/chapter.css" />
+</head>
+
+<body>
+
+<header class="app-header">
+  <div class="container">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">Σ</div>
+      <div class="brand-text">
+        <h1 class="title">Wstęp do systemów konstrukcyjnych</h1>
+        <p class="subtitle">E-skrypt – rozdział 6</p>
+      </div>
+    </div>
+
+    <div class="meta">
+      <a class="chip chip-link" href="../../index.html">Strona główna</a>
+      <a class="chip chip-link" href="index.html">Rozdział 6</a>
+      <button id="themeToggle" class="chip chip-button" type="button">
+        Motyw: jasny
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="chapter">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Okruszki">
+    <a href="../../index.html">Start</a>
+    <span class="sep">/</span>
+    <a href="../index.html">Rozdziały</a>
+    <span class="sep">/</span>
+    <a href="index.html">6</a>
+    <span class="sep">/</span>
+    <span aria-current="page">6.5</span>
+  </nav>
+
+  <header>
+    <h1><span class="section-no">6.5.</span> WIĘŹBY DACHOWE <span class="term">(ROOF TRUSSES)</span></h1>
+    <p class="lead">
+      Więźby dachowe omówiono jako konstrukcje graniczne, w których zasady pracy kratownicowej
+      ulegają częściowemu zaburzeniu. Stanowią one ustroje prętowe o pracy mieszanej,
+      łączącej rozciąganie i ściskanie z istotnym udziałem zginania.
+    </p>
+  </header>
+
+  <!-- Mini-spis -->
+  <nav class="toc" aria-label="Spis treści punktu 6.5">
+    <div class="toc-title">W tym punkcie</div>
+    <ul>
+      <li><a href="#s-651"><small>6.5.1.</small> Charakter pracy więźb dachowych</a></li>
+      <li><a href="#s-652"><small>6.5.2.</small> Typy więźb według schematu statycznego</a></li>
+      <li><a href="#s-653"><small>6.5.3.</small> Wiązar jako powtarzalny ustrój płaski</a></li>
+      <li><a href="#s-654"><small>6.5.4.</small> Zakres stosowania i ograniczenia</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== 6.5.1 ===================== -->
+  <section id="s-651">
+    <h2><span class="section-no">6.5.1.</span> Charakter pracy więźb dachowych</h2>
+
+    <p>
+      Więźba dachowa jest tradycyjnym przykładem konstrukcji prętowej, której zadaniem jest
+      przeniesienie obciążeń działających na połać dachu – ciężaru własnego konstrukcji,
+      pokrycia dachowego, obciążeń śniegiem oraz wiatrem – na elementy nośne budynku,
+      takie jak ściany i stropy.
+    </p>
+
+    <p>
+      Konstrukcja więźby ma charakter przestrzennego szkieletu, jednak jej podstawową
+      jednostką jest powtarzalny ustrój płaski, zwany wiązarem dachowym.
+      Pod względem geometrii i organizacji elementów wiązary dachowe przypominają
+      kratownice płaskie, jednak zasadnicza różnica dotyczy sposobu pracy konstrukcji.
+    </p>
+
+    <div class="callout def">
+      <div class="callout-title">Praca mieszana</div>
+      <p>
+        W idealnej kratownicy pręty przenoszą obciążenia głównie poprzez rozciąganie
+        i ściskanie. W więźbie dachowej część elementów – zwłaszcza bezpośrednio
+        podpierających połać – pracuje na zginanie. Osiowa praca prętów występuje
+        jedynie w wybranych elementach, takich jak jętki, kleszcze czy ściągi.
+      </p>
+    </div>
+
+    <p>
+      Istotną cechą więźb dachowych jest brak idealnej osiowości obciążeń i połączeń.
+      Węzły nie stanowią punktów zbiegu osi prętów, a siły przekazywane są często
+      z mimośrodem, co prowadzi do powstawania momentów zginających i sił poprzecznych.
+      Z tego względu więźby dachowe należy traktować jako konstrukcje pośrednie
+      pomiędzy kratownicami a ramami.
+    </p>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-05-01.png"
+           alt="Schemat pracy statycznej wiązara dachowego" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 165.</span> Schemat pracy wiązara dachowego.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ===================== 6.5.2 ===================== -->
+  <section id="s-652">
+    <h2><span class="section-no">6.5.2.</span> Typy więźb według schematu statycznego</h2>
+
+    <h3>Więźba krokwiowa <span class="term">(simple rafter roof)</span></h3>
+
+    <p>
+      Więźba krokwiowa jest najprostszym schematem konstrukcji dachowej, złożonym
+      z par krokwi opartych na murłatach lub belkach stropowych. Ukośne ustawienie
+      krokwi powoduje powstawanie znacznego rozporu poziomego, który przekazywany
+      jest na ściany i musi być przejęty przez elementy poziome lub strop.
+    </p>
+
+    <p>
+      Konstrukcja wymaga zastosowania wiatrownic, zapewniających sztywność
+      podłużną dachu.
+    </p>
+
+    <p><strong>Rozpiętość:</strong> do ok. 6 m.</p>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-05-02.png"
+           alt="Więźba krokwiowa — schemat" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 166.</span> Więźba krokwiowa.</figcaption>
+    </figure>
+
+    <h3>Więźba jętkowa <span class="term">(collar beam roof)</span></h3>
+
+    <p>
+      Więźba jętkowa stanowi rozwinięcie schematu krokwiowego poprzez zastosowanie
+      jętki, czyli poziomego elementu łączącego parę krokwi. Jętka ogranicza
+      efektywną rozpiętość krokwi i częściowo redukuje rozpór.
+    </p>
+
+    <p>
+      Rozpór poziomy u podstawy nie zostaje całkowicie wyeliminowany, jednak jest
+      mniejszy niż w więźbie krokwiowej.
+    </p>
+
+    <p><strong>Rozpiętość:</strong> do ok. 7 m, z dodatkowymi podporami do ok. 10 m.</p>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-05-03.png"
+           alt="Więźba jętkowa — schemat" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 167.</span> Więźba jętkowa.</figcaption>
+    </figure>
+
+    <h3>Więźba płatwiowo-kleszczowa <span class="term">(purlin roof)</span></h3>
+
+    <p>
+      W więźbie płatwiowo-kleszczowej krokwie są podparte podłużnymi belkami – płatwiami,
+      opartymi na słupach i mieczach. Dzięki temu obciążenia z połaci przekazywane są
+      częściowo na strop, co znacząco ogranicza rozpór ścian.
+    </p>
+
+    <p>
+      Układ ten charakteryzuje się wyraźnym rozdzieleniem funkcji elementów:
+      krokwie pracują na zginanie, natomiast płatwie i słupy przejmują obciążenia pionowe.
+    </p>
+
+    <p><strong>Rozpiętość:</strong> do ok. 12 m.</p>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-05-04.png"
+           alt="Więźba płatwiowo-kleszczowa — schemat" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 168.</span> Więźba płatwiowo-kleszczowa.</figcaption>
+    </figure>
+
+    <h3>Więźba wieszarowa <span class="term">(suspension truss roof)</span></h3>
+
+    <p>
+      Więźba wieszarowa jest schematem, w którym strop podwieszony jest do konstrukcji
+      dachu za pomocą wieszaków pracujących na rozciąganie. Obciążenia przekazywane
+      są na ściany zewnętrzne poprzez ukośne zastrzały.
+    </p>
+
+    <p><strong>Rozpiętość:</strong> do ok. 9 m (wieszak pojedynczy), do ok. 12 m (podwójny).</p>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch06/fig-06-05-05.png"
+           alt="Więźba wieszarowa — schemat" loading="lazy" />
+      <figcaption><span class="fig-ref">Ryc. 169.</span> Więźba wieszarowa.</figcaption>
+    </figure>
+
+    <div class="callout note">
+      <div class="callout-title">Zmiana schematu</div>
+      <p>
+        Zmiana schematu więźby nie polega na zmianie materiału, lecz na innej
+        organizacji drogi sił i kontroli rozporu.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== 6.5.3 ===================== -->
+  <section id="s-653">
+    <h2><span class="section-no">6.5.3.</span> Wiązar jako powtarzalny ustrój płaski</h2>
+
+    <p>
+      Wiązary dachowe mogą być traktowane jako powtarzalne ustroje płaskie, które
+      zestawione obok siebie w określonym rozstawie tworzą przestrzenny układ
+      nośny całego dachu.
+    </p>
+
+    <p>
+      Pojedynczy wiązar stanowi podstawowy moduł konstrukcyjny, natomiast jego
+      rozstaw i sposób współpracy z sąsiednimi elementami mają istotny wpływ
+      na sztywność, rozkład obciążeń oraz ogólną pracę konstrukcji.
+    </p>
+
+    <p>
+      W tym sensie dach oparty na wiązarach nie jest jedynie sumą niezależnych
+      elementów, lecz systemem konstrukcyjnym, którego zachowanie zależy od relacji
+      pomiędzy poszczególnymi wiązarami.
+    </p>
+
+    <h3>Prefabrykowane wiązary kratownicowe</h3>
+
+    <p>
+      Współcześnie coraz częściej stosuje się prefabrykowane wiązary kratownicowe
+      z drewna, w których pręty zaprojektowane są do pracy głównie osiowej.
+      Rozwiązanie to pozwala na niemal całkowite wyeliminowanie zginania
+      w elementach nośnych oraz ograniczenie rozpierania ścian.
+    </p>
+
+    <p>
+      Dach oparty na prefabrykowanych wiązarach kratownicowych nie jest już więźbą
+      w sensie tradycyjnym, lecz systemem kratownicowym, stosowanym powszechnie
+      w budownictwie mieszkaniowym jednorodzinnym, zwłaszcza tam, gdzie nie przewiduje
+      się użytkowego poddasza.
+    </p>
+  </section>
+
+  <!-- ===================== 6.5.4 ===================== -->
+  <section id="s-654">
+    <h2><span class="section-no">6.5.4.</span> Zakres stosowania i ograniczenia</h2>
+
+    <p>
+      Zakres stosowania poszczególnych rozwiązań więźby dachowej jest ściśle związany
+      z rozpiętością i geometrią dachu, a także z funkcją poddasza.
+      Wraz ze wzrostem rozpiętości lub złożoności formy dachu pojawiają się
+      ograniczenia architektoniczne i konstrukcyjne.
+    </p>
+
+    <p>
+      Więźby dachowe wymagają dużej dokładności wykonania węzłów oraz obecności
+      elementów stężających i usztywniających, które zapewniają stateczność
+      przestrzenną całego układu i ograniczają niekontrolowane przemieszczenia.
+    </p>
+
+    <p>
+      Dzięki swojej prostocie, adaptowalności oraz czytelnej logice przenoszenia sił
+      więźby dachowe pozostają powszechnym rozwiązaniem w architekturze mieszkaniowej,
+      a jednocześnie stanowią ważny element dziedzictwa budownictwa historycznego.
+    </p>
+  </section>
+
+  <!-- Nawigacja -->
+  <div class="chapter-actions" style="margin-top: 28px;">
+    <a class="pill" href="06-04-kratownice-przestrzenne.html">← 6.4 Kratownice przestrzenne</a>
+    <a class="pill" href="06-06-podsumowanie.html">6.6 Podsumowanie rozdziału →</a>
+  </div>
+
+</main>
+
+<footer class="app-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-title">Rozdział 6 · 6.5 Więźby dachowe</div>
+      <div class="footer-note">E-skrypt · wersja mobilna · HTML</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+
+    function setTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (btn) btn.textContent = theme === 'dark' ? 'Motyw: ciemny' : 'Motyw: jasny';
+    }
+
+    const saved = localStorage.getItem('theme');
+    setTheme(saved === 'dark' ? 'dark' : 'light');
+
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

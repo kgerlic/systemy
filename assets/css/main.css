@@ -515,3 +515,107 @@ html[data-theme="dark"] figure.ill figcaption{
     font: 14pt/1.4 serif;
   }
 }
+
+/* =========================
+   TABLES (readability)
+   ========================= */
+
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border, rgba(0,0,0,.12));
+  border-radius: 12px;
+  background: var(--surface, #fff);
+}
+
+/* Zapobiega „zlewaniu się” wierszy */
+table.data {
+  width: 100%;
+  border-collapse: separate;   /* ważne: pozwala na czytelne obramowania */
+  border-spacing: 0;
+  min-width: 720px;            /* czytelność na desktop; na mobile i tak scroll */
+}
+
+table.data th,
+table.data td {
+  padding: 12px 14px;          /* więcej powietrza */
+  line-height: 1.35;           /* mniej „ściśnięte” */
+  vertical-align: top;
+  border-bottom: 1px solid var(--border, rgba(0,0,0,.12));
+  border-right: 1px solid var(--border, rgba(0,0,0,.12));
+}
+
+/* Ostatnia kolumna bez prawej linii */
+table.data th:last-child,
+table.data td:last-child {
+  border-right: none;
+}
+
+/* Nagłówek tabeli – wyraźny */
+table.data thead th {
+  position: sticky;            /* działa w obrębie .table-wrap */
+  top: 0;
+  z-index: 1;
+  background: var(--surface-2, #f6f7f9);
+  font-weight: 700;
+  text-align: left;
+}
+
+/* Pierwsza kolumna (cechy) – czytelna */
+table.data tbody th[scope="row"] {
+  font-weight: 700;
+  background: var(--surface, #fff);
+  min-width: 220px;
+}
+
+/* Zebra rows – zwiększa czytelność na monitorze */
+table.data tbody tr:nth-child(even) td,
+table.data tbody tr:nth-child(even) th[scope="row"] {
+  background: var(--surface-3, #fafbfc);
+}
+
+/* Ostatni wiersz bez dolnej linii */
+table.data tbody tr:last-child th,
+table.data tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Drobna optymalizacja na bardzo szerokich ekranach */
+@media (min-width: 900px) {
+  table.data th,
+  table.data td {
+    padding: 14px 16px;
+  }
+}
+
+/* =========================
+   TABLE COLOR FIX (dark mode)
+   ========================= */
+
+/* Tabela zawsze jako jasna karta */
+.table-wrap {
+  background: var(--table-bg, #ffffff);
+}
+
+/* Tekst tabeli zawsze ciemny */
+table.data {
+  color: var(--table-text, #111111);
+}
+
+/* Nagłówek tabeli */
+table.data thead th {
+  background: var(--table-head-bg, #f0f2f5);
+  color: var(--table-text, #111111);
+}
+
+/* Zebra rows */
+table.data tbody tr:nth-child(even) td,
+table.data tbody tr:nth-child(even) th[scope="row"] {
+  background: var(--table-zebra-bg, #f7f8fa);
+  color: var(--table-text, #111111);
+}
+
+/* Pierwsza kolumna */
+table.data tbody th[scope="row"] {
+  color: var(--table-text, #111111);
+}
