@@ -1,21 +1,27 @@
 /* =========================================================
-   main.css — e-skrypt (mobile-first) + light/dark theme
+   main.css — e-skrypt (mobile-first) — akademicki, czytelny
+   Domyślnie: jasny motyw
+   Dark: html[data-theme="dark"]
    ========================================================= */
 
-/* =========================================================
-   THEME TOKENS
-   ========================================================= */
+/* -------------------------
+   Theme tokens
+   ------------------------- */
 :root{
   --bg: #f6f7fb;
   --surface: #ffffff;
   --surface2: #f1f3f8;
+  --surface3: #fafbff;
 
   --text: #121318;
   --muted: rgba(18,19,24,.72);
   --muted2: rgba(18,19,24,.56);
 
   --border: rgba(18,19,24,.14);
+  --border2: rgba(18,19,24,.10);
+
   --shadow: 0 10px 24px rgba(18,19,24,.10);
+  --shadow2: 0 6px 16px rgba(18,19,24,.08);
 
   --radius: 16px;
   --radius2: 22px;
@@ -24,74 +30,114 @@
   --pad: 16px;
   --tap: 48px;
 
-  --link: #1a4fff;
+  /* Akcent spokojny, „akademicki” */
+  --accent: #1a4fff;           /* link / focus */
+  --accent2: rgba(26,79,255,.12);
 
+  /* Ilustracje na białym tle jako karta */
   --figure-bg: #ffffff;
   --figure-border: rgba(18,19,24,.12);
 
-  /* ===== TABLE TOKENS (independent) ===== */
+  /* Tabele jako jasna karta (zawsze) */
   --table-bg: #ffffff;
-  --table-head-bg: #eef1f5;
-  --table-zebra-bg: #f7f8fa;
   --table-text: #111111;
-  --table-border: rgba(0,0,0,.14);
+  --table-head-bg: #e9ecf1;
+  --table-zebra-bg: #f5f7fa;
+  --table-border: rgba(0,0,0,.15);
+
+  /* Mikro-typografia */
+  --lh: 1.45;
+  --lh-tight: 1.25;
 }
 
-/* ===== DARK THEME ===== */
+/* Dark mode – nadal „akademicko”, bez czerni absolutnej */
 html[data-theme="dark"]{
-  --bg: #0b0c10;
+  --bg: #0f1116;
   --surface: rgba(255,255,255,.06);
   --surface2: rgba(255,255,255,.08);
+  --surface3: rgba(255,255,255,.04);
 
   --text: rgba(255,255,255,.92);
   --muted: rgba(255,255,255,.70);
   --muted2: rgba(255,255,255,.55);
 
   --border: rgba(255,255,255,.14);
-  --shadow: 0 10px 26px rgba(0,0,0,.35);
-  --link: #9bb3ff;
+  --border2: rgba(255,255,255,.10);
 
+  --shadow: 0 12px 28px rgba(0,0,0,.45);
+  --shadow2: 0 8px 18px rgba(0,0,0,.38);
+
+  --accent: #9bb3ff;
+  --accent2: rgba(155,179,255,.16);
+
+  /* ilustracje zostają białe */
   --figure-bg: #ffffff;
   --figure-border: rgba(255,255,255,.18);
 
-  /* tabela pozostaje jasna */
-  --table-bg: #ffffff;
-  --table-head-bg: #eef1f5;
-  --table-zebra-bg: #f7f8fa;
-  --table-text: #111111;
-  --table-border: rgba(0,0,0,.16);
+  /* tabele jako jasna karta (zawsze) – bez zmian */
 }
 
-/* =========================================================
-   BASE
-   ========================================================= */
+/* -------------------------
+   Base / reset
+   ------------------------- */
 *{ box-sizing: border-box; }
 html, body{ height: 100%; }
 
 body{
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg);
   color: var(--text);
-  line-height: 1.35;
+  background: var(--bg);
+  line-height: var(--lh);
+  text-rendering: optimizeLegibility;
 }
 
-img{ max-width: 100%; height: auto; }
+img{ max-width: 100%; height: auto; display:block; }
 
 a{
-  color: var(--link);
+  color: var(--accent);
   text-decoration: none;
 }
 a:hover{ text-decoration: underline; }
+
+:focus-visible{
+  outline: 2px solid var(--accent2);
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
 
 .container{
   width: min(var(--max), 100% - 2*var(--pad));
   margin: 0 auto;
 }
 
-/* =========================================================
-   HEADER / FOOTER / UI
-   ========================================================= */
+/* Delikatna faktura tła (akademicka, nie „wesoła”) */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(800px 420px at 15% 0%, rgba(26,79,255,.06), transparent 60%),
+    radial-gradient(900px 460px at 85% 0%, rgba(26,79,255,.04), transparent 62%);
+  opacity: 1;
+}
+
+/* -------------------------
+   Header
+   ------------------------- */
 .app-header{
   position: sticky;
   top: 0;
@@ -102,27 +148,371 @@ a:hover{ text-decoration: underline; }
 }
 
 .brand{
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   gap: 12px;
-  padding: 18px 0 10px;
+  padding: 16px 0 10px;
+  align-items: start;
 }
 
 .brand-mark{
   width: 44px;
   height: 44px;
   border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow: hidden;
+}
+
+.brand-mark img{
+  width: 28px;     /* logo widoczne, bez dominowania */
+  height: 28px;
+  object-fit: contain;
+}
+
+.title{
+  margin: 0;
+  font-size: 1.10rem;
+  line-height: var(--lh-tight);
+  letter-spacing: .2px;
+}
+
+.subtitle{
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.meta{
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 6px 0 12px;
+}
+
+.chip{
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .82rem;
+  box-shadow: 0 4px 14px rgba(18,19,24,.06);
+}
+
+.chip-link{
+  color: var(--muted);
+}
+.chip-link:hover{
+  background: var(--surface2);
+  text-decoration: none;
+}
+
+.chip-button{
+  cursor: pointer;
+}
+.chip-button:hover{
+  background: var(--surface2);
+}
+
+/* -------------------------
+   Search
+   ------------------------- */
+.search{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  padding: 10px 0 16px;
+  align-items: center;
+}
+
+.search-input{
+  height: var(--tap);
+  border-radius: 14px;
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1rem;
+  box-shadow: 0 4px 14px rgba(18,19,24,.06);
+}
+
+.search-input::placeholder{
+  color: color-mix(in srgb, var(--muted2) 80%, transparent);
+}
+
+.btn{
+  height: var(--tap);
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(18,19,24,.06);
+}
+.btn:hover{ background: var(--surface2); }
+
+.btn-ghost{
+  background: transparent;
+  box-shadow: none;
+}
+
+/* -------------------------
+   Sections / headings
+   ------------------------- */
+.section{
+  padding: 18px 0;
+}
+
+.section-title{
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  letter-spacing: .2px;
+}
+
+.section-head{
+  display:flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.hint{
+  color: var(--muted2);
+  font-size: .92rem;
+}
+
+/* -------------------------
+   Cards (szybki dostęp)
+   ------------------------- */
+.quick-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.card{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.card-action{
+  min-height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtelny „akademicki” akcent, bez kolorowych kafli */
+.card-action::after{
+  content:"";
+  position:absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 55%, var(--accent2));
+  opacity: .55;
+  pointer-events:none;
+}
+
+.card-action:hover{
+  background: var(--surface2);
+  text-decoration: none;
+}
+
+.card-title{
+  font-weight: 700;
+  margin-bottom: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-note{
+  color: var(--muted);
+  font-size: .95rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* -------------------------
+   Chapter tiles (Rozdziały)
+   ------------------------- */
+.tile-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.tile{
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 14px;
+  box-shadow: var(--shadow);
+  min-height: 132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  overflow: hidden;
+}
+
+/* cienka belka akcentu po lewej – „publikacja”, nie „apka” */
+.tile::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 48%, transparent);
+  opacity: .55;
+}
+
+.tile:hover{
+  background: var(--surface2);
+  text-decoration: none;
+}
+
+.tile-kicker{
+  color: var(--muted2);
+  font-size: .82rem;
+  margin-bottom: 6px;
+}
+
+.tile-title{
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  line-height: var(--lh-tight);
+}
+
+.tile-desc{
+  color: var(--muted);
+  font-size: .95rem;
+  margin-bottom: 10px;
+}
+
+.tile-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag{
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
+  background: color-mix(in srgb, var(--surface2) 70%, transparent);
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+/* -------------------------
+   List (jeśli używasz list-items)
+   ------------------------- */
+.list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-item{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: var(--tap);
+  padding: 14px;
+  border-radius: var(--radius2);
   background: var(--surface);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+}
+.list-item:hover{
+  background: var(--surface2);
+  text-decoration: none;
 }
 
-.title{ margin:0; font-size:1.15rem; }
-.subtitle{ margin:6px 0 0; color:var(--muted); }
+.list-title{
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.list-desc{
+  color: var(--muted);
+  font-size: .92rem;
+}
 
+/* -------------------------
+   Empty state
+   ------------------------- */
+.empty{
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px dashed color-mix(in srgb, var(--border) 90%, transparent);
+  border-radius: var(--radius2);
+  background: color-mix(in srgb, var(--surface2) 55%, transparent);
+}
+
+.empty-title{
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+.empty-desc{
+  margin: 0;
+  color: var(--muted);
+}
+
+/* -------------------------
+   Figures (białe tło ilustracji)
+   ------------------------- */
+figure.ill{
+  margin: 14px 0;
+  padding: 12px;
+  background: var(--figure-bg);
+  border: 1px solid var(--figure-border);
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow2);
+}
+
+figure.ill img{
+  margin: 0 auto;
+}
+
+figure.ill figcaption{
+  margin-top: 10px;
+  color: rgba(18,19,24,.76);
+  font-size: .92rem;
+}
+html[data-theme="dark"] figure.ill figcaption{
+  color: rgba(18,19,24,.78);
+}
+
+/* -------------------------
+   Footer
+   ------------------------- */
 .app-footer{
   border-top: 1px solid var(--border);
   padding: 18px 0 28px;
@@ -130,28 +520,25 @@ a:hover{ text-decoration: underline; }
   background: color-mix(in srgb, var(--bg) 92%, transparent);
 }
 
-/* =========================================================
-   FIGURES
-   ========================================================= */
-figure.ill{
-  margin: 14px 0;
-  padding: 12px;
-  background: var(--figure-bg);
-  border: 1px solid var(--figure-border);
-  border-radius: var(--radius2);
-  box-shadow: var(--shadow);
+.footer-grid{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-figure.ill figcaption{
-  margin-top: 10px;
+.footer-title{
+  font-weight: 700;
+  color: var(--text);
+}
+
+.footer-note{
+  color: var(--muted);
   font-size: .92rem;
-  color: rgba(18,19,24,.78);
 }
 
-/* =========================================================
-   TABLES — SINGLE SOURCE OF TRUTH
-   ========================================================= */
-
+/* -------------------------
+   Tables (czytelność + dark fix)
+   ------------------------- */
 .table-wrap{
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -160,81 +547,93 @@ figure.ill figcaption{
   background: var(--table-bg);
 }
 
-/* Tabela */
-.table-wrap table.data{
+/* tabela danych */
+table.data{
   width: 100%;
-  min-width: 720px;
   border-collapse: separate;
   border-spacing: 0;
-  background: var(--table-bg);
+  min-width: 720px;
   color: var(--table-text);
 }
 
-/* Komórki */
-.table-wrap table.data th,
-.table-wrap table.data td{
+.table-wrap table,
+.table-wrap th,
+.table-wrap td{
+  color: var(--table-text) !important;
+}
+
+table.data th,
+table.data td{
   padding: 12px 14px;
-  vertical-align: top;
   line-height: 1.35;
-  color: var(--table-text);
-  background: var(--table-bg);
+  vertical-align: top;
   border-bottom: 1px solid var(--table-border);
   border-right: 1px solid var(--table-border);
+  background: var(--table-bg);
 }
 
-/* Ostatnia kolumna */
-.table-wrap table.data th:last-child,
-.table-wrap table.data td:last-child{
+table.data th:last-child,
+table.data td:last-child{
   border-right: none;
 }
 
-/* Nagłówek */
-.table-wrap table.data thead th{
+table.data thead th{
   position: sticky;
   top: 0;
   z-index: 1;
-  font-weight: 700;
-  text-align: left;
   background: var(--table-head-bg);
+  font-weight: 800;
+  text-align: left;
 }
 
-/* Pierwsza kolumna */
-.table-wrap table.data tbody th[scope="row"]{
-  font-weight: 700;
+table.data tbody th[scope="row"]{
+  font-weight: 800;
   min-width: 220px;
+  background: var(--table-bg);
 }
 
-/* Zebra rows — WYŁĄCZNIE na komórkach */
-.table-wrap table.data tbody tr:nth-child(even) > th,
-.table-wrap table.data tbody tr:nth-child(even) > td{
+table.data tbody tr:nth-child(even) td,
+table.data tbody tr:nth-child(even) th[scope="row"]{
   background: var(--table-zebra-bg);
 }
 
-/* Ostatni wiersz */
-.table-wrap table.data tbody tr:last-child th,
-.table-wrap table.data tbody tr:last-child td{
+table.data tbody tr:last-child th,
+table.data tbody tr:last-child td{
   border-bottom: none;
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-@media (min-width: 900px){
-  .table-wrap table.data th,
-  .table-wrap table.data td{
-    padding: 14px 16px;
-  }
+/* Ochrona przed globalnym dark theme (tabela zawsze jasna) */
+html[data-theme="dark"] .table-wrap,
+html[data-theme="dark"] .table-wrap *{
+  color: var(--table-text) !important;
 }
 
-/* =========================================================
-   PRINT — intentionally disabled
-   ========================================================= */
+/* -------------------------
+   Responsive
+   ------------------------- */
+@media (min-width: 540px){
+  .quick-grid{ grid-template-columns: 1fr 1fr; }
+  .tile-grid{ grid-template-columns: 1fr 1fr; }
+  .footer-grid{ flex-direction: row; justify-content: space-between; }
+}
+
+@media (min-width: 920px){
+  .title{ font-size: 1.30rem; }
+  .subtitle{ font-size: 1rem; }
+  .quick-grid{ grid-template-columns: repeat(3, 1fr); }
+  .tile-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* -------------------------
+   Print — celowo „nie do druku”
+   ------------------------- */
 @media print{
   body{ background:#fff; color:#000; }
   header, main, footer{ display:none !important; }
   body::before{
-    content:"To jest publikacja cyfrowa przeznaczona do korzystania online.";
+    content: "To jest publikacja cyfrowa przeznaczona do korzystania online (wersja mobilna).";
     display:block;
-    padding:24px;
+    padding: 24px;
+    font: 14pt/1.4 serif;
   }
 }
