@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Słownik pojęć — e-skrypt: Systemy konstrukcyjne</title>
+  <style>
+    :root { --max: 980px; --bd: #d9d9d9; --muted:#666; --bg:#fafafa; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.55; margin: 0; color:#111; }
+    header { background: var(--bg); border-bottom: 1px solid var(--bd); }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 20px; }
+    h1 { margin: 0 0 8px; font-size: 1.6rem; }
+    p.lead { margin: 0; color: var(--muted); }
+    .tools { display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top: 14px; }
+    input[type="search"]{
+      padding:10px 12px; border:1px solid var(--bd); border-radius:10px; min-width: 260px; flex: 1;
+    }
+    .chips { display:flex; gap:8px; flex-wrap:wrap; margin: 16px 0 0; }
+    .chip { display:inline-block; padding:6px 10px; border:1px solid var(--bd); border-radius:999px; text-decoration:none; color:#111; background:#fff; font-size:.95rem; }
+    main { padding: 12px 0 28px; }
+    .entry { border-top: 1px solid var(--bd); padding: 18px 0; }
+    .entry:first-child { border-top: none; }
+    .term { display:flex; flex-wrap:wrap; gap:10px; align-items:baseline; margin:0; }
+    .term a.anchor { text-decoration:none; color:#111; }
+    .en { color: var(--muted); font-weight: 500; font-size: .95rem; }
+    .def { margin: 10px 0 8px; }
+    .meta { margin: 0; color: var(--muted); font-size: .95rem; }
+    .meta a { color: #0b57d0; text-decoration: none; }
+    .meta a:hover { text-decoration: underline; }
+    .hide { display:none; }
+    footer { border-top:1px solid var(--bd); color: var(--muted); }
+    code.inline { background:#f3f3f3; padding:2px 6px; border-radius:6px; }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="wrap">
+    <h1>Słownik pojęć</h1>
+    <p class="lead">Krótki słownik (glossary) terminów używanych w e-skrypcie. Definicje są zwięzłe i odsyłają do rozdziałów, gdzie pojęcia są omawiane szerzej.</p>
+
+    <div class="tools">
+      <input id="q" type="search" placeholder="Szukaj hasła lub słowa w definicjach (np. „tarcza”, „powłoka”, „geometria”)" aria-label="Szukaj w słowniku" />
+      <span class="meta">Wskazówka: kliknij hasło, aby skopiować link (anchor) do cytowania.</span>
+    </div>
+
+    <nav class="chips" aria-label="Lista haseł">
+      <a class="chip" href="#belka">Belka</a>
+      <a class="chip" href="#ciegno">Cięgno</a>
+      <a class="chip" href="#forma">Forma</a>
+      <a class="chip" href="#geometria">Geometria</a>
+      <a class="chip" href="#kratownica">Kratownica</a>
+      <a class="chip" href="#membrana">Membrana</a>
+      <a class="chip" href="#plyta">Płyta</a>
+      <a class="chip" href="#powloka">Powłoka</a>
+      <a class="chip" href="#rama">Rama</a>
+      <a class="chip" href="#ruszt">Ruszt</a>
+      <a class="chip" href="#schemat">Schemat statyczny</a>
+      <a class="chip" href="#system">System konstrukcyjny</a>
+      <a class="chip" href="#tarcza">Tarcza</a>
+      <a class="chip" href="#ustroj">Ustrój nośny</a>
+      <a class="chip" href="#objetosciowe">Systemy objętościowe</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="entries">
+
+  <section class="entry" id="belka" data-keys="belka beams zginanie rygle">
+    <h2 class="term">
+      <a class="anchor" href="#belka">Belka</a>
+      <span class="en">[EN: beam]</span>
+    </h2>
+    <p class="def">
+      Element liniowy przenoszący obciążenia głównie przez <strong>zginanie</strong> (momenty zginające) oraz siły tnące.
+      W projektowaniu architektonicznym belka jest podstawowym narzędziem kształtowania rozpiętości i siatki podpór.
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-3-poziome-elementy-zginane.html#belki">Rozdz. 3.1 Belki</a>
+    </p>
+  </section>
+
+  <section class="entry" id="ciegno" data-keys="ciegno cables rozciaganie">
+    <h2 class="term">
+      <a class="anchor" href="#ciegno">Cięgno</a>
+      <span class="en">[EN: cable / tie]</span>
+    </h2>
+    <p class="def">
+      Element pracujący głównie na <strong>rozciąganie</strong>; w praktyce często wymaga odpowiednich zakotwień oraz kontroli ugięć.
+      W konstrukcjach wiotkich nośność wynika z przebiegu linii sił i odpowiedniego napięcia (naturalnego lub wstępnego).
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-9-wiotkie-uklady-rozciagane.html#ciegna">Rozdz. 9.1 Cięgna</a>
+    </p>
+  </section>
+
+  <section class="entry" id="forma" data-keys="forma ksztalt architektura wyraz">
+    <h2 class="term">
+      <a class="anchor" href="#forma">Forma (konstrukcji)</a>
+      <span class="en">[EN: form]</span>
+    </h2>
+    <p class="def">
+      Postrzegalny kształt konstrukcji jako całości oraz jej rola w kształtowaniu przestrzeni i wyrazu architektonicznego.
+      W skrypcie termin „forma” stosowany jest wtedy, gdy analizowana jest relacja konstrukcji do architektury, a nie wyłącznie układ elementów.
+    </p>
+    <p class="meta">
+      Zob. też: <a href="#geometria">Geometria</a>. Czytaj w e-skrypcie:
+      <a href="rozdzial-1-wprowadzenie.html#zasady-pojec">Wprowadzenie — zasady użycia pojęć</a>
+    </p>
+  </section>
+
+  <section class="entry" id="geometria" data-keys="geometria uklad osie siatka krzywizna">
+    <h2 class="term">
+      <a class="anchor" href="#geometria">Geometria (układu konstrukcyjnego)</a>
+      <span class="en">[EN: geometry]</span>
+    </h2>
+    <p class="def">
+      Układ i relacje elementów nośnych opisane w sposób techniczny: osie, kąty, krzywizny, siatki, topologia połączeń.
+      Termin wykorzystywany głównie przy klasyfikacji systemów (np. kratownice, ruszty, powłoki) i analizie schematów statycznych.
+    </p>
+    <p class="meta">
+      Zob. też: <a href="#forma">Forma</a>. Czytaj w e-skrypcie:
+      <a href="rozdzial-1-wprowadzenie.html#pojeciapodstawowe">Rozdz. 1.1 Pojęcia podstawowe</a>
+    </p>
+  </section>
+
+  <section class="entry" id="kratownica" data-keys="kratownica truss praca osiowa pręty węzły">
+    <h2 class="term">
+      <a class="anchor" href="#kratownica">Kratownica</a>
+      <span class="en">[EN: truss]</span>
+    </h2>
+    <p class="def">
+      Ustrój prętowy, w którym pręty pracują głównie osiowo (rozciąganie/ściskanie), a obciążenia są przekazywane przez węzły.
+      Skuteczność kratownic wynika z triangulacji i korzystnego podziału sił wewnętrznych.
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-6-ustroje-pretowe-o-pracy-osiowej.html#kratownice-plaskie">Rozdz. 6.2 Kratownice płaskie</a>,
+      <a href="rozdzial-6-ustroje-pretowe-o-pracy-osiowej.html#kratownice-przestrzenne">Rozdz. 6.4 Kratownice przestrzenne</a>
+    </p>
+  </section>
+
+  <section class="entry" id="membrana" data-keys="membrana tension membrane wiotka rozciagana">
+    <h2 class="term">
+      <a class="anchor" href="#membrana">Membrana (napięta)</a>
+      <span class="en">[EN: tension membrane]</span>
+    </h2>
+    <p class="def">
+      Cienki element powierzchniowy pracujący głównie na rozciąganie, zwykle stabilizowany geometrią podparcia i napięciem wstępnym.
+      Wrażliwość na odkształcenia wymaga kontroli kształtu, detali brzegowych i odwodnienia.
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-9-wiotkie-uklady-rozciagane.html#membrany">Rozdz. 9.2 Napięte membrany</a>
+    </p>
+  </section>
+
+  <section class="entry" id="plyta" data-keys="plyta slabs zginanie dwukierunkowe">
+    <h2 class="term">
+      <a class="anchor" href="#plyta">Płyta (stropowa)</a>
+      <span class="en">[EN: slab]</span>
+    </h2>
+    <p class="def">
+      Element powierzchniowy przenoszący obciążenia na podpory w jednym lub dwóch kierunkach (zginanie płytowe).
+      W projektowaniu istotne są: schemat podparcia, kierunek pracy, grubość, przebicie oraz ugięcia.
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-3-poziome-elementy-zginane.html#plyty">Rozdz. 3.3 Płyty</a>
+    </p>
+  </section>
+
+  <section class="entry" id="powloka" data-keys="powloka shell krzywizna membranowa">
+    <h2 class="term">
+      <a class="anchor" href="#powloka">Powłoka</a>
+      <span class="en">[EN: shell]</span>
+    </h2>
+    <p class="def">
+      Cienkościenny element powierzchniowy, którego nośność wynika z krzywizny i pracy membranowej (przewaga sił w płaszczyźnie powierzchni).
+      Powłoki są konstrukcjami „aktywnymi formą” — kształt jest tu częścią mechanizmu nośnego.
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-8-sztywne-uklady-powierzchniowe.html#powloki">Rozdz. 8 Powłoki</a>
+    </p>
+  </section>
+
+  <section class="entry" id="rama" data-keys="rama frames rygle slupy wezel sztywny">
+    <h2 class="term">
+      <a class="anchor" href="#rama">Rama</a>
+      <span class="en">[EN: frame]</span>
+    </h2>
+    <p class="def">
+      Ustrój złożony z belek (rygli) i słupów połączonych węzłami zdolnymi do przenoszenia momentów zginających.
+      Rama może pełnić funkcję nośną i usztywniającą, a jej zachowanie zależy od podatności węzłów i stężeń.
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-4-zlozone-ustroje-zginane.html#ramy-plaskie">Rozdz. 4.1 Ramy płaskie</a>,
+      <a href="rozdzial-4-zlozone-ustroje-zginane.html#ramy-przestrzenne">Rozdz. 4.2 Ramy przestrzenne</a>
+    </p>
+  </section>
+
+  <section class="entry" id="ruszt" data-keys="ruszt grid belki krzyzowe siatka">
+    <h2 class="term">
+      <a class="anchor" href="#ruszt">Ruszt</a>
+      <span class="en">[EN: grid]</span>
+    </h2>
+    <p class="def">
+      Układ belek krzyżujących się w dwóch kierunkach, przenoszący obciążenia w sposób przestrzenny lub płytowy (w zależności od detali).
+      Ruszt stanowi formę pośrednią między układem belek a pracą płyty.
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-3-poziome-elementy-zginane.html#ruszty">Rozdz. 3.2 Ruszty</a>
+    </p>
+  </section>
+
+  <section class="entry" id="schemat" data-keys="schemat statyczny podpory przegub utwierdzenie">
+    <h2 class="term">
+      <a class="anchor" href="#schemat">Schemat statyczny</a>
+      <span class="en">[EN: structural scheme]</span>
+    </h2>
+    <p class="def">
+      Idealizowany model pracy elementu lub ustroju, określający podpory, połączenia i sposób przekazywania obciążeń.
+      Ułatwia ocenę przebiegu sił wewnętrznych i porównanie wariantów rozwiązań.
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-1-wprowadzenie.html#schematy-statyczne">Rozdz. 1.3 Schematy statyczne</a>
+    </p>
+  </section>
+
+  <section class="entry" id="system" data-keys="system konstrukcyjny klasyfikacja mechanizm">
+    <h2 class="term">
+      <a class="anchor" href="#system">System konstrukcyjny</a>
+      <span class="en">[EN: structural system]</span>
+    </h2>
+    <p class="def">
+      Zasada organizacji i współpracy elementów nośnych w celu przenoszenia obciążeń (mechanizm pracy + układ).
+      Termin ma charakter ogólny i służy do klasyfikacji (np. prętowe, powierzchniowe, wiotkie, objętościowe).
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-1-wprowadzenie.html#pojeciapodstawowe">Rozdz. 1.1 Pojęcia podstawowe</a>
+    </p>
+  </section>
+
+  <section class="entry" id="tarcza" data-keys="tarcza plate shear wall usztywnienie">
+    <h2 class="term">
+      <a class="anchor" href="#tarcza">Tarcza (ściana/tarcza usztywniająca)</a>
+      <span class="en">[EN: plate / shear wall]</span>
+    </h2>
+    <p class="def">
+      Element płaski pracujący głównie w swojej płaszczyźnie (ściskanie/rozciąganie/ścinanie), często jako element usztywniający budynek.
+      W praktyce tarcze stabilizują układ prętowy (np. ramy) i przenoszą oddziaływania poziome (wiatr, sejsmika).
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-2-pionowe-elementy-sciskane.html#tarcze">Rozdz. 2.2 Tarcze</a>
+    </p>
+  </section>
+
+  <section class="entry" id="ustroj" data-keys="ustroj nosny konstrukcja realizacja">
+    <h2 class="term">
+      <a class="anchor" href="#ustroj">Ustrój nośny</a>
+      <span class="en">[EN: load-bearing structure]</span>
+    </h2>
+    <p class="def">
+      Konkretna, „obiektowa” postać systemu konstrukcyjnego w danym budynku: zestaw rzeczywistych elementów nośnych, ich materiałów i połączeń.
+      W skrypcie: <em>system</em> opisuje zasadę, a <em>ustrój</em> — realizację tej zasady.
+    </p>
+    <p class="meta">
+      Zob. też: <a href="#system">System konstrukcyjny</a>. Czytaj w e-skrypcie:
+      <a href="rozdzial-1-wprowadzenie.html#pojeciapodstawowe">Rozdz. 1.1 Pojęcia podstawowe</a>
+    </p>
+  </section>
+
+  <section class="entry" id="objetosciowe" data-keys="systemy objetosciowe aktywne masa masywne grawitacyjne">
+    <h2 class="term">
+      <a class="anchor" href="#objetosciowe">Systemy objętościowe (aktywne masą)</a>
+      <span class="en">[EN: mass-active / massive structures]</span>
+    </h2>
+    <p class="def">
+      Konstrukcje, których nośność i sztywność wynikają przede wszystkim z <strong>masy</strong> i <strong>ciągłości materiału</strong> (praca objętościowa),
+      a nie z ukształtowania wyspecjalizowanych układów prętowych lub cienkościennych form nośnych. Typowe są elementy masywne (mury, ściany, bloki oporowe),
+      często o dominującej pracy ściskanej i ścinanej.
+    </p>
+    <p class="meta">
+      Czytaj w e-skrypcie:
+      <a href="rozdzial-1-wprowadzenie.html#mechanizmy-pracy">Wprowadzenie — mechanizmy pracy</a>,
+      <a href="rozdzial-2-pionowe-elementy-sciskane.html">Rozdz. 2 Ściany/tarcze</a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="meta">
+      Uwaga redakcyjna: jeśli w e-skrypcie używasz nazw angielskich, możesz je trzymać w nawiasach kwadratowych jak wyżej, dla spójności.
+      Anchory (np. <code class="inline">#objetosciowe</code>) ułatwiają cytowanie w materiałach dydaktycznych.
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Proste filtrowanie haseł po wpisanym tekście (tytuł + definicja + słowa kluczowe)
+  const q = document.getElementById('q');
+  const entries = Array.from(document.querySelectorAll('.entry'));
+
+  function norm(s){ return (s || '').toLowerCase().trim(); }
+
+  q.addEventListener('input', () => {
+    const term = norm(q.value);
+    entries.forEach(e => {
+      const hay = norm(e.innerText + ' ' + (e.dataset.keys || ''));
+      e.classList.toggle('hide', term && !hay.includes(term));
+    });
+  });
+</script>
+</body>
+</html>
