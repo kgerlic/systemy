@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>1.5 Modele obliczeniowe i schematy statyczne — e-skrypt</title>
+  <meta name="description"
+        content="Punkt 1.5 e-skryptu: modele obliczeniowe i schematy statyczne – idealizacja konstrukcji, podpory, stopnie swobody, modele prętowe i powierzchniowe oraz typowe schematy." />
+
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="stylesheet" href="../../assets/css/chapter.css" />
+</head>
+
+<body>
+
+<header class="app-header">
+  <div class="container">
+    <div class="brand">
+      <div class="brand-mark">
+        <img src="../../assets/img/logo/logo-sk.png"
+             alt="Systemy konstrukcyjne – logo">
+      </div>
+      <div class="brand-text">
+        <h1 class="title">Systemy konstrukcyjne</h1>
+        <p class="subtitle">Rozdział 1 · Podstawy</p>
+      </div>
+    </div>
+
+    <div class="meta">
+      <a class="chip chip-link" href="../../index.html">Strona główna</a>
+      <a class="chip chip-link" href="../index.html">Spis rozdziałów</a>
+      <button id="themeToggle" class="chip chip-button" type="button">
+        Motyw: jasny
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="chapter">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Okruszki">
+    <a href="../../index.html">Start</a>
+    <span class="sep">/</span>
+    <a href="../index.html">Rozdziały</a>
+    <span class="sep">/</span>
+    <a href="index.html">Rozdział 1</a>
+    <span class="sep">/</span>
+    <span aria-current="page">1.5</span>
+  </nav>
+
+  <!-- Tytuł -->
+  <header>
+    <h1>1.5. Modele obliczeniowe i schematy statyczne</h1>
+    <p class="lead">
+      Aby opisać pracę konstrukcji, stosuje się modele idealizowane.
+      W tym punkcie wyjaśniono, czym jest schemat statyczny, jakie znaczenie ma sposób podparcia,
+      oraz jak dobiera się poziom uproszczenia (model prętowy, powierzchniowy, bryłowy)
+      w zależności od problemu projektowego.
+    </p>
+  </header>
+
+  <div class="callout note">
+    <div class="callout-title">Najważniejsza zasada</div>
+    <p>
+      <strong>Model nie jest kopią rzeczywistości.</strong>
+      Jest narzędziem, które celowo upraszcza konstrukcję tak,
+      aby uchwycić dominujący mechanizm pracy i drogę przekazywania sił.
+    </p>
+  </div>
+
+  <section id="idealizacja">
+    <h2>Idealizacja konstrukcji</h2>
+    <p>
+      Idealizacja polega na zastąpieniu rzeczywistego obiektu uproszczonym układem elementów,
+      w którym pomija się cechy drugorzędne (detale połączeń, lokalne nierówności, nieciągłości),
+      a zachowuje informacje kluczowe dla globalnej pracy konstrukcji.
+    </p>
+    <p>
+      W praktyce dydaktycznej i koncepcyjnej najczęściej analizuje się:
+      elementy prętowe (belki, słupy), elementy powierzchniowe (płyty, ściany/tarcze)
+      oraz układy złożone (ramy, kratownice, powłoki).
+    </p>
+  </section>
+
+  <section id="schemat-statyczny">
+    <h2>Schemat statyczny</h2>
+    <p>
+      <strong>Schemat statyczny</strong> opisuje element lub ustrój przez:
+      geometrię, sposób podparcia (więzy), sposób obciążenia
+      oraz podstawowe założenia pracy (np. przeguby, utwierdzenia, ciągłość).
+    </p>
+    <p>
+      Zmiana schematu statycznego (np. dodanie podpory, zmiana przegubu na utwierdzenie)
+      prowadzi do zmiany reakcji oraz rozkładu sił wewnętrznych.
+      Dlatego schemat statyczny jest pierwszym „językiem”, którym opisuje się konstrukcję.
+    </p>
+  </section>
+
+  <section id="podpory">
+    <h2>Podpory i więzy</h2>
+    <p>
+      Podpory realizują <strong>więzy</strong>, czyli ograniczenia ruchu (przemieszczeń i obrotów).
+      Każdy typ podpory blokuje określone stopnie swobody, a to wpływa na reakcje oraz pracę elementu.
+    </p>
+
+    <div class="callout note">
+      <div class="callout-title">Przykładowe typy podpór (ujęcie koncepcyjne)</div>
+      <ul>
+        <li><strong>Przegub</strong> – blokuje przemieszczenia, dopuszcza obrót.</li>
+        <li><strong>Utwierdzenie</strong> – blokuje przemieszczenia i obrót.</li>
+        <li><strong>Podpora przesuwną (rolka)</strong> – blokuje przemieszczenie w jednym kierunku, dopuszcza ruch w drugim.</li>
+      </ul>
+    </div>
+
+    <!-- Jeśli w PDF masz rysunek podpór – wstaw go tutaj jako figure (analogicznie do 1.3) -->
+    <!--
+    <section class="figure-block">
+      <figure>
+        <img
+          src="../../assets/img/chapters/01/fig-01-01-02.png"
+          alt="Podstawowe typy podpór i więzów w schematach statycznych"
+          loading="lazy"
+        />
+        <figcaption>
+          Rys. 1.5. Przykładowe typy podpór (więzów) stosowane w schematach statycznych.
+        </figcaption>
+      </figure>
+    </section>
+    -->
+  </section>
+
+  <section id="stopnie-swobody">
+    <h2>Stopnie swobody</h2>
+    <p>
+      Opis więzów jest wygodny poprzez pojęcie <strong>stopni swobody</strong>
+      (możliwych przemieszczeń i obrotów). Dla uproszczonych modeli płaskich rozpatruje się
+      zwykle dwa przemieszczenia oraz obrót w węźle, natomiast w modelach przestrzennych – trzy
+      przemieszczenia i trzy obroty.
+    </p>
+    <p>
+      W analizie koncepcyjnej kluczowe jest rozumienie, że:
+      im więcej więzów (ograniczeń ruchu), tym inaczej rozkładają się reakcje
+      i siły wewnętrzne, a ustrój może stać się statycznie niewyznaczalny.
+    </p>
+  </section>
+
+  <section id="modele">
+    <h2>Modele prętowe, powierzchniowe i bryłowe</h2>
+    <p>
+      W zależności od geometrii i dominującego mechanizmu pracy dobiera się typ modelu:
+    </p>
+    <ul>
+      <li>
+        <strong>Model prętowy</strong> – dla belek, słupów, ram i kratownic
+        (gdy jeden wymiar jest dominujący, a przekrój można opisać w przybliżeniu).
+      </li>
+      <li>
+        <strong>Model powierzchniowy</strong> – dla płyt, tarcz, ścian, powłok
+        (gdy element pracuje w swojej powierzchni lub przez ugięcia na dużej rozpiętości).
+      </li>
+      <li>
+        <strong>Model bryłowy</strong> – dla elementów masywnych, detali, stref podporowych
+        (gdy istotne są efekty przestrzenne i lokalne koncentracje naprężeń).
+      </li>
+    </ul>
+    <p>
+      W e-skrypcie dominują modele prętowe i powierzchniowe – jako najbardziej użyteczne
+      w analizie ustrojów na poziomie koncepcji architektonicznej.
+    </p>
+  </section>
+
+  <section id="typowe-schematy">
+    <h2>Typowe schematy statyczne (elementy odniesienia)</h2>
+    <p>
+      Dalsze rozdziały wielokrotnie odwołują się do kilku podstawowych schematów odniesienia:
+      belki swobodnie podpartej, wspornika, układu ciągłego (wieloprzęsłowego),
+      ramy oraz tarczy/ściany usztywniającej.
+    </p>
+    <p>
+      W praktyce koncepcyjnej warto umieć:
+      rozpoznawać schemat w budynku, przewidywać drogę sił,
+      oraz rozumieć, które decyzje (np. lokalizacja podpór) dominują w pracy ustroju.
+    </p>
+  </section>
+
+  <section id="podsumowanie">
+    <h2>Podsumowanie</h2>
+    <p>
+      Schemat statyczny i model obliczeniowy to narzędzia, które łączą opis elementu,
+      ustroju i systemu. W kolejnych rozdziałach będą one wykorzystywane do porównywania
+      systemów konstrukcyjnych i wyjaśniania różnic w ich pracy.
+    </p>
+  </section>
+
+  <!-- Nawigacja -->
+  <div class="chapter-actions" style="margin-top: 24px;">
+    <a class="pill" href="01-04-element-ustroj-system.html">← 1.4</a>
+    <a class="pill" href="01-06-podsumowanie.html">Przejdź do 1.6 →</a>
+  </div>
+
+</main>
+
+<footer class="app-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-title">© 2025 Krzysztof Gerlic — e-skrypt dydaktyczny</div>
+      <div class="footer-note">Wydział Architektury, Politechnika Śląska</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+
+    function setTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (btn) btn.textContent = theme === 'dark' ? 'Motyw: ciemny' : 'Motyw: jasny';
+    }
+
+    const saved = localStorage.getItem('theme');
+    setTheme(saved === 'dark' ? 'dark' : 'light');
+
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
