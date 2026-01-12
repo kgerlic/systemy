@@ -262,8 +262,9 @@ html[data-theme="dark"] figure.ill figcaption{
   color: rgba(18,19,24,.80);
 }
 
+/* Numeracja ilustracji — zawsze czarna (czytelna na jasnym tle karty) */
 .fig-ref{
-  color: var(--muted);
+  color: #000;
   font-weight: 650;
 }
 

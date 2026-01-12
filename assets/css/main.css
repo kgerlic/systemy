@@ -643,3 +643,16 @@ html[data-theme="dark"] .table-wrap *{
     font: 14pt/1.4 serif;
   }
 }
+
+.fig-ref {
+  font-weight: 600;
+  color: var(--fig-ref-color);
+}
+
+:root {
+  --fig-ref-color: #555; /* jasny motyw */
+}
+
+[data-theme="dark"] {
+  --fig-ref-color: #bbb; /* ciemny motyw */
+}

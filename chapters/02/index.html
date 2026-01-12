@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="pl">
+<html lang="pl" data-theme="light">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Systemy objętościowe (aktywne masą) — e-skrypt</title>
   <meta name="description"
-        content="Rozdział 2 e-skryptu: systemy objętościowe (aktywne masą, mass-active) – najstarsza logika przenoszenia obciążeń, ściskanie rozproszone w objętości, stateczność geometryczna oraz cechy i ograniczenia." />
+        content="Rozdział 2 e-skryptu: systemy objętościowe (aktywne masą, mass-active) – ściskanie rozproszone w objętości, stateczność konstrukcji masywnych, cechy, przykłady oraz megabloki betonowe." />
 
   <link rel="stylesheet" href="../../assets/css/main.css" />
   <link rel="stylesheet" href="../../assets/css/chapter.css" />
@@ -52,21 +52,14 @@
   <header>
     <h1>Rozdział 2. Systemy objętościowe (aktywne masą)</h1>
     <p class="lead">
-      Rozdział wprowadza systemy objętościowe (mass-active, volumetric structural systems) jako historycznie
-      najstarszy i koncepcyjnie najbardziej pierwotny sposób przenoszenia obciążeń w budownictwie.
-      Omawia ich mechanizm pracy, logikę stateczności oraz konsekwencje projektowe.
+      Systemy objętościowe (<em>mass-active, volumetric structural systems</em>) należą do najstarszych rozwiązań
+      konstrukcyjnych. Ich praca opiera się na ściskaniu rozproszonym w objętości materiału oraz na stateczności
+      wynikającej z geometrii i masy ustroju.
     </p>
   </header>
 
   <!-- Treść rozdziału -->
   <section aria-labelledby="r2-tekst">
-    <h2 id="r2-tekst">Charakterystyka</h2>
-
-    <p>
-      Systemy objętościowe, określane również jako systemy aktywne masą (<em>mass-active</em>),
-      pracują głównie na ściskanie rozproszone w całej objętości elementu. Naprężenia mają charakter ciągły
-      (nie są skupione w węzłach lub połączeniach), a droga obciążeń przebiega przez materiał „masywny”.
-    </p>
 
     <figure class="ill">
       <img src="../../assets/img/ch02/fig-02-01-01.png"
@@ -77,48 +70,81 @@
       </figcaption>
     </figure>
 
-    <div class="callout">
-      <div class="callout-title">Najprostszy model intuicyjny</div>
-      <p>
-        Najprostszą formą konstrukcji objętościowej jest pryzma powstająca przez układanie na sobie nieobrobionych
-        kamieni. Brak połączeń i nieregularna geometria powodują, że elementy przekazują obciążenia głównie poprzez
-        bezpośredni kontakt i tarcie. Stateczność zależy od kąta nachylenia ścian (kąta zsypu) oraz szerokości podstawy,
-        co ogranicza możliwą wysokość.
-      </p>
-    </div>
+    <h2 id="r2-tekst">Charakterystyka</h2>
 
     <p>
-      Uporządkowanie warstw oraz zwiększenie powierzchni styku pomiędzy elementami umożliwia formowanie
-      bardziej stromych i stabilnych struktur, takich jak ściany i słupy. W praktyce kluczowe są tu proporcje geometryczne
-      i warunki podparcia, które decydują o stateczności całej bryły.
+      Najprostszą formą konstrukcji objętościowej jest pryzma utworzona przez układanie na sobie nieobrobionych kamieni.
+      Brak połączeń oraz nieregularna geometria powodują, że elementy przekazują obciążenia głównie poprzez bezpośredni
+      kontakt i tarcie. Ciężar górnych warstw wywołuje ściskanie dolnych, a jednocześnie sprzyja ich rozsuwaniu na boki
+      lub toczeniu po powierzchniach zewnętrznych. Stateczność takiej konstrukcji zależy od kąta nachylenia ścian
+      (kąta zsypu) oraz szerokości podstawy, co w praktyce ogranicza możliwą do uzyskania wysokość.
+    </p>
+
+    <p>
+      Uporządkowanie warstw, wprowadzenie poziomych spoin prostopadłych do kierunku działania siły ciężkości oraz
+      zwiększenie powierzchni styku pomiędzy elementami umożliwia formowanie bardziej stromych i stabilnych struktur,
+      takich jak ściany i słupy.
+    </p>
+
+    <p>
+      W systemach objętościowych podstawowym mechanizmem przenoszenia obciążeń jest ściskanie rozproszone w całej
+      objętości elementu. Naprężenia mają charakter ciągły i nie są skupione w węzłach ani połączeniach.
+      Stateczność takich konstrukcji zależy przede wszystkim od wewnętrznej równowagi geometrycznej, symetrii obciążeń,
+      odpowiedniej szerokości podstawy oraz odporności na oddziaływania poziome.
     </p>
 
     <h3>Typowe cechy</h3>
-    <ul>
-      <li>nośność i sztywność wynikają głównie z ilości i ciągłości materiału, a nie z „wyspecjalizowanego” kształtu,</li>
-      <li>znaczna grubość elementów i masywna, pełna forma,</li>
-      <li>brak wyraźnie wyodrębnionych elementów osiowych (w porównaniu z układami prętowymi),</li>
-      <li>droga obciążeń ma charakter rozproszony – praca odbywa się w całej objętości elementu.</li>
-    </ul>
+    <p>
+      Systemy aktywne masą charakteryzują się tym, że ich nośność i sztywność wynikają głównie z ilości oraz ciągłości
+      materiału, a nie z jego wyspecjalizowanego kształtowania. Do typowych cech tych systemów należą znaczna grubość
+      elementów, masywna, pełna forma oraz brak wyraźnie wyodrębnionych elementów osiowych. Droga obciążeń ma w nich
+      charakter rozproszony, a praca konstrukcji odbywa się w całej objętości elementu.
+    </p>
 
     <h3>Przykłady i zastosowania</h3>
     <p>
       Do tej grupy zalicza się m.in. mury i ściany nośne z kamienia lub cegły, masywne ściany i tarcze żelbetowe,
-      bloki fundamentowe oraz konstrukcje oporowe. Systemy te cechują się dużą trwałością, wysoką odpornością na ogień
-      oraz znaczną zdolnością akumulacji cieplnej.
+      bloki fundamentowe oraz konstrukcje oporowe. Systemy objętościowe cechują się dużą trwałością, wysoką odpornością
+      na ogień oraz znaczną zdolnością akumulacji cieplnej. Jednocześnie wiążą się z dużym ciężarem własnym, ograniczonymi
+      rozpiętościami oraz mniejszą swobodą kształtowania przestrzeni, co istotnie wpływa na możliwości ich zastosowania
+      w architekturze.
     </p>
+
+    <h3>Megabloki betonowe</h3>
+    <p>
+      Współczesną odmianą myślenia „masą” są wielkowymiarowe prefabrykaty – megabloki betonowe. W przeciwieństwie do
+      klasycznego muru z drobnowymiarowych elementów, megabloki integrują znaczną objętość materiału w jednym komponencie,
+      co upraszcza drogę obciążeń i ogranicza liczbę styków pomiędzy elementami. Z punktu widzenia pracy statycznej
+      pozostają jednak rozwiązaniem typowo objętościowym: dominują w nich naprężenia ściskające, a ich bezpieczne
+      zastosowanie wymaga kontroli stateczności globalnej oraz warunków podparcia i posadowienia.
+    </p>
+
+    <p>
+      Megabloki betonowe stosuje się m.in. w konstrukcjach oporowych i hydrotechnicznych, w elementach zabezpieczeń brzegowych,
+      a także w układach wymagających dużej odporności na uderzenia lub erozję. W architekturze mogą pełnić rolę masywnych
+      podstaw, cokołów, ścian oporowych lub elementów krajobrazowych, w których istotna jest zarówno nośność, jak i świadoma
+      ekspozycja „ciężaru” jako środka wyrazu.
+    </p>
+
+    <figure class="ill">
+      <img src="../../assets/img/ch02/fig-02-01-02.png"
+           alt="Ryc. 2.2. Megabloki betonowe"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 2.2.</span> Megabloki betonowe.
+      </figcaption>
+    </figure>
 
     <h3>Ograniczenia i współczesne hybrydy</h3>
     <p>
-      Jednocześnie systemy objętościowe wiążą się z dużym ciężarem własnym, ograniczonymi rozpiętościami oraz
-      mniejszą swobodą kształtowania przestrzeni. Z tego powodu we współczesnym budownictwie rzadko występują
-      w postaci „czystej” i najczęściej funkcjonują jako część układów hybrydowych, współpracując z systemami prętowymi
-      lub powierzchniowymi.
+      Ze względu na wymienione ograniczenia systemy objętościowe rzadko występują we współczesnym budownictwie w postaci
+      „czystej”. Najczęściej funkcjonują jako część układów hybrydowych, współpracując z systemami prętowymi lub
+      powierzchniowymi, które przejmują rozpiętości i umożliwiają większą swobodę kształtowania przestrzeni.
     </p>
 
     <p>
-      W kolejnych rozdziałach zagadnienia ściskania i stateczności zostaną rozwinięte poprzez analizę pojedynczych
-      elementów pionowych oraz ustrojów, w których mechanizm ten odgrywa kluczową rolę.
+      W kolejnych rozdziałach zagadnienia ściskania i stateczności zostaną rozwinięte poprzez analizę pojedynczych elementów
+      pionowych oraz ustrojów, w których mechanizm ten odgrywa kluczową rolę.
     </p>
   </section>
 
