@@ -50,32 +50,38 @@
   --lh-tight: 1.25;
 }
 
-/* Dark mode – nadal „akademicko”, bez czerni absolutnej */
+/* Dark mode – tło ciemnoszare, wyróżnienia czarne */
 html[data-theme="dark"]{
-  --bg: #0f1116;
-  --surface: rgba(255,255,255,.06);
-  --surface2: rgba(255,255,255,.08);
-  --surface3: rgba(255,255,255,.04);
+  /* tło – ciemny szary */
+  --bg: #2b2d31;
 
+  /* wyróżnienia – czarne / prawie czarne „karty” */
+  --surface: #0b0c0e;   /* podstawowa karta (chip, tile, card) */
+  --surface2: #111216;  /* hover / podbitka */
+  --surface3: #0e0f12;  /* dodatkowa warstwa */
+
+  /* tekst – bez zmian, ale lekko „zmiękczony” */
   --text: rgba(255,255,255,.92);
   --muted: rgba(255,255,255,.70);
   --muted2: rgba(255,255,255,.55);
 
+  /* obramowania – delikatne, ale czytelne na czerni */
   --border: rgba(255,255,255,.14);
   --border2: rgba(255,255,255,.10);
 
-  --shadow: 0 12px 28px rgba(0,0,0,.45);
-  --shadow2: 0 8px 18px rgba(0,0,0,.38);
+  /* cienie – w dark lepiej subtelniej, żeby nie robić „dymu” */
+  --shadow: 0 12px 28px rgba(0,0,0,.40);
+  --shadow2: 0 8px 18px rgba(0,0,0,.32);
 
+  /* akcent – możesz zostawić jak było */
   --accent: #9bb3ff;
   --accent2: rgba(155,179,255,.16);
 
-  /* ilustracje zostają białe */
+  /* ilustracje i tabele jako jasna karta – bez zmian */
   --figure-bg: #ffffff;
-  --figure-border: rgba(255,255,255,.18);
-
-  /* tabele jako jasna karta (zawsze) – bez zmian */
+  --figure-border: rgba(0,0,0,.10);
 }
+
 
 /* -------------------------
    Base / reset
