@@ -18,8 +18,7 @@
   <div class="container">
     <div class="brand">
       <div class="brand-mark">
-        <img src="../../assets/img/logo/logo-sk.png"
-             alt="Systemy konstrukcyjne – logo">
+        <img src="../../assets/img/logo/logo-sk.png" alt="Systemy konstrukcyjne – logo">
       </div>
       <div class="brand-text">
         <h1 class="title">Systemy konstrukcyjne</h1>
@@ -30,9 +29,7 @@
     <div class="meta">
       <a class="chip chip-link" href="../../index.html">Strona główna</a>
       <a class="chip chip-link" href="../index.html">Spis rozdziałów</a>
-      <button id="themeToggle" class="chip chip-button" type="button">
-        Motyw: jasny
-      </button>
+      <button id="themeToggle" class="chip chip-button" type="button">Motyw: jasny</button>
     </div>
   </div>
 </header>
@@ -56,13 +53,13 @@
     <p class="lead">
       Aby opisać pracę konstrukcji, stosuje się modele idealizowane.
       W tym punkcie wyjaśniono, czym jest schemat statyczny, jakie znaczenie ma sposób podparcia,
-      oraz jak dobiera się poziom uproszczenia (model prętowy, powierzchniowy, bryłowy)
+      oraz jak dobiera się poziom uproszczenia (model prętowy, powierzchniowy)
       w zależności od problemu projektowego.
     </p>
   </header>
 
   <div class="callout note">
-    <div class="callout-title">Najważniejsza zasada</div>
+    <div class="callout-title">Uwaga</div>
     <p>
       <strong>Model nie jest kopią rzeczywistości.</strong>
       Jest narzędziem, które celowo upraszcza konstrukcję tak,
@@ -73,124 +70,145 @@
   <section id="idealizacja">
     <h2>Idealizacja konstrukcji</h2>
     <p>
-      Idealizacja polega na zastąpieniu rzeczywistego obiektu uproszczonym układem elementów,
-      w którym pomija się cechy drugorzędne (detale połączeń, lokalne nierówności, nieciągłości),
-      a zachowuje informacje kluczowe dla globalnej pracy konstrukcji.
+      Analiza i projektowanie konstrukcji wymagają stosowania uproszczonych modeli, które pozwalają
+      opisać rzeczywisty obiekt w sposób czytelny i uporządkowany. Modele te nie odzwierciedlają wszystkich
+      cech fizycznych konstrukcji, lecz koncentrują się na właściwościach istotnych z punktu widzenia
+      przenoszenia obciążeń oraz współpracy elementów. :contentReference[oaicite:2]{index=2}
     </p>
     <p>
-      W praktyce dydaktycznej i koncepcyjnej najczęściej analizuje się:
-      elementy prętowe (belki, słupy), elementy powierzchniowe (płyty, ściany/tarcze)
-      oraz układy złożone (ramy, kratownice, powłoki).
+      W praktyce dydaktycznej i koncepcyjnej najczęściej analizuje się elementy prętowe (belki, słupy)
+      oraz elementy powierzchniowe (płyty, ściany/tarcze), a także układy złożone (ramy, kratownice, powłoki).
     </p>
   </section>
 
-  <section id="schemat-statyczny">
-    <h2>Schemat statyczny</h2>
-    <p>
-      <strong>Schemat statyczny</strong> opisuje element lub ustrój przez:
-      geometrię, sposób podparcia (więzy), sposób obciążenia
-      oraz podstawowe założenia pracy (np. przeguby, utwierdzenia, ciągłość).
-    </p>
-    <p>
-      Zmiana schematu statycznego (np. dodanie podpory, zmiana przegubu na utwierdzenie)
-      prowadzi do zmiany reakcji oraz rozkładu sił wewnętrznych.
-      Dlatego schemat statyczny jest pierwszym „językiem”, którym opisuje się konstrukcję.
-    </p>
-  </section>
-
+  <!-- PODPORY + RYC. 6-9 -->
   <section id="podpory">
     <h2>Podpory i więzy</h2>
     <p>
-      Podpory realizują <strong>więzy</strong>, czyli ograniczenia ruchu (przemieszczeń i obrotów).
-      Każdy typ podpory blokuje określone stopnie swobody, a to wpływa na reakcje oraz pracę elementu.
+      Jednym z podstawowych elementów modelu konstrukcji są <strong>podpory</strong> (supports).
+      Sposób zamocowania, połączenia lub podparcia elementów decyduje o rodzaju sił wewnętrznych
+      występujących w układzie. Podpora jest miejscem, w którym element przekazuje siły na kolejne części konstrukcji. :contentReference[oaicite:3]{index=3}
+    </p>
+    <p>
+      Niektóre rodzaje podpór dopuszczają określone przemieszczenia lub obrót elementu, inne natomiast
+      ograniczają je całkowicie. Ograniczenie możliwości przemieszczeń i obrotów określa się jako
+      <strong>utrata stopni swobody</strong>. Na tej podstawie wyróżnia się podpory przegubowe, przesuwne oraz sztywne. :contentReference[oaicite:4]{index=4}
+    </p>
+    <p>
+      W podporach występują <strong>reakcje podporowe</strong>, czyli siły powstające w odpowiedzi na działające obciążenia.
+      W zależności od rodzaju podpory mogą występować od jednej do trzech reakcji: pionowa, pozioma oraz moment obrotowy. :contentReference[oaicite:5]{index=5}
     </p>
 
-    <div class="callout note">
-      <div class="callout-title">Przykładowe typy podpór (ujęcie koncepcyjne)</div>
-      <ul>
-        <li><strong>Przegub</strong> – blokuje przemieszczenia, dopuszcza obrót.</li>
-        <li><strong>Utwierdzenie</strong> – blokuje przemieszczenia i obrót.</li>
-        <li><strong>Podpora przesuwną (rolka)</strong> – blokuje przemieszczenie w jednym kierunku, dopuszcza ruch w drugim.</li>
-      </ul>
-    </div>
+    <section class="figure-block" aria-label="Ryciny: typy podpór">
+      <figure class="ill">
+        <img src="../../assets/img/ch01/fig-01-05-01.png"
+             alt="Ryc. 6. Podpora przegubowa (pinned support)"
+             loading="lazy">
+        <figcaption><span class="fig-ref">Ryc. 6.</span> Podpora przegubowa (pinned support).</figcaption>
+      </figure>
 
-    <!-- Jeśli w PDF masz rysunek podpór – wstaw go tutaj jako figure (analogicznie do 1.3) -->
-    <!--
-    <section class="figure-block">
-      <figure>
-        <img
-          src="../../assets/img/chapters/01/fig-01-01-02.png"
-          alt="Podstawowe typy podpór i więzów w schematach statycznych"
-          loading="lazy"
-        />
-        <figcaption>
-          Rys. 1.5. Przykładowe typy podpór (więzów) stosowane w schematach statycznych.
-        </figcaption>
+      <figure class="ill">
+        <img src="../../assets/img/ch01/fig-01-05-02.png"
+             alt="Ryc. 7. Podpora przegubowo-przesuwna (roller support)"
+             loading="lazy">
+        <figcaption><span class="fig-ref">Ryc. 7.</span> Podpora przegubowo-przesuwna (roller support).</figcaption>
+      </figure>
+
+      <figure class="ill">
+        <img src="../../assets/img/ch01/fig-01-05-03.png"
+             alt="Ryc. 8. Podpora przesuwna – teleskopowa (sliding support)"
+             loading="lazy">
+        <figcaption><span class="fig-ref">Ryc. 8.</span> Podpora przesuwna – teleskopowa (sliding support).</figcaption>
+      </figure>
+
+      <figure class="ill">
+        <img src="../../assets/img/ch01/fig-01-05-04.png"
+             alt="Ryc. 9. Podpora sztywna (fixed support)"
+             loading="lazy">
+        <figcaption><span class="fig-ref">Ryc. 9.</span> Podpora sztywna (fixed support).</figcaption>
       </figure>
     </section>
-    -->
+  </section>
+
+  <!-- SCHEMAT STATYCZNY + RYC. 10-11 -->
+  <section id="schemat-statyczny">
+    <h2>Schemat statyczny</h2>
+    <p>
+      Na bazie przyjętych podpór i obciążeń buduje się <strong>schemat statyczny</strong> (structural diagram).
+      Jest to jedno z podstawowych narzędzi opisu konstrukcji, przedstawiające obiekt lub jego fragment
+      w postaci uproszczonego układu elementów nośnych, podpór oraz działających obciążeń.
+      Schemat statyczny abstrahuje od detali materiałowych i wykonawczych, a jego celem jest ukazanie
+      drogi obciążeń, sposobu podparcia oraz relacji pomiędzy elementami. :contentReference[oaicite:6]{index=6}
+    </p>
+    <p>
+      Analiza konstrukcji rozpoczyna się zwykle od określenia schematu statycznego, przedstawianego
+      w formie graficznej – z układem obciążeń oraz reakcji w punktach podparcia. Umożliwia to wyznaczanie
+      sił wewnętrznych, naprężeń i ugięć, a w konsekwencji ocenę bezpieczeństwa i użytkowalności. :contentReference[oaicite:7]{index=7}
+    </p>
+
+    <section class="figure-block" aria-label="Ryciny: schemat obciążenia i obciążenie rozłożone">
+      <figure class="ill">
+        <img src="../../assets/img/ch01/fig-01-05-06.png"
+             alt="Ryc. 10. Schemat obciążenia belki"
+             loading="lazy">
+        <figcaption><span class="fig-ref">Ryc. 10.</span> Schemat obciążenia belki.</figcaption>
+      </figure>
+
+      <figure class="ill">
+        <img src="../../assets/img/ch01/fig-01-05-07.png"
+             alt="Ryc. 11. Obciążenie rozłożone"
+             loading="lazy">
+        <figcaption><span class="fig-ref">Ryc. 11.</span> Obciążenie rozłożone (continuous load).</figcaption>
+      </figure>
+    </section>
+
+    <p>
+      Schemat statyczny zawiera informacje dotyczące rodzaju obciążeń — ich charakteru (skupione lub rozłożone),
+      kierunku działania oraz miejsc przyłożenia. Siła skupiona stanowi symboliczną reprezentację obciążenia
+      działającego na niewielkim obszarze w porównaniu z wymiarami elementu. Obciążenie równomiernie rozłożone
+      najczęściej odnosi się do masy własnej elementu wraz z warstwami bezpośrednio z nim związanymi. :contentReference[oaicite:8]{index=8}
+    </p>
   </section>
 
   <section id="stopnie-swobody">
     <h2>Stopnie swobody</h2>
     <p>
-      Opis więzów jest wygodny poprzez pojęcie <strong>stopni swobody</strong>
-      (możliwych przemieszczeń i obrotów). Dla uproszczonych modeli płaskich rozpatruje się
-      zwykle dwa przemieszczenia oraz obrót w węźle, natomiast w modelach przestrzennych – trzy
-      przemieszczenia i trzy obroty.
-    </p>
-    <p>
-      W analizie koncepcyjnej kluczowe jest rozumienie, że:
-      im więcej więzów (ograniczeń ruchu), tym inaczej rozkładają się reakcje
-      i siły wewnętrzne, a ustrój może stać się statycznie niewyznaczalny.
+      Opis więzów jest wygodny poprzez pojęcie <strong>stopni swobody</strong> (możliwych przemieszczeń i obrotów).
+      Dla uproszczonych modeli płaskich rozpatruje się zwykle dwa przemieszczenia oraz obrót w węźle,
+      natomiast w modelach przestrzennych – trzy przemieszczenia i trzy obroty. :contentReference[oaicite:9]{index=9}
     </p>
   </section>
 
   <section id="modele">
-    <h2>Modele prętowe, powierzchniowe i bryłowe</h2>
+    <h2>Modele prętowe i powierzchniowe</h2>
     <p>
-      W zależności od geometrii i dominującego mechanizmu pracy dobiera się typ modelu:
+      Kolejnym poziomem uproszczenia jest model geometryczny elementu wynikający z relacji pomiędzy jego wymiarami.
+      W tym ujęciu wyróżnia się elementy prętowe (długość znacznie większa od pozostałych wymiarów) oraz elementy
+      powierzchniowe (grubość niewielka w porównaniu z pozostałymi wymiarami). Podział ma charakter modelowy i służy
+      uproszczeniu opisu pracy konstrukcji. :contentReference[oaicite:10]{index=10}
     </p>
     <ul>
-      <li>
-        <strong>Model prętowy</strong> – dla belek, słupów, ram i kratownic
-        (gdy jeden wymiar jest dominujący, a przekrój można opisać w przybliżeniu).
-      </li>
-      <li>
-        <strong>Model powierzchniowy</strong> – dla płyt, tarcz, ścian, powłok
-        (gdy element pracuje w swojej powierzchni lub przez ugięcia na dużej rozpiętości).
-      </li>
-      <li>
-        <strong>Model bryłowy</strong> – dla elementów masywnych, detali, stref podporowych
-        (gdy istotne są efekty przestrzenne i lokalne koncentracje naprężeń).
-      </li>
+      <li><strong>Model prętowy</strong> – belki, słupy, ramy, kratownice.</li>
+      <li><strong>Model powierzchniowy</strong> – płyty, ściany/tarcze, powłoki.</li>
+      <li><strong>Model bryłowy</strong> – elementy masywne, detale i strefy podporowe (gdy istotne są efekty lokalne).</li>
     </ul>
-    <p>
-      W e-skrypcie dominują modele prętowe i powierzchniowe – jako najbardziej użyteczne
-      w analizie ustrojów na poziomie koncepcji architektonicznej.
-    </p>
   </section>
 
   <section id="typowe-schematy">
     <h2>Typowe schematy statyczne (elementy odniesienia)</h2>
     <p>
-      Dalsze rozdziały wielokrotnie odwołują się do kilku podstawowych schematów odniesienia:
-      belki swobodnie podpartej, wspornika, układu ciągłego (wieloprzęsłowego),
-      ramy oraz tarczy/ściany usztywniającej.
-    </p>
-    <p>
-      W praktyce koncepcyjnej warto umieć:
-      rozpoznawać schemat w budynku, przewidywać drogę sił,
-      oraz rozumieć, które decyzje (np. lokalizacja podpór) dominują w pracy ustroju.
+      Przykładowymi schematami statycznymi są belka swobodnie podparta, wspornik, rama czy płyta oparta na podporach.
+      W praktyce koncepcyjnej warto umieć rozpoznawać schemat w budynku, przewidywać drogę sił i rozumieć,
+      które decyzje (np. lokalizacja podpór) dominują w pracy ustroju. :contentReference[oaicite:11]{index=11}
     </p>
   </section>
 
   <section id="podsumowanie">
     <h2>Podsumowanie</h2>
     <p>
-      Schemat statyczny i model obliczeniowy to narzędzia, które łączą opis elementu,
-      ustroju i systemu. W kolejnych rozdziałach będą one wykorzystywane do porównywania
-      systemów konstrukcyjnych i wyjaśniania różnic w ich pracy.
+      Modele i schematy stanowią wspólny język komunikacji pomiędzy architektem a konstruktorem.
+      Umożliwiają świadome podejmowanie decyzji projektowych na wczesnym etapie pracy oraz interpretację zachowania
+      konstrukcji bez konieczności wykonywania szczegółowych obliczeń. :contentReference[oaicite:12]{index=12}
     </p>
   </section>
 
@@ -205,7 +223,7 @@
 <footer class="app-footer">
   <div class="container footer-grid">
     <div>
-      <div class="footer-title">© 2025 Krzysztof Gerlic — e-skrypt dydaktyczny</div>
+      <div class="footer-title">© 2025 Krzysztof Gerlic — e-skrypt</div>
       <div class="footer-note">Wydział Architektury, Politechnika Śląska</div>
     </div>
   </div>

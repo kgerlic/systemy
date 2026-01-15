@@ -6,7 +6,7 @@
 
   <title>1.3 Podstawowe pojęcia mechaniczne — e-skrypt</title>
   <meta name="description"
-        content="Punkt 1.3 e-skryptu: podstawowe pojęcia mechaniczne w opisie konstrukcji – siły wewnętrzne, naprężenia, odkształcenia, nośność, stateczność i sztywność." />
+        content="Punkt 1.3 e-skryptu: podstawowe pojęcia mechaniczne w opisie konstrukcji – obciążenia i reakcje, nośność, stateczność, siły wewnętrzne, naprężenia i odkształcenia." />
 
   <link rel="stylesheet" href="../../assets/css/main.css" />
   <link rel="stylesheet" href="../../assets/css/chapter.css" />
@@ -18,8 +18,7 @@
   <div class="container">
     <div class="brand">
       <div class="brand-mark">
-        <img src="../../assets/img/logo/logo-sk.png"
-             alt="Systemy konstrukcyjne – logo">
+        <img src="../../assets/img/logo/logo-sk.png" alt="Systemy konstrukcyjne – logo">
       </div>
       <div class="brand-text">
         <h1 class="title">Systemy konstrukcyjne</h1>
@@ -54,39 +53,82 @@
   <header>
     <h1>1.3. Podstawowe pojęcia mechaniczne</h1>
     <p class="lead">
-      Opis konstrukcji wymaga języka pojęć mechanicznych.
-      W tym punkcie wprowadzono podstawowe rozróżnienia
-      stosowane w dalszych rozdziałach e-skryptu.
+      Opis działania konstrukcji wymaga posługiwania się precyzyjnym, ale jednocześnie intuicyjnym
+      językiem pojęć. W tym punkcie zebrano podstawowe rozróżnienia wykorzystywane w dalszych
+      rozdziałach e-skryptu.
     </p>
   </header>
 
   <div class="callout note">
-    <div class="callout-title">Uwaga metodyczna</div>
+    <div class="callout-title">Uwaga</div>
     <p>
-      Pojęcia mechaniczne są wprowadzane w ujęciu modelowym
-      i służą rozumieniu pracy ustroju, a nie wykonywaniu
-      pełnych obliczeń inżynierskich.
+      Pojęcia mechaniczne są wprowadzane w ujęciu modelowym i służą rozumieniu pracy ustroju,
+      a nie wykonywaniu pełnych obliczeń inżynierskich.
     </p>
   </div>
 
-  <!-- Obciążenia -->
-  <section id="obciazenia-reakcje">
-    <h2>Obciążenia i reakcje</h2>
+  <!-- Wprowadzenie (zgodnie z PDF) -->
+  <section id="wprowadzenie">
+    <h2>Zakres pojęć i droga obciążeń</h2>
     <p>
-      <strong>Obciążenia</strong> to oddziaływania działające na konstrukcję
-      (np. ciężar własny, użytkowanie, wiatr, śnieg).
-      <strong>Reakcje</strong> są odpowiedzią podpór i stanowią ogniwo
-      pomiędzy konstrukcją a podłożem.
+      W niniejszym skrypcie konstrukcja rozumiana jest jako układ elementów nośnych, który przejmuje
+      oddziaływania działające na budynek i przekazuje je do podłoża. Częścią konstrukcji bezpośrednio
+      uczestniczącą w tym procesie jest ustrój nośny, obejmujący m.in. belki, płyty, słupy, ściany nośne
+      oraz układy stężające.
+    </p>
+    <p>
+      Obciążenia wynikające z masy własnej, sposobu użytkowania oraz oddziaływań zewnętrznych
+      (np. wiatr, śnieg, temperatura) są przejmowane przez elementy ustroju nośnego i przekazywane
+      dalej w sposób ciągły i uporządkowany — od elementów wyższych, przez podpory, aż do fundamentów
+      i gruntu. Obciążenia są równoważone przez siły w podporach, skierowane przeciwnie — są to reakcje.
     </p>
   </section>
 
-  <!-- Siły wewnętrzne -->
-  <section id="sily-wewnetrzne">
-    <h2>Siły wewnętrzne</h2>
+  <!-- Obciążenia i reakcje + Ryc. 1 -->
+  <section id="obciazenia-reakcje">
+    <h2>Obciążenia i reakcje</h2>
     <p>
-      Pod wpływem obciążeń elementy konstrukcyjne przenoszą
-      oddziaływania w postaci <strong>sił wewnętrznych</strong>,
-      które opisują dominujący mechanizm pracy elementu.
+      Sposób przebiegu drogi obciążeń zależy od przyjętego układu konstrukcyjnego. Zmiana położenia
+      elementu, jego rozpiętości lub sposobu podparcia wpływa na rozkład sił i sposób pracy całego układu
+      nośnego, a tym samym na formę, proporcje i logikę projektowanej architektury.
+    </p>
+
+    <section class="figure-block" aria-label="Ilustracje: obciążenia i reakcje">
+      <figure class="ill">
+        <img src="../../assets/img/ch01/fig-01-03-01.png"
+             alt="Ryc. 1. Obciążenia i reakcje"
+             loading="lazy">
+        <figcaption>
+          <span class="fig-ref">Ryc. 1.</span> Obciążenia i reakcje.
+        </figcaption>
+      </figure>
+    </section>
+  </section>
+
+  <!-- Nośność i stateczność (zgodnie z PDF) -->
+  <section id="nosnosc-i-statecznosc">
+    <h2>Nośność i stateczność</h2>
+    <p>
+      W kontekście działania konstrukcji kluczowe są pojęcia nośności i stateczności.
+      Zdolność konstrukcji do bezpiecznego przenoszenia obciążeń określana jest jako
+      <strong>nośność</strong>. Odnosi się ona zarówno do pojedynczych elementów, jak i do całych układów
+      konstrukcyjnych, i zależy od materiału, geometrii oraz mechanizmu pracy.
+    </p>
+    <p>
+      Równocześnie konstrukcja powinna zachowywać <strong>stateczność</strong>, rozumianą jako zdolność do
+      utrzymania położenia i formy pod wpływem działających oddziaływań — bez niekontrolowanych
+      przemieszczeń lub zmian konfiguracji.
+    </p>
+  </section>
+
+  <!-- Siły wewnętrzne + mechanizmy pracy (zgodnie z PDF) -->
+  <section id="sily-wewnetrzne">
+    <h2>Siły wewnętrzne i mechanizmy pracy</h2>
+    <p>
+      Przenoszenie obciążeń odbywa się poprzez określone mechanizmy pracy elementów konstrukcyjnych.
+      Siły wewnętrzne — zależnie od kierunku działania — mogą powodować ściskanie, rozciąganie, zginanie,
+      ścinanie oraz skręcanie. W praktyce elementy są często poddawane współwystępowaniu kilku rodzajów
+      oddziaływań.
     </p>
 
     <ul>
@@ -95,55 +137,74 @@
       <li><strong>M</strong> – moment zginający (zginanie)</li>
       <li><strong>T</strong> – moment skręcający (skręcanie)</li>
     </ul>
+
+    <section class="figure-block" aria-label="Ilustracje: mechanizmy pracy">
+      <figure class="ill">
+        <img src="../../assets/img/ch01/fig-01-03-02_.png"
+             alt="Ryc. 2. Ściskanie i rozciąganie"
+             loading="lazy">
+        <figcaption>
+          <span class="fig-ref">Ryc. 2.</span> Ściskanie i rozciąganie.
+        </figcaption>
+      </figure>
+
+      <figure class="ill">
+        <img src="../../assets/img/ch01/fig-01-03-03.png"
+             alt="Ryc. 3. Zginanie"
+             loading="lazy" />
+        <figcaption>
+          <span class="fig-ref">Ryc. 3.</span> Zginanie.
+        </figcaption>
+      </figure>
+
+
+      <figure class="ill">
+        <img src="../../assets/img/ch01/fig-01-03-04.png"
+             alt="Ryc. 4. Ścinanie i skręcanie"
+             loading="lazy">
+        <figcaption>
+          <span class="fig-ref">Ryc. 4.</span> Ścinanie i skręcanie.
+        </figcaption>
+      </figure>
+
+    </section>
   </section>
 
-  <!-- ILUSTRACJA Z PDF -->
-  <section class="figure-block">
-    <figure>
-      <img
-        src="../../assets/img/chapters/01/fig-01-01-01.png"
-        alt="Podstawowe rodzaje pracy elementów konstrukcyjnych: siła normalna N, siła tnąca V, moment zginający M, moment skręcający T"
-        loading="lazy"
-      />
-      <figcaption>
-        Rys. 1.3. Podstawowe rodzaje pracy elementów konstrukcyjnych
-        oraz odpowiadające im siły wewnętrzne:
-        <strong>N</strong> – praca osiowa,
-        <strong>V</strong> – ścinanie,
-        <strong>M</strong> – zginanie,
-        <strong>T</strong> – skręcanie.
-      </figcaption>
-    </figure>
-  </section>
-
-  <!-- Naprężenia i odkształcenia -->
+  <!-- Naprężenia i odkształcenia (rozszerzone zgodnie z PDF) -->
   <section id="naprezenia-odksztalcenia">
     <h2>Naprężenia i odkształcenia</h2>
     <p>
-      <strong>Naprężenia</strong> opisują intensywność oddziaływań w materiale,
-      natomiast <strong>odkształcenia</strong> są geometryczną odpowiedzią elementu
-      na obciążenia (ugięcia, wydłużenia, skrócenia).
+      Skutkiem działania obciążeń i związanych z nimi sił wewnętrznych są stany naprężenia i odkształcenia
+      materiału. <strong>Naprężenia</strong> stanowią wewnętrzne stany obciążenia materiału, których charakter i rozkład
+      wynikają z mechanizmu pracy elementu, sposobu podparcia oraz rodzaju oddziaływań.
+    </p>
+    <p>
+      Pojęcie naprężenia opisuje zależność pomiędzy wielkością działającej siły a powierzchnią,
+      przez którą jest ona przenoszona: przy tej samej wartości siły mniejsza powierzchnia przekroju
+      prowadzi do większych naprężeń, natomiast zwiększenie przekroju powoduje ich zmniejszenie.
+      Zależność ta ma bezpośrednie znaczenie projektowe, ponieważ łączy kształtowanie przekroju z nośnością
+      i zachowaniem elementu pod obciążeniem.
+    </p>
+    <p>
+      W elementach zginanych część przekroju ulega ściskaniu, a część rozciąganiu; pomiędzy nimi znajduje się
+      oś obojętna, w której naprężenia przyjmują wartość zerową. Zależnie od rodzaju i wartości naprężeń dochodzi
+      do zmiany wymiarów oraz kształtu elementów — to <strong>odkształcenie</strong> (ugięcia, wydłużenia, skrócenia),
+      wyrażane m.in. w jednostkach długości (np. mm) lub jako wartości względne (np. 1/200).
     </p>
   </section>
 
-  <!-- Nośność / stateczność / sztywność -->
-  <section id="nosnosc-statecznosc-sztywnosc">
-    <h2>Nośność, stateczność i sztywność</h2>
-    <ul>
-      <li><strong>Nośność</strong> – zdolność do bezpiecznego przeniesienia obciążeń</li>
-      <li><strong>Stateczność</strong> – zdolność do zachowania formy równowagi</li>
-      <li><strong>Sztywność</strong> – odporność na nadmierne odkształcenia</li>
-    </ul>
-  </section>
-
-  <!-- Schemat statyczny -->
-  <section id="schemat-statyczny">
-    <h2>Schemat statyczny</h2>
+  <!-- Szkielet a pokrycie/okładzina (zgodnie z PDF) -->
+  <section id="szkielet-i-okladzina">
+    <h2>Szkielet i pokrycie</h2>
     <p>
-      <strong>Schemat statyczny</strong> jest uproszczonym modelem konstrukcji,
-      określającym sposób podparcia i obciążenia.
-      Jego zmiana prowadzi do zmiany reakcji
-      oraz rozkładu sił wewnętrznych.
+      W architekturze istotne jest także rozróżnienie pomiędzy konstrukcją nośną a elementami, które nie
+      uczestniczą bezpośrednio w przenoszeniu obciążeń. <strong>Szkielet</strong> opisuje układ nośny oparty głównie
+      na elementach prętowych, natomiast <strong>pokrycie</strong> lub <strong>okładzina</strong> tworzą obudowę obiektu,
+      kształtując jego formę i chroniąc wnętrze przed oddziaływaniami zewnętrznymi.
+    </p>
+    <p>
+      Wprowadzone pojęcia stanowią podstawowy zestaw terminów wykorzystywanych w dalszej części skryptu.
+      Ich znaczenie będzie rozwijane i doprecyzowywane w kolejnych rozdziałach.
     </p>
   </section>
 
@@ -151,9 +212,10 @@
   <section id="podsumowanie">
     <h2>Podsumowanie</h2>
     <p>
-      Wprowadzone pojęcia mechaniczne stanowią podstawę
-      do dalszego porządkowania rozwiązań konstrukcyjnych
-      w ramach hierarchii <em>element – ustrój – system</em>.
+      Zebrane pojęcia opisują drogę obciążeń, warunki bezpieczeństwa (nośność i stateczność),
+      mechanizmy pracy elementów oraz ich odpowiedź materiałową (naprężenia i odkształcenia).
+      Stanowią one punkt wyjścia do dalszego porządkowania rozwiązań konstrukcyjnych w ramach
+      hierarchii <em>element – ustrój – system</em>.
     </p>
   </section>
 
@@ -168,7 +230,7 @@
 <footer class="app-footer">
   <div class="container footer-grid">
     <div>
-      <div class="footer-title">© 2025 Krzysztof Gerlic — e-skrypt dydaktyczny</div>
+      <div class="footer-title">© 2025 Krzysztof Gerlic — e-skrypt</div>
       <div class="footer-note">Wydział Architektury, Politechnika Śląska</div>
     </div>
   </div>

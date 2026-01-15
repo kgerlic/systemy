@@ -250,6 +250,11 @@ figure.ill img{
   margin: 0 auto;
 }
 
+figure.ill.small  { max-width: 320px; }
+figure.ill.medium { max-width: 420px; }
+figure.ill.large  { max-width: 600px; }
+
+
 figure.ill figcaption{
   margin-top: 10px;
   color: rgba(18,19,24,.78);

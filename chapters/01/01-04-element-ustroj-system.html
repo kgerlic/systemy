@@ -6,7 +6,7 @@
 
   <title>1.4 Element – ustrój – system — e-skrypt</title>
   <meta name="description"
-        content="Punkt 1.4 e-skryptu: hierarchia element – ustrój – system w opisie konstrukcji architektonicznych." />
+        content="Punkt 1.4 e-skryptu: hierarchia element – ustrój – system konstrukcyjny w opisie konstrukcji architektonicznych." />
 
   <link rel="stylesheet" href="../../assets/css/main.css" />
   <link rel="stylesheet" href="../../assets/css/chapter.css" />
@@ -18,8 +18,7 @@
   <div class="container">
     <div class="brand">
       <div class="brand-mark">
-        <img src="../../assets/img/logo/logo-sk.png"
-             alt="Systemy konstrukcyjne – logo">
+        <img src="../../assets/img/logo/logo-sk.png" alt="Systemy konstrukcyjne – logo">
       </div>
       <div class="brand-text">
         <h1 class="title">Systemy konstrukcyjne</h1>
@@ -52,21 +51,21 @@
 
   <!-- Tytuł -->
   <header>
-    <h1>1.4. Element – ustrój – system</h1>
+    <h1>1.4. Element – ustrój – system konstrukcyjny</h1>
     <p class="lead">
-      Opis konstrukcji wymaga rozróżnienia skali i poziomu złożoności.
-      W tym punkcie wprowadzono hierarchię: <em>element konstrukcyjny – ustrój konstrukcyjny – system konstrukcyjny</em>,
-      która porządkuje sposób analizy i klasyfikacji rozwiązań konstrukcyjnych.
+      Opis konstrukcji wymaga rozróżnienia kilku poziomów organizacji, odnoszących się do skali,
+      zakresu działania oraz stopnia złożoności układu nośnego. W niniejszym skrypcie przyjęto
+      trzystopniowy podział na: <em>element</em>, <em>ustrój</em> oraz <em>system konstrukcyjny</em>,
+      pozwalający uporządkować sposób myślenia o konstrukcji od pojedynczego składnika po całość budynku.
     </p>
   </header>
 
-  <!-- Teza -->
+  <!-- Teza porządkująca (spójna z PDF, ale zwięzła) -->
   <div class="callout note">
-    <div class="callout-title">Teza porządkująca</div>
+    <div class="callout-title">Uwaga</div>
     <p>
-      Ten sam element może pracować w różnych ustrojach,
-      a ten sam ustrój może być częścią różnych systemów konstrukcyjnych.
-      Dopiero system opisuje całość sposobu przenoszenia obciążeń w obiekcie.
+      Element zawsze funkcjonuje jako część większego układu, ustrój wynika ze współpracy elementów,
+      a system opisuje całościową zasadę kształtowania i pracy ustroju nośnego budynku.
     </p>
   </div>
 
@@ -74,42 +73,36 @@
   <section id="element">
     <h2>Element konstrukcyjny</h2>
     <p>
-      <strong>Element konstrukcyjny</strong> to pojedynczy składnik układu nośnego,
-      który przenosi obciążenia w określony sposób i na ograniczonej długości lub powierzchni.
-      Elementy są podstawowym „budulcem” konstrukcji.
+      <strong>Element konstrukcyjny</strong> stanowi podstawową jednostkę ustroju nośnego. Jest to pojedynczy składnik,
+      taki jak belka, słup, płyta, ściana nośna lub pręt kratownicy, który realizuje określoną funkcję
+      w przenoszeniu obciążeń. Element charakteryzuje się konkretną geometrią, materiałem oraz mechanizmem
+      pracy i zawsze funkcjonuje jako część większego układu.
     </p>
-    <ul>
-      <li>elementy prętowe: belki, słupy, pręty kratownic,</li>
-      <li>elementy powierzchniowe: płyty, tarcze, ściany,</li>
-      <li>elementy bryłowe: masywne ściany, filary, bloki fundamentowe.</li>
-    </ul>
-    <p>
-      Na poziomie elementu analizuje się przede wszystkim:
-      siły wewnętrzne, naprężenia, odkształcenia oraz nośność i stateczność lokalną.
-    </p>
+  </section>
+
+  <!-- RYC. 5 (miejsce zgodne z PDF: po definicji elementu, przed ustrojem) -->
+  <section class="figure-block" aria-label="Rycina: hierarchia element–ustrój–system">
+    <figure class="ill">
+      <img src="../../assets/img/ch01/fig-01-04-01.png"
+           alt="Ryc. 5. Schemat hierarchii: element – ustrój – system konstrukcyjny"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 5.</span> Schemat hierarchii: element – ustrój – system konstrukcyjny.
+      </figcaption>
+    </figure>
   </section>
 
   <!-- USTRÓJ -->
   <section id="ustroj">
     <h2>Ustrój konstrukcyjny</h2>
     <p>
-      <strong>Ustrój konstrukcyjny</strong> to logicznie powiązany układ elementów,
-      który wspólnie przenosi obciążenia i realizuje określoną funkcję nośną
-      (np. przekrycie przestrzeni, podparcie kondygnacji, usztywnienie budynku).
+      Zespół współpracujących elementów tworzy <strong>ustrój konstrukcyjny</strong>. Ustrój obejmuje fragment konstrukcji
+      lub jej zasadniczy układ, odpowiedzialny za przenoszenie obciążeń w określonym kierunku lub zakresie,
+      na przykład strop, ściana lub kratownica.
     </p>
     <p>
-      Przykładami ustrojów są:
-    </p>
-    <ul>
-      <li>belka oparta na podporach,</li>
-      <li>rama płaska lub przestrzenna,</li>
-      <li>kratownica, łuk, płyta stropowa,</li>
-      <li>ściana nośna lub tarcza usztywniająca.</li>
-    </ul>
-    <p>
-      Na poziomie ustroju analizuje się:
-      schemat statyczny, rozkład sił wewnętrznych,
-      współpracę elementów oraz mechanizm przenoszenia obciążeń.
+      Na poziomie ustroju ujawniają się relacje pomiędzy elementami, sposób ich podparcia oraz wzajemna
+      współpraca decydująca o nośności i stateczności danego fragmentu konstrukcji.
     </p>
   </section>
 
@@ -117,37 +110,30 @@
   <section id="system">
     <h2>System konstrukcyjny</h2>
     <p>
-      <strong>System konstrukcyjny</strong> obejmuje całość układu nośnego obiektu:
-      zestaw ustrojów wraz z ich wzajemnymi powiązaniami,
-      sposobem przekazywania obciążeń do fundamentów
-      oraz zasadami zapewnienia stateczności globalnej.
+      Najwyższym poziomem organizacji jest <strong>system konstrukcyjny</strong>, rozumiany jako całościowa zasada
+      kształtowania i pracy ustroju nośnego budynku. System określa dominujący sposób przenoszenia obciążeń,
+      charakter współpracy elementów oraz ogólną logikę strukturalną obiektu.
     </p>
     <p>
-      System konstrukcyjny określa:
-    </p>
-    <ul>
-      <li>dominujący mechanizm pracy (np. praca osiowa, zginanie, praca masą),</li>
-      <li>sposób usztywnienia i zapewnienia stateczności przestrzennej,</li>
-      <li>podstawowe ograniczenia geometryczne i materiałowe.</li>
-    </ul>
-    <p>
-      To właśnie na poziomie systemu możliwe jest sensowne porównywanie
-      różnych rozwiązań konstrukcyjnych stosowanych w architekturze.
+      Przykładami systemów konstrukcyjnych są układy: <strong>ścianowe</strong>, <strong>szkieletowe</strong>,
+      <strong>płytowo-słupowe</strong>, <strong>ramowe</strong> czy <strong>przestrzenne</strong>.
+      Na tym poziomie konstrukcja przestaje być zbiorem rozwiązań lokalnych, a staje się spójnym mechanizmem
+      obejmującym cały budynek.
     </p>
   </section>
 
-  <!-- RELACJE -->
-  <section id="relacje">
-    <h2>Relacje i skale opisu</h2>
+  <!-- ZNACZENIE W PROCESIE PROJEKTOWYM -->
+  <section id="znaczenie-projektowe">
+    <h2>Znaczenie hierarchii w procesie projektowym</h2>
     <p>
-      Hierarchia element – ustrój – system pozwala unikać częstych nieporozumień,
-      takich jak utożsamianie pojedynczego elementu z całym systemem konstrukcyjnym.
-      Przykładowo: obecność słupów nie oznacza jeszcze, że budynek ma system szkieletowy.
+      Rozróżnienie pomiędzy elementem, ustrojem i systemem konstrukcyjnym ma istotne znaczenie w procesie
+      projektowym. Umożliwia analizę konstrukcji na odpowiednim poziomie szczegółowości, adekwatnym do etapu
+      pracy projektowej.
     </p>
     <p>
-      W analizie architektonicznej szczególnie istotne jest świadome przechodzenie
-      pomiędzy poziomami opisu: od lokalnych decyzji materiałowych i przekrojowych
-      do globalnej logiki pracy konstrukcji.
+      Na wczesnym etapie koncepcji kluczowy jest wybór <strong>systemu konstrukcyjnego</strong>, który wyznacza ramy
+      przestrzenne i technologiczne projektu. W miarę rozwoju koncepcji uwaga przesuwa się ku <strong>ustrojom</strong>
+      i <strong>elementom</strong>, które konkretyzują przyjęte założenia.
     </p>
   </section>
 
@@ -155,15 +141,9 @@
   <section id="powiazanie">
     <h2>Powiązanie z dalszymi rozdziałami</h2>
     <p>
-      W kolejnych rozdziałach e-skryptu systemy konstrukcyjne będą klasyfikowane
-      i omawiane przede wszystkim na poziomie <strong>systemu</strong>,
-      przy jednoczesnym odwoływaniu się do charakterystycznych ustrojów
-      i elementów składowych.
-    </p>
-    <p>
-      Zanim to nastąpi, w kolejnym punkcie wprowadzono pojęcie
-      <strong>modelu obliczeniowego i schematu statycznego</strong>,
-      które stanowią narzędzie łączące wszystkie trzy poziomy opisu.
+      Przyjęta hierarchia pojęć stanowi podstawę dalszej systematyki omawianej w kolejnych rozdziałach skryptu.
+      Pozwala porządkować różnorodne rozwiązania konstrukcyjne według zasad ich organizacji i pracy,
+      niezależnie od zastosowanego materiału czy skali obiektu.
     </p>
   </section>
 
