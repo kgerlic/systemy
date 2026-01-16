@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>3.1.2 Zamocowania i długość wyboczeniowa — e-skrypt</title>
+  <meta name="description"
+        content="Rozdział 3.1.2 e-skryptu: zamocowania słupów, schematy podparcia i ich wpływ na długość wyboczeniową oraz stateczność elementów ściskanych." />
+
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="stylesheet" href="../../assets/css/chapter.css" />
+</head>
+
+<body>
+
+<header class="app-header">
+  <div class="container">
+    <div class="brand">
+      <div class="brand-mark">
+        <img src="../../assets/img/logo/logo-sk.png"
+             alt="Systemy konstrukcyjne – logo">
+      </div>
+      <div class="brand-text">
+        <h1 class="title">Systemy konstrukcyjne</h1>
+        <p class="subtitle">Rozdział 3 · Elementy pionowe pracujące na ściskanie</p>
+      </div>
+    </div>
+
+    <div class="meta">
+      <a class="chip chip-link" href="../../index.html">Strona główna</a>
+      <a class="chip chip-link" href="../index.html">Spis rozdziałów</a>
+      <a class="chip chip-link" href="index.html">Rozdział 3</a>
+      <button id="themeToggle" class="chip chip-button" type="button">
+        Motyw: jasny
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="chapter">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Okruszki">
+    <a href="../../index.html">Start</a>
+    <span class="sep">/</span>
+    <a href="../index.html">Rozdziały</a>
+    <span class="sep">/</span>
+    <a href="index.html">Rozdział 3</a>
+    <span class="sep">/</span>
+    <a href="03-02-slupy-definicja-i-praca.html">3.1 Słupy</a>
+    <span class="sep">/</span>
+    <a href="03-03-wyboczenie-i-smuklosc.html">3.1.1 Wyboczenie</a>
+    <span class="sep">/</span>
+    <span aria-current="page">3.1.2 Zamocowania</span>
+  </nav>
+
+  <!-- Tytuł -->
+  <header>
+    <h1>3.1.2. Zamocowania i długość wyboczeniowa</h1>
+    <p class="lead">
+      Warunki podparcia i zamocowania słupa mają bezpośredni wpływ na jego stateczność.
+      To, czy w węzłach dopuszczony jest obrót, czy też obrót jest ograniczony, zmienia
+      sposób pracy elementu oraz efektywną długość wyboczeniową.
+    </p>
+  </header>
+
+  <!-- Wprowadzenie -->
+  <section>
+    <h2>Rola zamocowania w zachowaniu słupa</h2>
+    <p>
+      Aby słup zachował stateczność i nie uległ przewróceniu pod wpływem przypadkowych obciążeń bocznych,
+      konieczne jest zapewnienie odpowiedniego zamocowania. Zamocowanie może ograniczać obrót elementu,
+      przenosić momenty zginające lub działać przegubowo, przekazując głównie siły osiowe.
+      W praktyce inżynierskiej rozróżnienie to jest kluczowe, ponieważ determinuje podatność słupa
+      na przemieszczenia boczne oraz ryzyko wyboczenia.
+    </p>
+  </section>
+
+  <!-- Ilustracja zamocowania -->
+  <figure class="figure">
+    <img src="../../assets/img/fig/fig-03-01-02.png"
+         alt="Sztywne zamocowanie słupa (utwierdzenie) i ograniczenie obrotu">
+    <figcaption>Ryc. 3.2. Sztywne zamocowanie słupa (fixed connection of a column)</figcaption>
+  </figure>
+
+  <!-- Typowe schematy -->
+  <section>
+    <h2>Typowe schematy podparcia</h2>
+    <p>
+      W modelach obliczeniowych zamocowania sprowadza się najczęściej do kilku podstawowych przypadków,
+      które można opisać poprzez możliwość obrotu i przemieszczenia w węzłach:
+    </p>
+    <ul>
+      <li>
+        <strong>przegub (pinned)</strong> – umożliwia obrót w węźle, przenosi siły osiowe i poprzeczne,
+        nie przenosi momentu (lub przenosi go w ograniczonym zakresie),
+      </li>
+      <li>
+        <strong>utwierdzenie (fixed)</strong> – ogranicza obrót elementu i może przenosić momenty zginające,
+      </li>
+      <li>
+        <strong>podparcie pośrednie</strong> – usztywnienie w trakcie wysokości elementu (np. strop),
+        które zmniejsza długość swobodną i poprawia stateczność.
+      </li>
+    </ul>
+    <p>
+      W praktyce zamocowania rzadko są idealnie przegubowe lub idealnie sztywne. Najczęściej mają one
+      charakter pośredni, a ich sztywność zależy od detalu połączenia, materiału oraz sposobu współpracy
+      z elementami sąsiednimi.
+    </p>
+  </section>
+
+  <!-- Długość wyboczeniowa -->
+  <section>
+    <h2>Długość wyboczeniowa – znaczenie praktyczne</h2>
+    <p>
+      Jednym z najważniejszych parametrów opisujących stateczność elementu ściskanego jest
+      <strong>długość wyboczeniowa</strong>, czyli efektywna długość fragmentu, na którym słup może
+      ulegać wygięciu bocznemu. Długość ta zależy od:
+    </p>
+    <ul>
+      <li>wysokości elementu pomiędzy punktami podparcia,</li>
+      <li>rodzaju zamocowania na końcach (przegub/utwierdzenie),</li>
+      <li>obecności i sztywności usztywnień pośrednich (np. stropów),</li>
+      <li>współpracy słupa z układem budynku (ramy, tarcze, stężenia).</li>
+    </ul>
+    <p>
+      Zmniejszenie długości wyboczeniowej (np. przez dodanie usztywnień pośrednich) zwykle znacząco
+      poprawia stateczność słupa i ogranicza ryzyko wyboczenia. Z tego powodu elementy pionowe
+      projektuje się nie tylko jako „pojedyncze pręty”, lecz jako części większego układu konstrukcyjnego.
+    </p>
+  </section>
+
+  <!-- Przejście do stabilizacji -->
+  <div class="callout note">
+    <div class="callout-title">Wniosek</div>
+    <p>
+      Nawet mocny i masywny przekrój słupa może okazać się niewystarczający, jeśli element nie ma zapewnionej
+      odpowiedniej stabilizacji bocznej. W kolejnym punkcie omówiono podstawowe sposoby usztywniania
+      i stabilizowania słupów w konstrukcji budynku.
+    </p>
+  </div>
+
+  <!-- Nawigacja -->
+  <div class="chapter-actions" style="margin-top: 24px;">
+    <a class="pill" href="03-03-wyboczenie-i-smuklosc.html">← Wstecz: 3.1.1 Wyboczenie</a>
+    <a class="pill" href="03-05-stabilizacja-stezenia-odciagi.html">Dalej: 3.1.3 Stabilizacja →</a>
+  </div>
+
+</main>
+
+<footer class="app-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-title">© 2025 Krzysztof Gerlic — e-skrypt</div>
+      <div class="footer-note">Wydział Architektury, Politechnika Śląska</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+
+    function setTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (btn) btn.textContent = theme === 'dark' ? 'Motyw: ciemny' : 'Motyw: jasny';
+    }
+
+    const saved = localStorage.getItem('theme');
+    setTheme(saved === 'dark' ? 'dark' : 'light');
+
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>3.1 Słupy — e-skrypt</title>
+  <meta name="description"
+        content="Rozdział 3.1 e-skryptu: słupy – definicja, obciążenie osiowe i mimośrodowe, smukłość, zamocowania, stabilizacja, przekroje, układy wielogałęziowe oraz przykłady materiałowe." />
+
+  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="stylesheet" href="../../assets/css/chapter.css" />
+</head>
+
+<body>
+
+<header class="app-header">
+  <div class="container">
+    <div class="brand">
+      <div class="brand-mark">
+        <img src="../../assets/img/logo/logo-sk.png"
+             alt="Systemy konstrukcyjne – logo">
+      </div>
+      <div class="brand-text">
+        <h1 class="title">Systemy konstrukcyjne</h1>
+        <p class="subtitle">Rozdział 3 · Elementy pionowe pracujące na ściskanie</p>
+      </div>
+    </div>
+
+    <div class="meta">
+      <a class="chip chip-link" href="../../index.html">Strona główna</a>
+      <a class="chip chip-link" href="../index.html">Spis rozdziałów</a>
+      <a class="chip chip-link" href="index.html">Rozdział 3</a>
+      <button id="themeToggle" class="chip chip-button" type="button">
+        Motyw: jasny
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="chapter">
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Okruszki">
+    <a href="../../index.html">Start</a>
+    <span class="sep">/</span>
+    <a href="../index.html">Rozdziały</a>
+    <span class="sep">/</span>
+    <a href="index.html">Rozdział 3</a>
+    <span class="sep">/</span>
+    <span aria-current="page">3.1 Słupy</span>
+  </nav>
+
+  <!-- Tytuł -->
+  <header>
+    <h1>3.1. Słupy (columns)</h1>
+    <p class="lead">
+      Słup jest elementem konstrukcyjnym ustawionym pionowo, którego przekrój poprzeczny jest wyraźnie
+      mniejszy niż jego wysokość. Jego podstawową funkcją jest przenoszenie obciążeń z innych części
+      budynku, takich jak stropy lub dach, na elementy niższe bądź bezpośrednio na fundament.
+      W ujęciu modelowym obciążenie przyłożone osiowo powoduje ściskanie słupa, natomiast obecność
+      obciążeń bocznych, skośnych lub mimośrodów prowadzi do pojawienia się zginania, a w określonych
+      sytuacjach także skręcania. Istotne jest, że nawet niewielka niesymetria obciążenia może wywołać
+      dodatkowe momenty, które zmieniają mechanizm pracy elementu. Miara smukłości zależy od relacji
+      wymiarów przekroju poprzecznego do długości wyboczeniowej elementu, czyli efektywnej odległości
+      pomiędzy punktami jego podparcia lub usztywnienia.
+    </p>
+  </header>
+
+  <!-- Ryc. 3.2 -->
+  <section class="figure-block" aria-label="Ilustracje: zamocowanie słupa">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-02.png"
+           alt="Sztywne zamocowanie słupa (fixed connection of a column)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.2.</span> Sztywne zamocowanie słupa (fixed connection of a column)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Aby słup zachował stateczność i nie uległ przewróceniu pod wpływem przypadkowych obciążeń bocznych,
+      konieczne jest zapewnienie odpowiedniego zamocowania. Sztywne zamocowanie utrzymuje element w położeniu
+      pionowym i ogranicza jego obrót, jednak w wielu rozwiązaniach nie wystarcza ono do przejmowania większych
+      oddziaływań poziomych działających w górnej części słupa. Z tego powodu stateczność elementu zwykle zwiększa
+      się poprzez jego włączenie w większy układ konstrukcyjny, w którym słup współpracuje z innymi elementami nośnymi.
+      Zamocowanie zlokalizowane blisko osi słupa często ma charakter przegubowy, co oznacza, że umożliwia obrót w węźle,
+      ale przekazuje siły osiowe. W konstrukcjach szkieletowych słup jest zazwyczaj podparty u dołu na belce podwalinowej,
+      natomiast u góry łączony z pozostałymi elementami za pomocą belek oczepowych. Przestrzeń pomiędzy słupami bywa
+      wypełniana materiałem osłonowym (poszyciem), który oprócz funkcji ochronnej może pełnić również funkcję usztywniającą,
+      stabilizując słupy w płaszczyźnie ściany.
+    </p>
+
+    <p>
+      W sytuacji, gdy słup pracuje jako element wolnostojący i nie jest powiązany z innymi częściami konstrukcji,
+      a jednocześnie przewidywane są istotne oddziaływania boczne, konieczne staje się zastosowanie dodatkowych odciągów
+      lub stężeń. Ich zadaniem jest ograniczenie przemieszczeń poziomych oraz utrzymanie elementu w położeniu pionowym.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.3 -->
+  <section class="figure-block" aria-label="Ilustracje: stateczność słupa">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-03.png"
+           alt="Zapewnienie stateczności słupa (stability of a column)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.3.</span> Zapewnienie stateczności słupa (stability of a column)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Jednym z kluczowych parametrów opisujących zachowanie słupa jest jego smukłość, rozumiana jako relacja wymiarów
+      przekroju poprzecznego do wysokości elementu, a w praktyce — do odległości pomiędzy punktami podparcia lub zamocowania,
+      na przykład pomiędzy kolejnymi stropami. Zbyt smukły słup, po przekroczeniu określonej wartości obciążenia krytycznego,
+      może ulec gwałtownej utracie stateczności w postaci wyboczenia. Wygięcie względem osi początkowej powoduje wówczas
+      pojawienie się momentów zginających i przejście od pracy na ściskanie do pracy zdominowanej przez zginanie, co prowadzi
+      do szybkiej degradacji nośności i znacznej deformacji elementu. Wyboczenie najczęściej ujawnia się w środkowej części
+      długości wyboczeniowej, dlatego korzystnym zabiegiem jest lokalne zwiększenie przekroju w tej strefie. Można to osiągnąć
+      poprzez kształtowanie profilu o formie wrzecionowatej (poszerzonego w środku i zwężonego przy końcach) lub poprzez zastosowanie
+      rozwiązań wzmacniających, np. trzonu z dodatkowymi cięgnami zewnętrznymi. W przypadku słupów krępych, dla których ryzyko wyboczenia
+      jest niewielkie, nośność elementu zależy przede wszystkim od wytrzymałości materiału na ściskanie.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.4 -->
+  <section class="figure-block" aria-label="Ilustracje: zabezpieczenie przed wyboczeniem">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-04.png"
+           alt="Zabezpieczenie przed wyboczeniem (buckling protection)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.4.</span> Zabezpieczenie przed wyboczeniem (buckling protection)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Do elementów o podobnym mechanizmie pracy należy również zastrzał oraz niektóre krzyżulce kratownicowe, mimo że mają
+      one często układ skośny. Jeżeli w danym pręcie dominuje ściskanie osiowe, może on również podlegać wyboczeniu,
+      analogicznie jak słup pionowy.
+    </p>
+
+    <p>
+      Słupy można klasyfikować między innymi ze względu na rodzaj przekroju poprzecznego. Wyróżnia się wówczas przekroje:
+    </p>
+
+    <ul>
+      <li>pełne (np. kamienne, murowane, żelbetowe, drewniane),</li>
+      <li>zamknięte (np. skrzynkowe, wieloboczne, rurowe),</li>
+      <li>otwarte (np. dwuteowe),</li>
+      <li>złożone, utworzone z kilku rozdzielonych prętów, takich jak kątowniki lub ceowniki.</li>
+    </ul>
+
+    <p>
+      W przypadku dominującego obciążenia osiowego korzystne jest stosowanie przekroju możliwie symetrycznego,
+      o zbliżonej sztywności we wszystkich kierunkach.
+    </p>
+
+    <p>
+      Jeżeli dominujące obciążenie słupa ma charakter osiowy, a oddziaływania boczne mogą pojawiać się w różnych kierunkach,
+      zalecany jest przekrój symetryczny, zapewniający podobną sztywność niezależnie od kierunku obciążenia. Natomiast w sytuacji,
+      gdy słup stanowi część układu ramowego lub gdy kierunek oddziaływań bocznych jest z góry określony, korzystne może być stosowanie
+      przekroju kierunkowego, np. prostokątnego, wydłużonego w stronę dominujących obciążeń.
+    </p>
+
+    <p>
+      Rozstaw słupów jest w dużej mierze konsekwencją wymagań funkcjonalnych i architektonicznych, takich jak wielkość pomieszczeń,
+      szerokości przejść czy przejazdów, na przykład w garażach podziemnych. Zwiększanie rozpiętości między podporami prowadzi jednak
+      do wzrostu obciążeń przypadających na pojedynczy słup, a także do większych wymagań wobec elementów pośrednich (stropów i belek),
+      które muszą skutecznie przekazać obciążenia na podpory. Wysokość słupa wynika zwykle z przyjętej wysokości kondygnacji, natomiast
+      z punktu widzenia mechaniki kluczowe znaczenie ma odległość pomiędzy miejscami zamocowania, która determinuje długość wyboczeniową
+      elementu. Słup przechodzący przez kilka kondygnacji lub sztywno powiązany ze stropami może pracować jak element wieloprzęsłowy,
+      co w pewnych przypadkach pozwala na przyjęcie większej smukłości. W budynkach wielokondygnacyjnych należy jednak uwzględnić,
+      że obciążenia pionowe narastają na kolejnych poziomach, a elementy dolne przenoszą znacznie większe siły.
+    </p>
+
+    <p>
+      Słupy mogą występować jako elementy pojedyncze albo jako układy złożone z kilku połączonych prętów, określane jako słupy
+      wielogałęziowe. W praktyce spotyka się najczęściej rozwiązania dwu- lub czteroelementowe, w których pręty główne współpracują
+      dzięki przewiązkom lub skratowaniu.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.5 -->
+  <section class="figure-block" aria-label="Ilustracje: słupy jedno- i wielogałęziowe">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-05.png"
+           alt="Słupy jedno- i wielogałęziowe (single and multi-member columns)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.5.</span> Słupy jedno- i wielogałęziowe (single and multi-member columns)
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- Ryc. 3.6 -->
+  <section class="figure-block" aria-label="Ilustracje: konstrukcje arboralne">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-06.png"
+           alt="Konstrukcje arboralne (drzewiaste) (arboreal structures)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.6.</span> Konstrukcje arboralne (drzewiaste) (arboreal structures)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Słupy mogą także tworzyć układy przestrzenne o rozgałęzionej geometrii, określane jako struktury arboralne (drzewiaste).
+      W tego typu rozwiązaniach geometria węzłów oraz kąty pomiędzy prętami wynikają z konieczności zachowania równowagi sił w układzie.
+      Kierunek elementu podpierającego jest wówczas konsekwencją wypadkowej sił przenoszonych przez gałęzie. Z tego względu forma struktury
+      nie może być przypadkowa — jej geometria powinna ograniczać powstawanie niekorzystnych momentów zginających w strefach węzłowych.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.7 -->
+  <section class="figure-block" aria-label="Ilustracje: słupy pełne drewniane">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-07.png"
+           alt="Słupy pełne drewniane (solid timber columns)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.7.</span> Słupy pełne drewniane (solid timber columns)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Słupy drewniane pełne wykonywane są najczęściej z tarcicy iglastej poddanej obróbce tartacznej i mogą przyjmować przekrój
+      kwadratowy lub okrągły. Ze względu na niejednorodną strukturę drewna oraz zmiany wilgotności, w trakcie eksploatacji mogą pojawiać
+      się pęknięcia, a w niektórych przypadkach również skręcanie elementu. Zastosowanie zewnętrznych obejm pozwala ograniczyć ryzyko
+      rozwarstwienia i może pełnić funkcję wzmacniającą. Wymiary przekroju poprzecznego słupa zależą od wartości obciążeń oraz smukłości
+      elementu, czyli podatności na wyboczenie.
+    </p>
+
+    <p>
+      Orientacyjnie szerokość (grubość) słupa można przyjmować w zakresie 1/15–1/30 jego wysokości.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.8 -->
+  <section class="figure-block" aria-label="Ilustracje: słupy z drewna klejonego">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-08.png"
+           alt="Słupy z drewna klejonego (glulam columns)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.8.</span> Słupy z drewna klejonego (glulam columns)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Słupy z drewna klejonego warstwowo (glulam) są wykonywane w warunkach fabrycznych, co pozwala uzyskać większą kontrolę jakości
+      oraz wyeliminować część naturalnych niedoskonałości drewna, takich jak pęknięcia czy sęki. Proces klejenia pod ciśnieniem,
+      przy odpowiednim doborze warstw, a także gładka, obrobiona powierzchnia mogą korzystnie wpływać na trwałość elementu,
+      w tym również na jego zachowanie w warunkach pożaru. Dodatkowe okucia stalowe ułatwiają montaż i mogą ograniczać ryzyko
+      rozwarstwienia w strefach zamocowań.
+    </p>
+
+    <p>
+      Orientacyjnie szerokość (grubość) słupa również mieści się w zakresie 1/15–1/30 wysokości.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.9 -->
+  <section class="figure-block" aria-label="Ilustracje: słupy murowane">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-09.png"
+           alt="Słupy murowane (brick columns)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.9.</span> Słupy murowane (brick columns)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Słupy murowane mogą być wykonywane z kamienia, cegły lub betonowych elementów murowych. Pod wpływem ściskania struktura muru
+      może ulegać rozwarstwieniu, dlatego kluczowe znaczenie ma prawidłowe wiązanie warstw oraz zapewnienie ciągłości konstrukcyjnej.
+      Dla zwiększenia nośności stosuje się m.in. siatki zbrojeniowe umieszczane w spoinach poziomych. Innym rozwiązaniem jest wprowadzenie
+      pionowych prętów i powiązanie muru z żelbetem w postaci wewnętrznego rdzenia, przy czym elementy murowe mogą pełnić rolę zewnętrznego
+      deskowania traconego.
+    </p>
+
+    <p>
+      Orientacyjnie szerokość (grubość) słupa murowanego można przyjmować w zakresie 1/15–1/20 wysokości.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.10 -->
+  <section class="figure-block" aria-label="Ilustracje: słupy żelbetowe">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-10.png"
+           alt="Słupy żelbetowe (reinforced concrete columns)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.10.</span> Słupy żelbetowe (reinforced concrete columns)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Słupy żelbetowe wykonywane w technologii monolitycznej powstają na budowie, przy użyciu deskowania nadającego im docelową formę,
+      najczęściej o przekroju kwadratowym lub prostokątnym. Dla przekrojów kołowych stosuje się m.in. prefabrykowane szalunki w postaci rur,
+      np. celulozowych. Monolityczne wykonanie sprzyja uzyskaniu sztywnych połączeń z pozostałymi elementami konstrukcji.
+    </p>
+
+    <p>
+      Słupy prefabrykowane wymagają natomiast zastosowania odpowiednich elementów montażowych oraz detali połączeń, które w wielu przypadkach
+      mają charakter zbliżony do przegubu. Zbrojenie główne prowadzone jest wzdłuż słupa i rozmieszczane zwykle przy obwodzie przekroju,
+      natomiast jego współpracę i stabilizację zapewniają strzemiona lub spirala (uzwojenie).
+    </p>
+
+    <p>
+      Orientacyjnie szerokość (grubość) słupa żelbetowego mieści się w zakresie 1/20–1/35 wysokości.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.11 -->
+  <section class="figure-block" aria-label="Ilustracje: słup prefabrykowany">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-11.png"
+           alt="Słup prefabrykowany (precast column)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.11.</span> Słup prefabrykowany (precast column)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Słupy żelbetowe sprężone są wykonywane w fabryce i wyposażone w wewnętrzne cięgna wprowadzające naprężenie wstępne.
+      Prefabrykacja takich elementów wiąże się z koniecznością stosowania specjalistycznych urządzeń transportowych i montażowych,
+      dlatego w praktyce słupy prefabrykowane są często wykonywane jako sprężone. Wysoka jakość produkcji oraz korzystne warunki pracy
+      elementu mogą pozwalać na redukcję wymiarów przekroju w porównaniu z rozwiązaniami monolitycznymi.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.12 -->
+  <section class="figure-block" aria-label="Ilustracje: słupy stalowe">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-12.png"
+           alt="Słupy stalowe (steel columns)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.12.</span> Słupy stalowe (steel columns)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Stalowe słupy walcowane wykonywane są z gotowych profili hutniczych. Pod wpływem obciążeń pracują głównie na ściskanie,
+      jednak ze względu na stosunkowo niewielką grubość ścianek profili stalowych mogą być bardziej podatne na lokalne zjawiska
+      statecznościowe, w tym wyboczenie.
+    </p>
+
+    <p>
+      Przekroje zamknięte (np. skrzynkowe oraz rurowe) wykazują większą odporność na wyboczenie i skręcanie, a jednocześnie mają mniejszą
+      powierzchnię narażoną na oddziaływania atmosferyczne niż kształtowniki otwarte o porównywalnej masie. Jeżeli jako słupy stosuje się
+      przekroje otwarte, korzystne są rozwiązania o możliwie zbliżonej nośności w różnych kierunkach, np. dwuteowniki szerokostopowe.
+    </p>
+
+    <p>
+      Orientacyjnie szerokość (grubość) słupa stalowego mieści się w zakresie 1/7–1/28 wysokości.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.13 -->
+  <section class="figure-block" aria-label="Ilustracje: słupy z przewiązkami i kratownicowe">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-13.png"
+           alt="Słupy z przewiązkami i kratownicowe (lattice columns)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.13.</span> Słupy z przewiązkami i kratownicowe (lattice columns)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Słupy stalowe wielogałęziowe stanowią układy złożone z kilku prętów głównych współpracujących ze sobą. Wykonywane są zwykle z profili
+      walcowanych łączonych przewiązkami lub skratowaniem. Przewiązki mają często postać płyt stalowych sztywno mocowanych do elementów głównych,
+      dzięki czemu cały układ pracuje jak przestrzenny zespół o zwiększonej sztywności. Współpraca kilku prętów ogranicza podatność na lokalne
+      wyboczenie w porównaniu ze słupami pojedynczymi.
+    </p>
+
+    <p>
+      Dla większych wysokości stosuje się również kratownice przestrzenne, w których podpory narożne są szeroko rozstawione, co zwiększa odporność
+      na wyboczenie globalne. Nadmierne obciążenie może jednak prowadzić do wyboczenia poszczególnych prętów składowych, dlatego odległości między
+      węzłami w elementach ściskanych przyjmuje się zwykle mniejsze niż w elementach rozciąganych.
+    </p>
+
+    <p>
+      Orientacyjnie szerokość (grubość) takiego słupa mieści się w zakresie 1/20–1/25 wysokości.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.14 -->
+  <section class="figure-block" aria-label="Ilustracje: słupy zespolone">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-14.png"
+           alt="Słupy zespolone (composite columns)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.14.</span> Słupy zespolone (composite columns)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Słupy zespolone stalowo-betonowe (określane również jako słupy kompozytowe) są rozwiązaniami bardziej złożonymi technologicznie, jednak
+      umożliwiają uzyskanie większej nośności lub większej smukłości w porównaniu z elementami jednorodnymi. Realizuje się je m.in. poprzez
+      wypełnienie betonem stalowego profilu zamkniętego lub poprzez obetonowanie profilu otwartego. Beton pełni wówczas funkcję ochronną
+      (w tym przeciwpożarową), a jednocześnie ogranicza możliwość wyboczenia i skręcania elementów stalowych.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.15 -->
+  <section class="figure-block" aria-label="Ilustracje: pale fundamentowe">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-15.png"
+           alt="Pale fundamentowe (foundation piles)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.15.</span> Pale fundamentowe (foundation piles)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Pal fundamentowy jest elementem przekazującym obciążenia budynku na głębsze, bardziej nośne warstwy gruntu.
+      Pale mogą być wykonywane jako prefabrykowane elementy wbijane, co wiąże się z powstawaniem drgań podłoża
+      i ogranicza możliwość ich stosowania w sąsiedztwie istniejącej zabudowy. Alternatywą są pale wiercone,
+      wykonywane na miejscu w obudowie lub bezpośrednio w gruncie. W górnej części pale łączy się belką lub płytą
+      oczepową, tworząc podstawę dla dalszych elementów konstrukcji. Liczbę i długość pali dobiera się zależnie od
+      wartości obciążeń oraz warunków gruntowych; długości te mogą wynosić od kilku do kilkudziesięciu metrów.
+      Orientacyjnie średnica pala mieści się w zakresie 0,3–0,6 m, a rozstaw wynosi zazwyczaj 2–3 średnice.
+    </p>
+  </section>
+
+
+  <section>
+    <p>
+      Słupy z materiałów kompozytowych mogą być wykonywane jako elementy wielowarstwowe, np. z włókien węglowych spojonych żywicą epoksydową.
+      Charakteryzują się niewielką masą własną oraz wysoką odpornością na korozję, dlatego często stosuje się je jako nowoczesne słupy
+      oświetleniowe i elementy infrastruktury. Orientacyjnie średnice takich słupów mieszczą się w zakresie 0,10–0,20 m, a stosunek średnicy
+      do wysokości może wynosić około 1/50.
+    </p>
+  </section>
+
+  <!-- Ryc. 3.17 -->
+  <section class="figure-block" aria-label="Ilustracje: słup wiszący">
+    <figure class="ill">
+      <img src="../../assets/img/03/fig-03-16.png"
+           alt="Słup wiszący (flying mast)"
+           loading="lazy">
+      <figcaption>
+        <span class="fig-ref">Ryc. 3.16.</span> Słup wiszący (flying mast)
+      </figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <p>
+      Słup wiszący stanowi szczególny rodzaj pionowej rozpory utrzymywanej w zadanym położeniu za pomocą cięgien.
+      Cięgna stabilizują element na określonej wysokości, jednak zmiany obciążeń oraz temperatury mogą powodować relatywnie duże przemieszczenia
+      i zmiany geometrii układu. Rozwiązanie to spotyka się m.in. w konstrukcjach membranowych, gdzie słup wiszący może pełnić funkcję elementu
+      równoważącego i kształtującego układ sił naciągu.
+    </p>
+  </section>
+
+  <!-- Nawigacja -->
+  <div class="chapter-actions" style="margin-top: 24px;">
+    <a class="pill" href="index.html">← Wstęp rozdziału 3</a>
+    <a class="pill" href="03-02-slupy-wyboczenie-zamocowania-stabilizacja.html">Dalej: 3.1 (wyboczenie i stabilizacja) →</a>
+  </div>
+
+</main>
+
+<footer class="app-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-title">© 2025 Krzysztof Gerlic — e-skrypt</div>
+      <div class="footer-note">Wydział Architektury, Politechnika Śląska</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+
+    function setTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (btn) btn.textContent = theme === 'dark' ? 'Motyw: ciemny' : 'Motyw: jasny';
+    }
+
+    const saved = localStorage.getItem('theme');
+    setTheme(saved === 'dark' ? 'dark' : 'light');
+
+    if (btn) {
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

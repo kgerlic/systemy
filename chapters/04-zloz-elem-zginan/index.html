@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Systemy konstrukcyjne – Płyty (slabs)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* === PODSTAWOWY STYL STRONY === */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f5f7;
+      color: #222222;
+      line-height: 1.6;
+    }
+
+    .page-wrapper {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    /* === NAGŁÓWEK ROZDZIAŁU === */
+    .chapter-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .chapter-header h1 {
+      font-size: 1.6rem;
+      margin: 0.5rem 0;
+      color: #1a5799;
+    }
+
+    .chapter-header p {
+      margin: 0.25rem 0;
+      color: #555555;
+      font-size: 0.95rem;
+    }
+
+    /* === SPIS PODSEKCJI W ROZDZIALE === */
+    .chapter-toc {
+      margin: 1.5rem 0 2rem;
+      padding: 1rem 1.25rem;
+      background: #ffffff;
+      border-radius: 8px;
+      border: 1px solid #d0d3da;
+    }
+
+    .chapter-toc h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #1a5799;
+    }
+
+    .chapter-toc ul {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.95rem;
+    }
+
+    .chapter-toc li {
+      margin: 0.2rem 0;
+    }
+
+    .chapter-toc a {
+      color: #1a5799;
+      text-decoration: none;
+    }
+
+    .chapter-toc a:hover {
+      text-decoration: underline;
+    }
+
+    /* === MODUŁ (POJĘCIE) – KAFEL === */
+    .module {
+      background: #ffffff;
+      border-radius: 10px;
+      border: 1px solid #d0d3da;
+      padding: 1.25rem 1.25rem 1.5rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    }
+
+    .module h2 {
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      color: #1a5799;
+    }
+
+    .module .subtitle {
+      font-size: 0.85rem;
+      color: #666666;
+      margin-top: -0.4rem;
+      margin-bottom: 0.8rem;
+    }
+
+    /* === RYSUNEK === */
+    .figure {
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #d0d3da;
+      background: #fafafa;
+    }
+
+    .figure-caption {
+      font-size: 0.8rem;
+      color: #666666;
+      margin-top: 0.35rem;
+    }
+
+    /* === TEKST GŁÓWNY W MODUŁE === */
+    .module p {
+      margin: 0.4rem 0;
+      font-size: 0.95rem;
+    }
+
+    /* === RAMKA „WYMIARY ORIENTACYJNE” === */
+    .dims-box {
+      margin-top: 0.8rem;
+      margin-bottom: 0.8rem;
+      padding: 0.65rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #c9d3e6;
+      background: #f2f6fc;
+      font-size: 0.9rem;
+    }
+
+    .dims-box-title {
+      font-weight: 600;
+      color: #1a5799;
+      margin-bottom: 0.3rem;
+    }
+
+    .dims-box ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    .dims-box li {
+      margin: 0.1rem 0;
+    }
+
+    /* === RAMKA „UWAGI / ZASTOSOWANIE” === */
+    .note-box {
+      margin-top: 0.4rem;
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #f2c48d;
+      background: #fff7ec;
+      font-size: 0.9rem;
+    }
+
+    .note-box-title {
+      font-weight: 600;
+      color: #b76a1d;
+      margin-bottom: 0.25rem;
+    }
+
+    /* === BLOK „ZAPAMIĘTAJ” / „NAJCZĘSTSZE BŁĘDY” === */
+    .info-box {
+      margin: 1.5rem 0 0.5rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 8px;
+      border: 1px solid #d0d3da;
+      background: #ffffff;
+      font-size: 0.9rem;
+    }
+
+    .info-box-title {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .info-box ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    /* === DROBNE DOSTOSOWANIA DLA SZERSZYCH EKRANÓW === */
+    @media (min-width: 900px) {
+      .page-wrapper {
+        padding: 2.5rem 1.5rem 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- NAGŁÓWEK ROZDZIAŁU -->
+    <header class="chapter-header">
+      <h1>3.3. Płyty (slabs)</h1>
+      <p>Elementy powierzchniowe przenoszące obciążenia prostopadłe – jednokierunkowo lub dwukierunkowo.</p>
+      <p>Skrypt dla studentów kierunku architektura – podstawy systemów konstrukcyjnych.</p>
+    </header>
+
+    <!-- MINI SPIS TREŚCI ROZDZIAŁU -->
+    <section class="chapter-toc">
+      <h2>W tym rozdziale:</h2>
+      <ul>
+        <li><a href="#plyta-pelna">Płyta żelbetowa pełna</a></li>
+        <li><a href="#plyta-bezbelkowa">Płyta bezbelkowa</a></li>
+        <li><a href="#plyta-kasetonowa">Płyta kasetonowa</a></li>
+        <!-- dopisz kolejne typy płyt -->
+      </ul>
+    </section>
+
+    <!-- WPROWADZENIE DO ROZDZIAŁU -->
+    <section class="module" id="wprowadzenie-plyty">
+      <h2>Wprowadzenie</h2>
+      <p>
+        Płyta jest elementem konstrukcyjnym, którego długość i szerokość są znacznie większe od grubości.
+        Pod wpływem obciążeń działających prostopadle ulega zginaniu i ścinaniu. Podparcie może mieć
+        formę liniową (ściany, belki) lub punktową (słupy), co decyduje o sposobie przenoszenia obciążeń
+        i wymaganej sztywności.
+      </p>
+      <p>
+        W zależności od układu podpór płyta może pracować jednokierunkowo (gdy efektywnie oparta jest
+        na dwóch przeciwległych krawędziach) lub dwukierunkowo (gdy podparta jest ze wszystkich stron
+        i przenosi obciążenia w dwóch kierunkach).
+      </p>
+    </section>
+
+    <!-- MODUŁ 1: PŁYTA ŻELBETOWA PEŁNA -->
+    <section class="module" id="plyta-pelna">
+      <h2>3.3.1. Płyta żelbetowa pełna monolityczna</h2>
+      <div class="subtitle">(solid reinforced concrete slab)</div>
+
+      <div class="figure">
+        <!-- Tu podstaw swój rysunek -->
+        <img src="rys_plyta_pelna.png" alt="Schemat pracy płyty żelbetowej pełnej">
+        <div class="figure-caption">
+          Ryc. 79. Płyta żelbetowa pełna – schemat pracy (przykładowy rysunek)
+        </div>
+      </div>
+
+      <p>
+        Monolityczna płyta żelbetowa o jednorodnej grubości, wykonywana na pełnym deskowaniu.
+        Pracuje jedno- lub dwukierunkowo w zależności od sposobu podparcia. Jest konstrukcyjnie
+        najprostszą formą stropu, ale charakteryzuje się stosunkowo dużą masą własną.
+      </p>
+
+      <div class="dims-box">
+        <div class="dims-box-title">Wymiary orientacyjne</div>
+        <ul>
+          <li>rozpiętość jednokierunkowa: ok. 3,5 m</li>
+          <li>rozpiętość dwukierunkowa: do ok. 5,0 m</li>
+          <li>grubość: ok. 1/30 rozpiętości (1D) – płyta jednokierunkowa</li>
+          <li>grubość: ok. 1/40 rozpiętości (2D) – płyta dwukierunkowa</li>
+        </ul>
+      </div>
+
+      <div class="note-box">
+        <div class="note-box-title">Uwagi / zastosowanie</div>
+        <p>
+          Stosowana jako strop łączący pozostałe elementy konstrukcji (ściany, belki, słupy).
+          Prosta technologicznie, lecz wymaga pełnego deskowania i dużej ilości zbrojenia.
+          Ze względu na masę własną nie jest korzystna dla bardzo dużych rozpiętości.
+        </p>
+      </div>
+    </section>
+
+    <!-- MODUŁ 2: PŁYTA BEZBELKOWA -->
+    <section class="module" id="plyta-bezbelkowa">
+      <h2>3.3.2. Płyta bezbelkowa</h2>
+      <div class="subtitle">(flat slab)</div>
+
+      <div class="figure">
+        <img src="rys_plyta_bezbelkowa.png" alt="Schemat płyty bezbelkowej opartej na słupach">
+        <div class="figure-caption">
+          Ryc. 80. Płyta bezbelkowa – podparcie bezpośrednio na słupach
+        </div>
+      </div>
+
+      <p>
+        Płyta oparta bezpośrednio na słupach, bez belek pośrednich. Przy rozstawie słupów zbliżonym
+        w obu kierunkach pracuje dwukierunkowo. W strefie słupów występuje ryzyko przebicia, co
+        ogranicza maksymalną rozpiętość i zwykle wymaga zwiększenia grubości płyty w porównaniu
+        ze stropem opartym liniowo na belkach.
+      </p>
+
+      <div class="dims-box">
+        <div class="dims-box-title">Wymiary orientacyjne</div>
+        <ul>
+          <li>rozpiętość wieloprzęsłowa: ok. 7,5–12 m</li>
+          <li>grubość płyty (wieloprzęsłowej): ok. 1/40 rozpiętości</li>
+          <li>grubość płyty (jednoprzesłowej): ok. 1/36 rozpiętości</li>
+        </ul>
+      </div>
+
+      <div class="note-box">
+        <div class="note-box-title">Uwagi / zastosowanie</div>
+        <p>
+          Zapewnia dużą swobodę kształtowania przestrzeni (brak belek pod stropem), ale wymaga
+          dokładnej analizy przebicia w rejonie słupów. Często stosowana w garażach wielostanowiskowych,
+          budynkach biurowych oraz w obiektach z regularnym siatką słupów.
+        </p>
+      </div>
+    </section>
+
+    <!-- MODUŁ 3: PŁYTA KASETONOWA – PRZYKŁAD -->
+    <section class="module" id="plyta-kasetonowa">
+      <h2>3.3.3. Płyta kasetonowa</h2>
+      <div class="subtitle">(waffle slab)</div>
+
+      <div class="figure">
+        <img src="rys_plyta_kasetonowa.png" alt="Schemat płyty kasetonowej z układem żeber">
+        <div class="figure-caption">
+          Ryc. 81. Płyta kasetonowa – układ prostopadłych żeber
+        </div>
+      </div>
+
+      <p>
+        Monolityczna płyta żelbetowa wzmocniona układem prostopadłych żeber, które tworzą
+        kasetonowe zagłębienia. Umożliwia przykrywanie dużych rozpiętości przy stosunkowo
+        niewielkiej masie, dzięki usunięciu betonu z mało obciążonych stref.
+      </p>
+
+      <div class="dims-box">
+        <div class="dims-box-title">Wymiary orientacyjne</div>
+        <ul>
+          <li>rozpiętość: ok. 6–15 m</li>
+          <li>grubość płyty: ok. 1/25–1/30 rozpiętości</li>
+        </ul>
+      </div>
+
+      <div class="note-box">
+        <div class="note-box-title">Uwagi / zastosowanie</div>
+        <p>
+          System korzystny w dużych, otwartych przestrzeniach (hale, atria, budynki użyteczności
+          publicznej). W rejonie oparcia na słupach nie wykonuje się kasetonów, aby zwiększyć
+          odporność na przebicie.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRZYKŁADOWY BLOK „NAJCZĘSTSZE BŁĘDY” NA KOŃCU ROZDZIAŁU -->
+    <section class="info-box">
+      <div class="info-box-title">Najczęstsze błędy w rozumieniu pracy płyt</div>
+      <ul>
+        <li>traktowanie każdej płyty podpartej na czterech krawędziach jako „idealnie dwukierunkowej”,</li>
+        <li>mylenie stropu gęstożebrowego ze stropem kasetonowym,</li>
+        <li>pomijanie ryzyka przebicia w płytach bezbelkowych,</li>
+        <li>ignorowanie kierunku większej sztywności przy płytach żebrowych i kanałowych.</li>
+      </ul>
+    </section>
+
+  </div>
+</body>
+</html>

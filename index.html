@@ -23,8 +23,7 @@
   <div class="container">
     <div class="brand">
       <div class="brand-mark">
-        <img src="assets/img/logo/logo-sk.png"
-             alt="Systemy konstrukcyjne – logo">
+        <img src="assets/img/logo/logo-sk.png" alt="Systemy konstrukcyjne – logo">
       </div>
       <div class="brand-text">
         <h1 class="title">Wstęp do systemów konstrukcyjnych</h1>
@@ -35,7 +34,9 @@
     <div class="meta">
       <span class="chip">Wersja: online</span>
       <a class="chip chip-link" href="glossary/">Słownik pojęć</a>
-      <button id="themeToggle" class="chip chip-button" type="button" aria-label="Zmień motyw">Motyw: jasny</button>
+      <button id="themeToggle" class="chip chip-button" type="button" aria-label="Zmień motyw">
+        Motyw: jasny
+      </button>
     </div>
 
     <div class="search" role="search">
@@ -54,7 +55,6 @@
     <h2 class="section-title">Szybki dostęp</h2>
 
     <div class="quick-grid">
-      <!-- ZMIANA: sensownie kierujemy do rozdziału 0 (Wstęp) -->
       <a class="card card-action" href="chapters/00/index.html">
         <div class="card-title">Jak korzystać z e-skryptu</div>
         <div class="card-note">Układ stron, nawigacja, motyw, skróty.</div>
@@ -80,7 +80,7 @@
 
     <div class="tile-grid" id="chaptersGrid">
 
-      <!-- 0 (NOWY) -->
+      <!-- 0 -->
       <a class="tile" href="chapters/00/index.html">
         <div>
           <div class="tile-kicker">Rozdział 0</div>
@@ -93,12 +93,14 @@
         </div>
       </a>
 
-      <!-- 1 (ZAKTUALIZOWANY OPIS) -->
+      <!-- 1 -->
       <a class="tile" href="chapters/01/index.html">
         <div>
           <div class="tile-kicker">Rozdział 1</div>
           <div class="tile-title">Podstawy systemów konstrukcyjnych</div>
-          <div class="tile-desc">Rola konstrukcji, obciążenia i droga sił, nośność–stateczność–sztywność, element–ustrój–system oraz schematy statyczne.</div>
+          <div class="tile-desc">
+            Rola konstrukcji, obciążenia i droga sił, nośność–stateczność–sztywność, element–ustrój–system oraz schematy statyczne.
+          </div>
         </div>
         <div class="tile-tags">
           <span class="tag">pojęcia</span>
@@ -106,16 +108,19 @@
         </div>
       </a>
 
-      <!-- 2 -->
+      <!-- 2 (NAPRAWIONE: używa .tile jak pozostałe kafelki) -->
       <a class="tile" href="chapters/02/index.html">
         <div>
           <div class="tile-kicker">Rozdział 2</div>
-          <div class="tile-title">Ustroje belkowe</div>
-          <div class="tile-desc">Belki, podciągi, wsporniki, układy belek i konsekwencje statyczne.</div>
+          <div class="tile-title">Systemy objętościowe (aktywne masą)</div>
+          <div class="tile-desc">
+            Konstrukcje, w których obciążenia są przenoszone przez ściskanie, a stateczność wynika z formy i masy.
+          </div>
         </div>
         <div class="tile-tags">
-          <span class="tag">zginanie</span>
-          <span class="tag">ugięcia</span>
+          <span class="tag">mass-active</span>
+          <span class="tag">ściskanie</span>
+          <span class="tag">stateczność</span>
         </div>
       </a>
 
@@ -285,7 +290,6 @@
     const q = input.value.trim();
     if (!q) return;
 
-    // Przekierowanie do słownika z parametrem
     window.location.href = 'glossary/?q=' + encodeURIComponent(q);
   }
 
@@ -296,7 +300,6 @@
     input.focus();
   }
 
-  // Obsługa klawisza Enter w polu wyszukiwania
   (function () {
     const input = document.getElementById('q');
     if (!input) return;
